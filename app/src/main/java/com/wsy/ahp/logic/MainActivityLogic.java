@@ -86,9 +86,9 @@ public class MainActivityLogic {
         );
         infoFavorite.fragment = FavoriteFragment.class;
         HiTabBottomInfo infoCategory = new HiTabBottomInfo<Integer>(
-                "聊天",
-                "fonts/iconfont.ttf",
-                activityProvider.getString(R.string.if_chat),
+                "知识库",
+                "fonts/ahp.ttf",
+                activityProvider.getString(R.string.knowledge),
                 "嘿",
                 defaultColor,
                 tintColor
@@ -105,8 +105,8 @@ public class MainActivityLogic {
         infoRecommend.fragment = RecommendFragment.class;
         HiTabBottomInfo infoProfile = new HiTabBottomInfo<Integer>(
                 "我的",
-                "fonts/iconfont.ttf",
-                activityProvider.getString(R.string.if_profile),
+                "fonts/ahp.ttf",
+                activityProvider.getString(R.string.wode),
                 null,
                 defaultColor,
                 tintColor

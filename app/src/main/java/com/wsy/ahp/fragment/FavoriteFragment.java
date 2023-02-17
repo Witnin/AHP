@@ -9,4 +9,6 @@ public class FavoriteFragment extends HiBaseFragment {
     public int getLayoutId() {
         return R.layout.fragment_favoite;
     }
+
+
 }
