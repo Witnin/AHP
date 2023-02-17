@@ -6,7 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 
-import com.wsy.commom.ui.component.HiBaseActivity;
+import com.wsy.common.ui.component.HiBaseActivity;
 
 public class MainActivity extends HiBaseActivity {
 
