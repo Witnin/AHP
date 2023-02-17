@@ -1,12 +1,14 @@
 package com.wsy.ahp;
 
-import android.app.AppComponentFactory;
+
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+
+import com.wsy.commom.ui.component.HiBaseActivity;
+
+public class MainActivity extends HiBaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
