@@ -13,13 +13,19 @@
 
 
 
-
         <Button
             android:id="@+id/mybutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:text="To YourFragment"/>
+            android:text="mybutton"/>
+
+    <Button
+        android:id="@+id/hiRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="hiRefresh"/>
 
 
 </LinearLayout >

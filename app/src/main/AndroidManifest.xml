@@ -25,6 +25,9 @@
         <activity
             android:name=".activity.HiTabTopDemoActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.HiRefreshDemoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

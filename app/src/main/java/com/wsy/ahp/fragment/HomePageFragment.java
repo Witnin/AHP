@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.wsy.ahp.R;
+import com.wsy.ahp.activity.HiRefreshDemoActivity;
 import com.wsy.ahp.activity.HiTabTopDemoActivity;
 import com.wsy.common.ui.component.HiBaseFragment;
 
@@ -33,8 +34,14 @@ public class HomePageFragment extends HiBaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button botton = getActivity().findViewById(R.id.mybutton);
+        Button refreshButton = getActivity().findViewById(R.id.hiRefresh);
         botton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HiTabTopDemoActivity.class);
+            startActivity(intent);
+        });
+
+        refreshButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), HiRefreshDemoActivity.class);
             startActivity(intent);
         });
     }
