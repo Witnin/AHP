@@ -32,6 +32,9 @@
         <activity
             android:name=".activity.HiRefreshDemoActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.GreetingActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

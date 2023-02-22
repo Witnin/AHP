@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.wsy.ahp.R;
+import com.wsy.ahp.activity.GreetingActivity;
 import com.wsy.ahp.activity.HiRefreshDemoActivity;
 import com.wsy.ahp.activity.HiTabTopDemoActivity;
 import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
@@ -37,6 +38,7 @@ public class HomePageFragment extends HiBaseFragment {
         Button botton = getActivity().findViewById(R.id.mybutton);
         Button refreshButton = getActivity().findViewById(R.id.hiRefresh);
         Button bannerButton = getActivity().findViewById(R.id.hiBanner);
+        Button jetpackComposeButton = getActivity().findViewById(R.id.jetpackCompose);
         botton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HiTabTopDemoActivity.class);
             startActivity(intent);
@@ -49,6 +51,10 @@ public class HomePageFragment extends HiBaseFragment {
 
         bannerButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HiBannerDemoActivity.class);
+            startActivity(intent);
+        });
+        jetpackComposeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), GreetingActivity.class);
             startActivity(intent);
         });
     }
