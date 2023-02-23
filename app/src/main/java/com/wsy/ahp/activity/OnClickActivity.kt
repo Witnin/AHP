@@ -6,14 +6,15 @@ import android.widget.TextView
 import com.wsy.ahp.R
 import com.wsy.ahp.kotlin.find
 import com.wsy.ahp.kotlin.onClick
+import kotlinx.android.synthetic.main.activity_on_click.*
 
 class OnClickActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_on_click)
-        val textView = find<TextView>(R.id.onClick)
+//        val textView = find<TextView>(R.id.onClick)
         R.id.onClick.onClick(  this) {
-           textView.text = " Kotlin扩展"
+           onClick.text = " Kotlin扩展"
         }
     }
 }

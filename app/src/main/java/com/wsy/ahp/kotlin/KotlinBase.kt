@@ -43,6 +43,17 @@ object KotlinBase {
 
     }
 
+    /**
+     * 字符串判空
+     */
+    fun testEmpty(str: String?){
+        if(str.isNullOrEmpty()){
+            println("isNullOrEmpty:${str.isNullOrEmpty()}")
+        }else  if(str.isNullOrBlank()){
+            println("isNullOrBlank:${str.isNullOrBlank()}")
+        }
+    }
+
     fun test(listString: List<String>, s: String) {
         println("无参数")
     }
