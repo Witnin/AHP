@@ -41,5 +41,12 @@
         android:textAllCaps="false"
         android:text="jetpackCompose"/>
 
+    <Button
+        android:id="@+id/kotlinExtension"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="kotlinExtension"/>
+
 
 </LinearLayout >
