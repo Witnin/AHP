@@ -55,6 +55,7 @@ class HiCircleIndicator @JvmOverloads constructor(
         return this
     }
 
+
     override fun onInflate(count: Int) {
         removeAllViews()
         if (count <= 0) {
