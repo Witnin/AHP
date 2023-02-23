@@ -1,4 +1,23 @@
 <resources>
+    <string name="app_version">Version1.0</string>
+    <string name="app_long_name">勘验取证终端数据采集系统</string>
+    <string name="hello">你好</string>
+    <string name="first_short">first</string>
+    <string name="first_long">小颜坏坏</string>
+    <string name="second_short">second</string>
+    <string name="second_long">来回跳转</string>
+    <string name="third_short">third</string>
+    <string name="third_long">变成猪儿🐖</string>
+    <string name="kyqz_task">"任务列表"</string>
+    <string name="kyqz_case">"专项监督"</string>
+    <string name="kyqz_clue">"线索管理"</string>
+    <string name="kyqz_data">"检测数据"</string>
+    <string name="kyqz_resource">"学习资料"</string>
+    <string name="kyqz_me">"个人中心"</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="account_hint">请输入用户名</string>
+    <string name="pwd_hint">请输入密码</string>
     <string name="app_name">知识库混合开发测试APP</string>
 
     <string name="if_home">&#xe8c6;</string>

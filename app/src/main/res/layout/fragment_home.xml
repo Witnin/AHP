@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="MyFragment"
-        android:textSize="40sp"
-        android:gravity="center_horizontal"/>
+        android:textSize="40sp" />
 
 
-
-        <Button
-            android:id="@+id/mybutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:text="hiTop"/>
+    <Button
+        android:id="@+id/mybutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hiTop"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/hiRefresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="hiRefresh"/>
+        android:text="hiRefresh"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/hiBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="hiBanner"/>
+        android:text="hiBanner"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/jetpackCompose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="jetpackCompose"/>
+        android:text="jetpackCompose"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/kotlinExtension"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="kotlinExtension"/>
+        android:text="kotlinExtension"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/homeBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="homeBottom"
+        android:textAllCaps="false" />
 
 
-</LinearLayout >
+</LinearLayout>

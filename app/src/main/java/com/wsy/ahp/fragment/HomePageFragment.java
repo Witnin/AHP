@@ -12,6 +12,7 @@ import com.wsy.ahp.R;
 import com.wsy.ahp.activity.GreetingActivity;
 import com.wsy.ahp.activity.HiRefreshDemoActivity;
 import com.wsy.ahp.activity.HiTabTopDemoActivity;
+import com.wsy.ahp.activity.HomeActivity;
 import com.wsy.ahp.activity.OnClickActivity;
 import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
 import com.wsy.common.ui.component.HiBaseFragment;
@@ -41,6 +42,7 @@ public class HomePageFragment extends HiBaseFragment {
         Button bannerButton = getActivity().findViewById(R.id.hiBanner);
         Button jetpackComposeButton = getActivity().findViewById(R.id.jetpackCompose);
         Button kotlinExtensionButton = getActivity().findViewById(R.id.kotlinExtension);
+        Button homeBottom = getActivity().findViewById(R.id.homeBottom);
         botton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HiTabTopDemoActivity.class);
             startActivity(intent);
@@ -63,5 +65,11 @@ public class HomePageFragment extends HiBaseFragment {
             Intent intent = new Intent(getActivity(), OnClickActivity.class);
             startActivity(intent);
         });
+        homeBottom.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), HomeActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 }

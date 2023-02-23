@@ -101,4 +101,7 @@ dependencies {
     // Optional - Integration with RxJava
     implementation("androidx.compose.runtime:runtime-rxjava2")
 
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+
+
 }
