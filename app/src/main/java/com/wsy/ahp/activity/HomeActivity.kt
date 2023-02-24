@@ -10,7 +10,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         //隐藏导航栏
-        //隐藏导航栏
         val actionbar = supportActionBar
         actionbar?.hide()
     }

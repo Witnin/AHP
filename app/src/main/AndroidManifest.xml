@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wsy.ahp">
-
+    <!-- 需要GL ES 3.0或者更高版本 -->
+    <uses-feature
+        android:glEsVersion="0x00030000"
+        android:required="true" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AHP"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.threed.PanoramaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.threed.GlLineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.threed.GlGlobeActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.HomeActivity"
             android:exported="false" />

@@ -11,4 +11,5 @@
     <!--    TabBottom-->
     <color name="tabBottomDefaultColor">#ff656667</color>
     <color name="tabBottomTintColor">#ffd44949</color>
+    <color name="transparent">#00000000</color>
 </resources>

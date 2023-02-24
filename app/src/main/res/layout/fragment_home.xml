@@ -4,55 +4,94 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="MyFragment"
-        android:textSize="40sp" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="MyFragment"
+                android:textSize="40sp" />
 
 
-    <Button
-        android:id="@+id/mybutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="hiTop"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/mybutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hiTop"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/hiRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="hiRefresh"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/hiRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hiRefresh"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/hiBanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="hiBanner"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/hiBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hiBanner"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/jetpackCompose"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="jetpackCompose"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/jetpackCompose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="jetpackCompose"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/kotlinExtension"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="kotlinExtension"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/kotlinExtension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="kotlinExtension"
+                android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/homeBottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="homeBottom"
-        android:textAllCaps="false" />
+            <Button
+                android:id="@+id/homeBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="homeBottom"
+                android:textAllCaps="false" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/threedBottom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3d效果"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_gl_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="三维物体" />
+
+                <Button
+                    android:id="@+id/btn_gl_globe"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="地球仪" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

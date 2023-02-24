@@ -14,6 +14,9 @@ import com.wsy.ahp.activity.HiRefreshDemoActivity;
 import com.wsy.ahp.activity.HiTabTopDemoActivity;
 import com.wsy.ahp.activity.HomeActivity;
 import com.wsy.ahp.activity.OnClickActivity;
+import com.wsy.ahp.activity.threed.GlGlobeActivity;
+import com.wsy.ahp.activity.threed.GlLineActivity;
+import com.wsy.ahp.activity.threed.PanoramaActivity;
 import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
 import com.wsy.common.ui.component.HiBaseFragment;
 
@@ -43,6 +46,9 @@ public class HomePageFragment extends HiBaseFragment {
         Button jetpackComposeButton = getActivity().findViewById(R.id.jetpackCompose);
         Button kotlinExtensionButton = getActivity().findViewById(R.id.kotlinExtension);
         Button homeBottom = getActivity().findViewById(R.id.homeBottom);
+        Button threedBottom = getActivity().findViewById(R.id.threedBottom);
+        Button btn_gl_globe = getActivity().findViewById(R.id.btn_gl_globe);
+        Button btn_gl_line = getActivity().findViewById(R.id.btn_gl_line);
         botton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HiTabTopDemoActivity.class);
             startActivity(intent);
@@ -69,6 +75,20 @@ public class HomePageFragment extends HiBaseFragment {
             Intent intent = new Intent(getActivity(), HomeActivity.class);
             startActivity(intent);
         });
+        threedBottom.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PanoramaActivity.class);
+            startActivity(intent);
+        });
+        btn_gl_globe.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), GlGlobeActivity.class);
+            startActivity(intent);
+        });
+        btn_gl_line.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), GlLineActivity.class);
+            startActivity(intent);
+        });
+
+
 
 
     }
