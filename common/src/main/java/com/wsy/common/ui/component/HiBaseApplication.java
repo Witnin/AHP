@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import com.wsy.common.ActivityManager;
 import com.wsy.wsy_library.log.HiConsolePrinter;
 import com.wsy.wsy_library.log.HiFilePrinter;
 import com.wsy.wsy_library.log.HiLogConfig;

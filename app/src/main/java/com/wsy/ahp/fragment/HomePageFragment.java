@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,7 @@ import com.wsy.ahp.activity.HiRefreshDemoActivity;
 import com.wsy.ahp.activity.HiTabTopDemoActivity;
 import com.wsy.ahp.activity.HomeActivity;
 import com.wsy.ahp.activity.OnClickActivity;
+import com.wsy.ahp.activity.TestActivity;
 import com.wsy.ahp.activity.threed.GlGlobeActivity;
 import com.wsy.ahp.activity.threed.GlLineActivity;
 import com.wsy.ahp.activity.threed.PanoramaActivity;
@@ -40,6 +42,7 @@ public class HomePageFragment extends HiBaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView myTextView = getActivity().findViewById(R.id.myTextView);
         Button botton = getActivity().findViewById(R.id.mybutton);
         Button refreshButton = getActivity().findViewById(R.id.hiRefresh);
         Button bannerButton = getActivity().findViewById(R.id.hiBanner);
@@ -85,6 +88,11 @@ public class HomePageFragment extends HiBaseFragment {
         });
         btn_gl_line.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), GlLineActivity.class);
+            startActivity(intent);
+        });
+
+        myTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), TestActivity.class);
             startActivity(intent);
         });
 
