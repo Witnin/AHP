@@ -64,6 +64,12 @@
                 android:layout_height="wrap_content"
                 android:text="homeBottom"
                 android:textAllCaps="false" />
+            <Button
+                android:id="@+id/anim_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="anim_bottom"
+                android:textAllCaps="false" />
 
             <LinearLayout
                 android:layout_width="match_parent"

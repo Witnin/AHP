@@ -16,6 +16,7 @@ import com.wsy.ahp.activity.HiTabTopDemoActivity;
 import com.wsy.ahp.activity.HomeActivity;
 import com.wsy.ahp.activity.OnClickActivity;
 import com.wsy.ahp.activity.TestActivity;
+import com.wsy.ahp.activity.animation.AnimationActivity;
 import com.wsy.ahp.activity.threed.GlGlobeActivity;
 import com.wsy.ahp.activity.threed.GlLineActivity;
 import com.wsy.ahp.activity.threed.PanoramaActivity;
@@ -52,6 +53,7 @@ public class HomePageFragment extends HiBaseFragment {
         Button threedBottom = getActivity().findViewById(R.id.threedBottom);
         Button btn_gl_globe = getActivity().findViewById(R.id.btn_gl_globe);
         Button btn_gl_line = getActivity().findViewById(R.id.btn_gl_line);
+        Button anim_bottom = getActivity().findViewById(R.id.anim_bottom);
         botton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), HiTabTopDemoActivity.class);
             startActivity(intent);
@@ -93,6 +95,10 @@ public class HomePageFragment extends HiBaseFragment {
 
         myTextView.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), TestActivity.class);
+            startActivity(intent);
+        });
+        anim_bottom.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AnimationActivity.class);
             startActivity(intent);
         });
 
