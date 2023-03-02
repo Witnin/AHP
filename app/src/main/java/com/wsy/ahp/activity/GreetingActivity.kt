@@ -16,7 +16,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.wsy.ahp.route.RouteFlag
 
+@Route(path = "/home/greeting")
 class GreetingActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

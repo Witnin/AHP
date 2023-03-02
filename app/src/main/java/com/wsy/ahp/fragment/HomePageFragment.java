@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.wsy.ahp.R;
 import com.wsy.ahp.activity.GreetingActivity;
 import com.wsy.ahp.activity.HiRefreshDemoActivity;
@@ -102,8 +103,18 @@ public class HomePageFragment extends HiBaseFragment {
             startActivity(intent);
         });
 
+        layoutView.findViewById(R.id.profile).setOnClickListener(v ->navigation("/home/detail"));
+        layoutView.findViewById(R.id.vip).setOnClickListener(v ->navigation("/vip/detail"));
+        layoutView.findViewById(R.id.auth).setOnClickListener(v ->navigation("/auth/detail"));
+        layoutView.findViewById(R.id.unknow).setOnClickListener(v ->{navigation("/profile/unknow");});
+        layoutView.findViewById(R.id.greeting).setOnClickListener(v ->{navigation("/home/greeting");});
 
 
 
+
+    }
+
+    private void navigation(String s) {
+        ARouter.getInstance().build(s).navigation();
     }
 }
