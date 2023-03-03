@@ -2,6 +2,7 @@ package com.wsy.ahp.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,8 +24,11 @@ import com.wsy.ahp.activity.threed.GlLineActivity;
 import com.wsy.ahp.activity.threed.PanoramaActivity;
 import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
 import com.wsy.common.ui.component.HiBaseFragment;
+import com.wsy.wsy_library.executor.HiExecutor;
 
 public class HomePageFragment extends HiBaseFragment {
+
+    Boolean paused =false;
     @Override
     public int getLayoutId() {
         return R.layout.fragment_home;
@@ -108,6 +112,43 @@ public class HomePageFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.auth).setOnClickListener(v ->navigation("/auth/detail"));
         layoutView.findViewById(R.id.unknow).setOnClickListener(v ->{navigation("/profile/unknow");});
         layoutView.findViewById(R.id.greeting).setOnClickListener(v ->{navigation("/home/greeting");});
+
+        layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
+            for (int priority = 0; priority < 10;priority++){
+                int finalPriority = priority;
+                HiExecutor.INSTANCE.execute(priority,() -> {
+                    try {
+                        Thread.sleep( 1000 - finalPriority * 100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+            });
+
+        }});
+        layoutView.findViewById(R.id.executor2).setOnClickListener(v ->{
+            if(paused){
+                HiExecutor.INSTANCE.resume();
+            }else{
+                HiExecutor.INSTANCE.pause();
+            }
+            paused = !paused;
+        });
+        layoutView.findViewById(R.id.executor3).setOnClickListener(v ->{
+            HiExecutor.INSTANCE.execute(new HiExecutor.Callable<String>() {
+
+                @Override
+                public void onCompleted(String s) {
+                    Log.e("executor", "onCompleted: -当前线程时"+Thread.currentThread().getName() );
+                    Log.e("executor", "onCompleted: -任务结果result"+s );
+                }
+
+                @Override
+                public String onBackground() {
+                    Log.e("executor", "onBackground: -当前线程时"+Thread.currentThread().getName() );
+                    return "我是异步任务的结果";
+                }
+            });
+        });
 
 
 

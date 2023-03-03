@@ -21,6 +21,6 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
             }
         })
 
-        ReentrantReadWriteLockDemo.test()
+//        ReentrantReadWriteLockDemo.test()
     }
 }
