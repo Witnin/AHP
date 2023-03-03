@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.wsy.ahp.logic.MainActivityLogic
 import com.wsy.ahp.logic.MainActivityLogic.ActivityProvider
-import com.wsy.ahp.thread.AtomicDemo
-import com.wsy.ahp.thread.SynchronizedDemo
-import com.wsy.ahp.thread.ThreadTest
+import com.wsy.ahp.thread.*
 import com.wsy.common.ActivityManager
 import com.wsy.common.ui.component.HiBaseActivity
 
@@ -23,6 +21,6 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
             }
         })
 
-        SynchronizedDemo.test()
+        ReentrantReadWriteLockDemo.test()
     }
 }
