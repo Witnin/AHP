@@ -9,6 +9,7 @@ import androidx.lifecycle.whenResumed
 import androidx.lifecycle.whenStarted
 import com.wsy.ahp.coroutine.CoroutineScene.startScene1
 import com.wsy.ahp.coroutine.CoroutineScene3
+import com.wsy.ahp.coroutine.CountDownLatchDemo
 import com.wsy.ahp.logic.MainActivityLogic
 import com.wsy.ahp.logic.MainActivityLogic.ActivityProvider
 import com.wsy.ahp.thread.*
@@ -33,5 +34,6 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
 
 
 //        ReentrantReadWriteLockDemo.test()
+        CountDownLatchDemo.test2()
     }
 }
