@@ -19,30 +19,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="MyFragment"
+                android:text="测试示例"
+                android:textSize="40sp" />
+            <TextView
+                android:id="@+id/myTextView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="测试示例"
+                android:textSize="40sp" />
+            <TextView
+                android:id="@+id/myTextView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="测试示例1"
+                android:textSize="40sp" />
+            <TextView
+                android:id="@+id/myTextView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="测试示例2"
+                android:textSize="40sp" />
+            <TextView
+                android:id="@+id/myTextView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="测试示例3"
                 android:textSize="40sp" />
 
 
-            <Button
-                android:id="@+id/mybutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="hiTop"
-                android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/hiRefresh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="hiRefresh"
-                android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/hiBanner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="hiBanner"
-                android:textAllCaps="false" />
+                <Button
+                    android:id="@+id/mybutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hiTop"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/hiRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hiRefresh"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/hiBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hiBanner"
+                    android:textAllCaps="false" />
+
 
             <Button
                 android:id="@+id/jetpackCompose"
@@ -58,18 +89,27 @@
                 android:text="kotlinExtension"
                 android:textAllCaps="false" />
 
-            <Button
-                android:id="@+id/homeBottom"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="homeBottom"
-                android:textAllCaps="false" />
-            <Button
-                android:id="@+id/anim_bottom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="anim_bottom"
-                android:textAllCaps="false" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/homeBottom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="homeBottom"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/anim_bottom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="anim_bottom"
+                    android:textAllCaps="false" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,6 +138,7 @@
                     android:layout_weight="1"
                     android:text="地球仪" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,12 +165,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="auth" />
+
                 <Button
                     android:id="@+id/unknow"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="unknow" />
+
                 <Button
                     android:id="@+id/greeting"
                     android:layout_width="0dp"
@@ -148,7 +191,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="profile"
+                    android:text="executor1"
                     android:textAllCaps="false" />
 
                 <Button
@@ -156,14 +199,17 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="vip" />
+                    android:text="executor2" />
 
                 <Button
                     android:id="@+id/executor3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="auth" />
+                    android:text="executor3" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></Space>
 
             </LinearLayout>
         </LinearLayout>

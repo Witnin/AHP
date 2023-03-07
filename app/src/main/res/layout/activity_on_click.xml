@@ -1,18 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-
-    <Button
-        android:id="@+id/onClick"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="onClick"/>
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <Button
+            android:id="@+id/onClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="onClick"
+            android:textAllCaps="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
 
+            <Button
+                android:id="@+id/coroutline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="协程测试-同步"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/coroutline1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="协程测试-先后执行"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/coroutline2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="协程-文件读取"
+                android:textAllCaps="false" />
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
-</LinearLayout >
+</LinearLayout>

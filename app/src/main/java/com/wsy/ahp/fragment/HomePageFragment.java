@@ -23,6 +23,7 @@ import com.wsy.ahp.activity.threed.GlGlobeActivity;
 import com.wsy.ahp.activity.threed.GlLineActivity;
 import com.wsy.ahp.activity.threed.PanoramaActivity;
 import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
+import com.wsy.ahp.coroutine.CoroutineScene;
 import com.wsy.common.ui.component.HiBaseFragment;
 import com.wsy.wsy_library.executor.HiExecutor;
 
@@ -44,6 +45,8 @@ public class HomePageFragment extends HiBaseFragment {
 //        });
 //
 //    }
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -149,6 +152,8 @@ public class HomePageFragment extends HiBaseFragment {
                 }
             });
         });
+
+
 
 
 
