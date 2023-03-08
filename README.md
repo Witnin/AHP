@@ -6,12 +6,13 @@
 ---------------------------
 模块：
 -library
-    --log
-    --executor
+--log
+--executor
+--hiRestful
 -common
 -ui
 -threed
-    --3D全景
+--3D全景
 ----------------------------
 
 Kotlin协程的写法
