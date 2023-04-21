@@ -2,9 +2,15 @@ package com.wsy.ahp.coroutine
 
 import android.util.Log
 import kotlinx.coroutines.*
+import kotlin.system.measureTimeMillis
 
 /**
  * kotlin协程测试
+ * GlobalScope.launch
+ * GlobalScope.async
+ * runBlocking
+ * suspend
+ * delay
  */
  object CoroutineScene {
     private val TAG: String = "CoroutineScene"
@@ -36,6 +42,28 @@ import kotlinx.coroutines.*
         }
         Log.e(TAG, "coroutine has launched")
     }
+
+//    runBlocking,阻塞线程,内部协程执行完才会执行外部
+//    桥接普通函数和协程
+    private fun testRunBlocking(){
+        val time : Long = measureTimeMillis{
+            runBlocking {
+                println("test RunBlocking的block中${Thread.currentThread()} before delay")
+                delay(500)
+                println("test RunBlocking1 ${Thread.currentThread()} Hello")
+            }
+            println("test RunBlocking2 ${Thread.currentThread()} Hello")
+
+        }
+        println("函数总耗时 $time")
+    }
+
+    @JvmStatic
+    fun main(args: Array<String>) {
+        testRunBlocking()
+    }
+
+
 
     private fun updateUI(result2: String, result3: String) {
         Log.e(TAG, "updateUI work on ${Thread.currentThread().name} ")
