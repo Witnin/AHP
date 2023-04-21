@@ -1,11 +1,12 @@
 package com.wsy.wsy_library.restful
 
+import com.wsy.wsy_library.log.HiLog
 import com.wsy.wsy_library.restful.annotation.*
 import java.lang.reflect.*
 
 class MethodParser(
     private val baseUrl: String,
-    method: Method
+    method: Method,
 ) {
 
     private var replaceRelativeUrl: String? = null
@@ -25,7 +26,7 @@ class MethodParser(
         parseMethodReturnType(method)
 
         //parse method parameters such as path,filed
-        //parseMethodParameters(method, args)
+//        parseMethodParameters(method,args)
     }
 
 
@@ -113,36 +114,48 @@ class MethodParser(
 
         val annotations = method.annotations;
         for (annotation in annotations) {
-            if (annotation is GET) {
-                relativeUrl = annotation.value
-                httpMethod = HiRequest.METHOD.GET
-            } else if (annotation is POST) {
-                relativeUrl = annotation.value
-                httpMethod = HiRequest.METHOD.POST
-                formPost = annotation.formPost
-            } else if (annotation is Headers) {
-                val headersArray = annotation.value
-                //@Headers("auth-token:token", "accountId:123456")
-                for (header in headersArray) {
-                    val colon = header.indexOf(":")
-                    check(!(colon == 0 || colon == -1)) {
-                        String.format(
-                            "@headers value must be in the form [name:value] ,but found [%s]",
-                            header
-                        )
-                    }
-                    val name = header.substring(0, colon)
-                    val value = header.substring(colon + 1).trim()
-                    headers[name] = value
+            when (annotation) {
+                is GET -> {
+                    relativeUrl = annotation.value
+                    httpMethod = HiRequest.METHOD.GET
                 }
-            } else if (annotation is BaseUrl) {
-                domainUrl = annotation.value
-            } else {
-                throw IllegalStateException("cannot handle method annotation:" + annotation.javaClass.toString())
+                is POST -> {
+                    relativeUrl = annotation.value
+                    httpMethod = HiRequest.METHOD.POST
+                    formPost = annotation.formPost
+                }
+                is PUT -> {
+                    relativeUrl = annotation.value
+                    httpMethod = HiRequest.METHOD.PUT
+                    formPost = annotation.formPost
+                }
+                is Headers -> {
+                    val headersArray = annotation.value
+                    //@Headers("auth-token:token", "accountId:123456")
+                    for (header in headersArray) {
+                        val colon = header.indexOf(":")
+                        check(!(colon == 0 || colon == -1)) {
+                            String.format(
+                                "@headers value must be in the form [name:value] ,but found [%s]",
+                                header
+                            )
+                        }
+                        val name = header.substring(0, colon)
+                        val value = header.substring(colon + 1).trim()
+                        headers[name] = value
+                    }
+                }
+                is BaseUrl -> {
+                    domainUrl = annotation.value
+                }
+                else -> {
+                    HiLog.dt("BizInterceptor Http:", annotation.javaClass.toString())
+                    throw IllegalStateException("cannot handle method annotation:" + annotation.javaClass.toString())
+                }
             }
         }
 
-        require((httpMethod == HiRequest.METHOD.GET) || (httpMethod == HiRequest.METHOD.POST)) {
+        require((httpMethod == HiRequest.METHOD.GET) || (httpMethod == HiRequest.METHOD.POST) ||  (httpMethod == HiRequest.METHOD.PUT)) {
             String.format("method %s must has one of GET,POST ", method.name)
         }
 

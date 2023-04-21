@@ -6,7 +6,7 @@ package com.wsy.wsy_library.restful
 open class HiResponse<T> {
 
     companion object {
-        const val SUCCESS: Int = 0
+        const val SUCCESS: Int = 200
         const val RC_HAS_ERROR = 5000                   //有错误
         const val RC_ACCOUNT_INVALID = 5001            //账号不存在
         const val RC_PWD_INVALID = 5002               //密码错误
@@ -23,7 +23,7 @@ open class HiResponse<T> {
     }
 
     var rawData: String? = null//原始数据
-    var code = 0//业务状态码
+    var code = 200//业务状态码
     var data: T? = null//业务数据
     var errorData: Map<String, String>? = null //错误状态下的数据
 

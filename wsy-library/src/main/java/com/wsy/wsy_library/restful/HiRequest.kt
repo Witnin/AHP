@@ -13,11 +13,12 @@ open class HiRequest {
     var returnType: Type? = null
     var formPost: Boolean = true
 
-    @IntDef(value = [METHOD.GET, METHOD.POST])
+    @IntDef(value = [METHOD.GET, METHOD.POST,METHOD.PUT])
     annotation class METHOD {
         companion object {
             const val GET = 0
             const val POST = 1
+            const val PUT = 2
         }
     }
 

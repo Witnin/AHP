@@ -1,5 +1,6 @@
 package com.wsy.wsy_library.restful
 
+import com.wsy.wsy_library.log.HiLog
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy
@@ -35,6 +36,7 @@ class HiRestful constructor(val baserUrl: String, callFactory: HiCall.Factory) {
 
             //bugFix:此处需要考虑 空参数
             var methodParser = methodService.get(method)
+            HiLog.dt("BizInterceptor Http:", methodParser)
             if (methodParser == null) {
                 methodParser = MethodParser.parse(baserUrl, method)
                 methodService[method] = methodParser
@@ -45,4 +47,6 @@ class HiRestful constructor(val baserUrl: String, callFactory: HiCall.Factory) {
             scheduler.newCall(request)
         } as T
     }
+
+
 }
