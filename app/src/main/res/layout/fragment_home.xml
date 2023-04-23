@@ -19,39 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="测试示例"
+                android:text="测试示例文字跳转显示activity名称"
                 android:textSize="40sp" />
-            <TextView
-                android:id="@+id/myTextView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="测试示例"
-                android:textSize="40sp" />
-            <TextView
-                android:id="@+id/myTextView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="测试示例1"
-                android:textSize="40sp" />
-            <TextView
-                android:id="@+id/myTextView12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="测试示例2"
-                android:textSize="40sp" />
-            <TextView
-                android:id="@+id/myTextView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="测试示例3"
-                android:textSize="40sp" />
-
-
-
 
                 <Button
                     android:id="@+id/mybutton"
@@ -81,13 +50,27 @@
                 android:layout_height="wrap_content"
                 android:text="jetpackCompose"
                 android:textAllCaps="false" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="协程测试" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
             <Button
                 android:id="@+id/kotlinExtension"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="kotlinExtension"
                 android:textAllCaps="false" />
+            </LinearLayout>
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -199,12 +182,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textAlignment="center"
                 android:text="compose示例" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -229,12 +212,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textAlignment="center"
                     android:text="异步任务执行" />
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -264,6 +247,38 @@
                     android:text="executor3" />
                 </LinearLayout>
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="RelativeLayout示例" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/relative_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="父元素"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/relative_brother"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="兄弟元素" />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
