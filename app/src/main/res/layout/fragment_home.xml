@@ -110,35 +110,55 @@
                     android:text="anim_bottom"
                     android:textAllCaps="false" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/threedBottom"
-                    android:layout_width="0dp"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="3d示例" />
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="3d效果"
-                    android:textAllCaps="false" />
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/threedBottom"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="3d效果"
+                        android:textAllCaps="false" />
 
-                <Button
-                    android:id="@+id/btn_gl_line"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="三维物体" />
+                    <Button
+                        android:id="@+id/btn_gl_line"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="三维物体" />
 
-                <Button
-                    android:id="@+id/btn_gl_globe"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="地球仪" />
+                    <Button
+                        android:id="@+id/btn_gl_globe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="地球仪" />
+                </LinearLayout>
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="路由跳转" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -172,20 +192,55 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="unknow" />
+            </LinearLayout>
 
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="compose示例" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
                 <Button
                     android:id="@+id/greeting"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="greeting" />
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/compose_login" />
             </LinearLayout>
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:textAlignment="center"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="异步任务执行" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
                 <Button
                     android:id="@+id/executor1"
                     android:layout_width="0dp"
@@ -207,9 +262,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="executor3" />
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"></Space>
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
