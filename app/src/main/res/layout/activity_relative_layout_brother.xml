@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RelativeLayoutBrotherActivity"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="10dp"
+        android:background="#ff0000"
+        android:src="@drawable/magic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginLeft="10dp"
+        android:text="关于食品检测仪的使用" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_alignBottom="@id/imageView"
+        android:layout_marginLeft="10dp"
+        android:text="简介：xxxxxxxxx" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="时长：11：40" />
+</RelativeLayout>

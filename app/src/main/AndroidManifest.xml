@@ -21,6 +21,9 @@
         android:theme="@style/Theme.AHP"
         tools:targetApi="31">
         <activity
+            android:name=".activity.RelativeLayoutBrotherActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.RelativeLayoutActivity"
             android:exported="false" />
         <activity
