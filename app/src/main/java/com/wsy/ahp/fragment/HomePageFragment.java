@@ -118,6 +118,7 @@ public class HomePageFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.login).setOnClickListener(v ->{navigation("/home/Login");});
         layoutView.findViewById(R.id.relative_parent).setOnClickListener(v ->{navigation("/relative/parent");});
         layoutView.findViewById(R.id.relative_brother).setOnClickListener(v ->{navigation("/relative/brother");});
+        layoutView.findViewById(R.id.native_login).setOnClickListener(v ->{navigation("/native/login");});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){

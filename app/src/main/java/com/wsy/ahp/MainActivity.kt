@@ -40,7 +40,7 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
 
 
 //        ReentrantReadWriteLockDemo.test()
-        CountDownLatchDemo.test2()
+//        CountDownLatchDemo.test2()
 //        ApiFactory.create(TestApi::class.java).recommendList(1,10).enqueue(object: HiCallback<JsonObject>{
 //            override fun onSuccess(response: HiResponse<JsonObject>) {
 //

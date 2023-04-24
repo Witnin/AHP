@@ -102,7 +102,8 @@ class MethodParser(
                     //relativeUrl = home/{categroyId}
                     replaceRelativeUrl = relativeUrl.replace("{$replaceName}", replacement)
                 }
-            } else {
+            }
+            else {
                 throw  IllegalStateException("cannot handle parameter annotation :" + annotation.javaClass.toString())
             }
         }

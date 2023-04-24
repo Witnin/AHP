@@ -13,7 +13,7 @@ class IconFontTextView
 @JvmOverloads constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int = 0) :
     AppCompatTextView(context, attributeSet, defStyle) {
     init {
-        val typeface = Typeface.createFromAsset(context.assets, "fonts/iconfont.ttf");
+        val typeface = Typeface.createFromAsset(context.assets, "fonts/ahp.ttf");
         setTypeface(typeface)
     }
 

@@ -6,7 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import com.alibaba.android.arouter.launcher.ARouter
-import org.devio.hi.library.util.AppGlobals
+import com.wsy.wsy_library.util.AppGlobals
 
 object HiRoute {
     //拉起浏览器

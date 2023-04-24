@@ -3,7 +3,7 @@ package com.wsy.ahp.http
 import com.wsy.wsy_library.restful.HiRestful
 
 object ApiFactory {
-    private val baseUrl = "https://nanputech.com:8091/"
+    val baseUrl = "https://nanputech.com:8091/"
     private val hiRestful:HiRestful = HiRestful(baseUrl,RetrofitCallFactory(baseUrl))
 //    val KEY_DEGRADE_HTTP = "degrade_http"
 //    val HTTPS_BASE_URL = "https://api.devio.org/as/"
