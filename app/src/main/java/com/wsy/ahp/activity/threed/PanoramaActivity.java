@@ -31,6 +31,7 @@ public class PanoramaActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); // 保持屏幕常亮
         pv_content = findViewById(R.id.pv_content);
         pv_content.initRender(resArray[0]); // 设置全景视图的全景图片
+
         initExampleSpinner(); // 初始化样例下拉框
     }
 
@@ -45,9 +46,9 @@ public class PanoramaActivity extends AppCompatActivity {
         sp_example.setSelection(0);
     }
 
-    private String[] exampleArray = {"现代客厅", "中式客厅", "故宫风光", "城市街景",
+    private String[] exampleArray = {"场景一","场景二","现代客厅", "中式客厅", "故宫风光", "城市街景",
             "鸟瞰城市", "俯拍高校", "私人会所", "酒店大堂"};
-    private int[] resArray = {R.drawable.panorama01, R.drawable.panorama02, R.drawable.panorama03, R.drawable.panorama04,
+    private int[] resArray = {R.drawable.scene1, R.drawable.scene2,R.drawable.panorama01, R.drawable.panorama02, R.drawable.panorama03, R.drawable.panorama04,
             R.drawable.panorama05, R.drawable.panorama06, R.drawable.panorama07, R.drawable.panorama08};
 
     class ExampleSelectedListener implements AdapterView.OnItemSelectedListener {

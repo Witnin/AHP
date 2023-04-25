@@ -14,8 +14,8 @@ import com.wsy.ahp.R;
 import com.wsy.ahp.fragment.CategoryFragment;
 import com.wsy.ahp.fragment.FavoriteFragment;
 import com.wsy.ahp.fragment.HomePageFragment;
-import com.wsy.ahp.fragment.ProfileFragment;
 import com.wsy.ahp.fragment.RecommendFragment;
+import com.wsy.ahp.fragment.UserFragment;
 import com.wsy.common.tab.HiFragmentTabView;
 import com.wsy.common.tab.HiTabViewAdapter;
 import com.wsy.ui.tab.bottom.HiTabBottomInfo;
@@ -111,7 +111,7 @@ public class MainActivityLogic {
                 defaultColor,
                 tintColor
         );
-        infoProfile.fragment = ProfileFragment.class;
+        infoProfile.fragment = UserFragment.class;
         infoList.add(homeInfo);
         infoList.add(infoFavorite);
         infoList.add(infoCategory);

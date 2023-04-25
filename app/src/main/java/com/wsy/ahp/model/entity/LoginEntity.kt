@@ -18,6 +18,10 @@ data class LoginEntity(
 data class UserInfo (
     val username:String,
     val realname:String,
+    val avatar:String,
+    val introduce:String,
+    val backgroundUrl:String,
+    val matureTime:String,
 )
 
 data class Menu (

@@ -60,7 +60,6 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-
         <TextView
             android:id="@+id/tab_item_collection"
             android:layout_width="0dp"

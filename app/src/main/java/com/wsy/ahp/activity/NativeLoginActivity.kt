@@ -86,10 +86,20 @@ class NativeLoginActivity : HiBaseActivity() {
                 if (response!!.isSuccessful){
                     val data = response.body()
                     val result = data!!.result
-                    val userInfo = data.result.userInfo
                     val username = data.result.userInfo.username
+                    val realname = data.result.userInfo.realname
+                    val avatar = data.result.userInfo.avatar
+                    val introduce = data.result.userInfo.introduce
+                    val backgroundUrl = data.result.userInfo.backgroundUrl
+                    val matureTime = data.result.userInfo.matureTime
                     val token = data.result.token
                     SPUtil.putString("X-Access-Token",token)
+                    SPUtil.putString("username",username)
+                    SPUtil.putString("realname",realname)
+                    SPUtil.putString("avatar",avatar)
+                    SPUtil.putString("introduce",introduce)
+                    SPUtil.putString("backgroundUrl",backgroundUrl)
+                    SPUtil.putString("matureTime",matureTime)
                     showToasts(getString(R.string.login_success)+data!!.message)
                     finish()
                 }else{
