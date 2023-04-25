@@ -12,6 +12,7 @@ import com.wsy.ahp.http.ApiFactory
 import com.wsy.ahp.http.api.LoginApi
 import com.wsy.ahp.http.api.TestApi
 import com.wsy.ahp.http.common.RetrofitServiceCreator
+import com.wsy.ahp.http.common.Url
 import com.wsy.ahp.model.entity.LoginBody
 import com.wsy.ahp.model.entity.LoginService
 import com.wsy.common.ui.component.HiBaseActivity
@@ -26,7 +27,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-@Route(path = "/native/login")
+@Route(path = Url.loginUrl)
 class NativeLoginActivity : HiBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 

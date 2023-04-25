@@ -30,4 +30,6 @@ public abstract class HiBaseFragment extends Fragment {
         }
         return true;
     }
+
+
 }
