@@ -122,7 +122,7 @@ class NativeLoginActivity : HiBaseActivity() {
 
 
 
-    private fun showToasts(message:String){
+      fun showToasts(message:String){
         Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT).show()
     }
 }

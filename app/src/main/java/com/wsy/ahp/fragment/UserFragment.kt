@@ -10,12 +10,20 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.wsy.ahp.R
+import com.wsy.ahp.http.api.LoginApi
+import com.wsy.ahp.http.common.RetrofitServiceCreator
+import com.wsy.ahp.model.entity.CommonService
 import com.wsy.common.ui.component.HiBaseFragment
 import com.wsy.common.utils.SPUtil
 import kotlinx.android.synthetic.main.fragment_profile.*
 import com.wsy.common.ui.view.loadCircle
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class UserFragment:HiBaseFragment() {
     override fun getLayoutId(): Int {
@@ -25,6 +33,34 @@ class UserFragment:HiBaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         upDateUI()
+        bannerList()
+    }
+
+    fun bannerList(){
+        val loginApi = RetrofitServiceCreator.create(LoginApi::class.java)
+
+        loginApi.banner(1,10).enqueue(object: Callback<CommonService>
+             {
+            override fun onResponse(call: Call<CommonService>, response: Response<CommonService>) {
+                if (response.body()!!.code == 200){
+                    val data = response.body()!!.result
+                    val bannerList = data.records.toList()
+                    Log.d("user-bannerList","$bannerList")
+                }else{
+                    showToasts(getString(R.string.login_failed)+response.message())
+                }
+            }
+
+            override fun onFailure(call: Call<CommonService>, t: Throwable) {
+                showToasts(getString(R.string.login_failed)+t)
+
+            }
+
+        })
+    }
+
+    fun showToasts(message:String){
+        Toast.makeText(context,message, Toast.LENGTH_SHORT).show()
     }
 
     private fun upDateUI() {
