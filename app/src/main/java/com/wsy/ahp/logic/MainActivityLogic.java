@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import com.wsy.ahp.R;
 import com.wsy.ahp.fragment.CategoryFragment;
 import com.wsy.ahp.fragment.FavoriteFragment;
+import com.wsy.ahp.fragment.HomeFragment;
 import com.wsy.ahp.fragment.HomePageFragment;
 import com.wsy.ahp.fragment.RecommendFragment;
 import com.wsy.ahp.fragment.UserFragment;
@@ -75,7 +76,7 @@ public class MainActivityLogic {
                 defaultColor,
                 tintColor
         );
-        homeInfo.fragment = HomePageFragment.class;
+        homeInfo.fragment = HomeFragment.class;
         HiTabBottomInfo infoFavorite = new HiTabBottomInfo<Integer>(
                 "收藏",
                 "fonts/iconfont.ttf",
@@ -112,11 +113,21 @@ public class MainActivityLogic {
                 tintColor
         );
         infoProfile.fragment = UserFragment.class;
+        HiTabBottomInfo others = new HiTabBottomInfo<Integer>(
+                "其他",
+                "fonts/iconfont.ttf",
+                activityProvider.getString(R.string.if_home),
+                null,
+                defaultColor,
+                tintColor
+        );
+        others.fragment = HomePageFragment.class;
         infoList.add(homeInfo);
         infoList.add(infoFavorite);
         infoList.add(infoCategory);
         infoList.add(infoRecommend);
         infoList.add(infoProfile);
+        infoList.add(others);
         hiTabBottomLayout.inflateInfo(infoList);
         initFragmentTabView();
         hiTabBottomLayout.addTabSelectedChangeListener(new IHiTabLayout.OnTabSelectedListener<HiTabBottomInfo<?>>() {

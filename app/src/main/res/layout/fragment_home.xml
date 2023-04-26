@@ -1,319 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+   <com.wsy.common.ui.view.IconFontTextView
+       android:id="@+id/search_container"
+       android:layout_marginLeft="@dimen/dp_16"
+       android:layout_marginTop="@dimen/dp_5"
+       android:layout_marginRight="@dimen/dp_16"
+       android:layout_marginBottom="@dimen/dp_10"
+       android:layout_width="match_parent"
+       android:background="@drawable/shape_home_search"
+       android:layout_height="@dimen/dp_35"
+       android:gravity="center"
+       android:text="@string/home_search_hint"
+       android:textColor="@color/color_9fa"
+       android:textSize="14sp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="10dp">
+   <com.wsy.ui.tab.top.HiTabTopLayout
+       android:id="@+id/tab_top_layout"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="@dimen/dp_16"
+       android:layout_marginRight="@dimen/dp_16"
+       android:layout_marginBottom="@dimen/dp_10"
+       android:background="@color/color_white"
+       android:layout_height="@dimen/dp_45" />
 
-            <TextView
-                android:id="@+id/myTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="测试示例文字跳转显示activity名称"
-                android:textSize="40sp" />
-
-                <Button
-                    android:id="@+id/mybutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="hiTop"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/hiRefresh"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="hiRefresh"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/hiBanner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="hiBanner"
-                    android:textAllCaps="false" />
+   <androidx.viewpager.widget.ViewPager
+       android:id="@+id/view_pager"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
 
 
-            <Button
-                android:id="@+id/jetpackCompose"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="jetpackCompose"
-                android:textAllCaps="false" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:text="协程测试" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-            <Button
-                android:id="@+id/kotlinExtension"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="kotlinExtension"
-                android:textAllCaps="false" />
-            </LinearLayout>
-        </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/homeBottom"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="homeBottom"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/anim_bottom"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="anim_bottom"
-                    android:textAllCaps="false" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="3d示例" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <Button
-                        android:id="@+id/threedBottom"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="3d效果"
-                        android:textAllCaps="false" />
-
-                    <Button
-                        android:id="@+id/btn_gl_line"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="三维物体" />
-
-                    <Button
-                        android:id="@+id/btn_gl_globe"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="地球仪" />
-                </LinearLayout>
-            </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:text="路由跳转" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/profile"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="profile"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/vip"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="vip" />
-
-                <Button
-                    android:id="@+id/auth"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="auth" />
-
-                <Button
-                    android:id="@+id/unknow"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="unknow" />
-            </LinearLayout>
-
-
-            </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAlignment="center"
-                android:text="compose示例" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <Button
-                    android:id="@+id/greeting"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="greeting" />
-                <Button
-                    android:id="@+id/login"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/compose_login" />
-            </LinearLayout>
-        </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="异步任务执行" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                <Button
-                    android:id="@+id/executor1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="executor1"
-                    android:textAllCaps="false" />
-
-                <Button
-                    android:id="@+id/executor2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="executor2" />
-
-                <Button
-                    android:id="@+id/executor3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="executor3" />
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="RelativeLayout示例" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <Button
-                        android:id="@+id/relative_parent"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="父元素"
-                        android:textAllCaps="false" />
-
-                    <Button
-                        android:id="@+id/relative_brother"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="兄弟元素" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAlignment="center"
-                    android:text="原生登录注册" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <Button
-                        android:id="@+id/native_login"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="登录"
-                        android:textAllCaps="false" />
-
-                    <Button
-                        android:id="@+id/native_register"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="注册" />
-
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
