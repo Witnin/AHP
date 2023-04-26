@@ -5,10 +5,13 @@ buildscript{
     ext {
         room_version = "2.5.0"
         arouter_version = "1.0.2"
+        vasDolly_version = "3.0.6"
     }
 
     dependencies {
         classpath "com.alibaba:arouter-register:$arouter_version"
+        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath "com.tencent.vasdolly:plugin:$vasDolly_version"
     }
 }
 

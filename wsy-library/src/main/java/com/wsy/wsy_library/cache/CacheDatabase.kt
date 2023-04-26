@@ -7,7 +7,8 @@ import com.wsy.wsy_library.util.AppGlobals
 
 @Database(
     entities = [Cache::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class CacheDatabase : RoomDatabase() {
     companion object {

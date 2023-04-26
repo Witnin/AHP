@@ -84,7 +84,7 @@ fun LoginScreen() {
     ) {
         //背景图
         Image(
-            painter = painterResource(id = R.drawable.fm),
+            painter = painterResource(id = R.drawable.earth),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
