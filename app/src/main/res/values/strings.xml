@@ -95,7 +95,7 @@
     <string name="profile_tab_item_collection">\n收藏</string>
     <string name="profile_tab_item_history">\n历史浏览</string>
     <string name="profile_tab_item_learn">\n学习时长</string>
-    <string name="home_search_hint">&#xe987;  搜索你想要的商品</string>
+    <string name="home_search_hint">&#xe61d;  搜索</string>
     <string name="title_category">分类</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="compose_login">compose渐变登录</string>

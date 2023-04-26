@@ -1,5 +1,6 @@
 package com.wsy.ahp.activity
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -17,6 +18,7 @@ import com.wsy.ahp.model.entity.LoginBody
 import com.wsy.ahp.model.entity.LoginService
 import com.wsy.common.ui.component.HiBaseActivity
 import com.wsy.common.utils.SPUtil
+import com.wsy.wsy_library.util.HiStatusBar
 import kotlinx.android.synthetic.main.activity_login.*
 import okhttp3.MediaType
 import okhttp3.RequestBody
@@ -34,7 +36,7 @@ class NativeLoginActivity : HiBaseActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        HiStatusBar.setStatusBar(this,true, Color.WHITE,false)
         action_back.setOnClickListener{
             onBackPressed()
         }

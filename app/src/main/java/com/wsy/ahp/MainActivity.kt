@@ -1,5 +1,6 @@
 package com.wsy.ahp
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -20,6 +21,7 @@ import com.wsy.common.ActivityManager
 import com.wsy.common.ui.component.HiBaseActivity
 import com.wsy.wsy_library.restful.HiCallback
 import com.wsy.wsy_library.restful.HiResponse
+import com.wsy.wsy_library.util.HiStatusBar
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -31,6 +33,8 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         activityLogic = MainActivityLogic(this, savedInstanceState)
+
+        HiStatusBar.setStatusBar(this,true, Color.WHITE,false)
 
         ActivityManager.instance.addFrontBackCallback(object :ActivityManager.FrontBackCallback{
             override fun onChanged(front: Boolean) {
