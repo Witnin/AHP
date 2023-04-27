@@ -26,7 +26,7 @@ import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
 import com.wsy.common.ui.component.HiBaseFragment;
 import com.wsy.wsy_library.executor.HiExecutor;
 
-public class HomePageFragment extends HiBaseFragment {
+public class OtherFragment extends HiBaseFragment {
 
     Boolean paused =false;
     @Override

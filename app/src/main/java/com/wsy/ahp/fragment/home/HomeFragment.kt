@@ -1,4 +1,4 @@
-package com.wsy.ahp.fragment
+package com.wsy.ahp.fragment.home
 
 import android.os.Bundle
 import android.util.Log
@@ -20,7 +20,6 @@ import com.wsy.ahp.model.entity.TypeService
 import com.wsy.common.ui.component.HiBaseFragment
 import com.wsy.ui.tab.top.HiTabTopInfo
 import kotlinx.android.synthetic.main.fragment_home.*
-import org.devio.`as`.proj.main.fragment.home.HomeTabFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -120,7 +119,7 @@ class HomeFragment : HiBaseFragment() {
         override fun getItem(position: Int): Fragment {
             var fragment = fragments.get(position, null)
             if (fragment == null) {
-                fragment = HomeTabFragment.newInstance(tabs[position].id)
+                fragment = HomeTabFragment.newInstance(tabs[position].articleType.toString())
                 fragments.put(position, fragment)
             }
             return fragment

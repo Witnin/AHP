@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentManager;
 import com.wsy.ahp.R;
 import com.wsy.ahp.fragment.CategoryFragment;
 import com.wsy.ahp.fragment.FavoriteFragment;
-import com.wsy.ahp.fragment.HomeFragment;
-import com.wsy.ahp.fragment.HomePageFragment;
+import com.wsy.ahp.fragment.home.HomeFragment;
+import com.wsy.ahp.fragment.OtherFragment;
 import com.wsy.ahp.fragment.RecommendFragment;
 import com.wsy.ahp.fragment.UserFragment;
 import com.wsy.common.tab.HiFragmentTabView;
@@ -121,7 +121,7 @@ public class MainActivityLogic {
                 defaultColor,
                 tintColor
         );
-        others.fragment = HomePageFragment.class;
+        others.fragment = OtherFragment.class;
         infoList.add(homeInfo);
         infoList.add(infoFavorite);
         infoList.add(infoCategory);

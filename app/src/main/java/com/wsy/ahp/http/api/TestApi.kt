@@ -12,8 +12,7 @@ import retrofit2.http.Query
 
 interface TestApi {
 
-    @GET("recommend/gyssEverydayRecommend/list")
-    fun recommendList(@Filed("pageNo") pageNo:Int, @Filed("pageNo") pageSize:Int) : HiCall<JsonObject>
+
 
     @retrofit2.http.GET("recommend/gyssEverydayRecommend/list")
     fun recommend(@Query("pageNo") pageNo:Int, @Query("pageSize") pageSize:Int) : Call<JsonObject>

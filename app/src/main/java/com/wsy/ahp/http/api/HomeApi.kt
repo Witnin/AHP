@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import com.wsy.ahp.http.common.NetUrl
 import com.wsy.ahp.model.entity.CommonService
 import com.wsy.ahp.model.entity.LoginService
+import com.wsy.ahp.model.entity.RecommendService
 import com.wsy.ahp.model.entity.TypeService
 import com.wsy.wsy_library.restful.HiCall
 import com.wsy.wsy_library.restful.annotation.GET
@@ -22,4 +23,12 @@ interface HomeApi {
     @retrofit2.http.GET(NetUrl.type)
     fun type(@Query("pageNo") pageNo:Int, @Query("pageSize") pageSize:Int)
             : Call<TypeService>
+
+
+    @retrofit2.http.GET("recommend/gyssEverydayRecommend/smallListWithComment")
+    fun recommend(@Query("pageNo") pageNo:Int,
+                  @Query("pageSize") pageSize:Int,
+                  @Query("recSort") recSort:Int,
+
+    ) : Call<RecommendService>
 }
