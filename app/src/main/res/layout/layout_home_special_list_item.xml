@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_140"
+    android:background="@color/color_white">
+
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="@dimen/dp_110"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginStart="@dimen/dp_10"
+        android:background="@color/color_eee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/color_c61" />
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingEnd="@dimen/dp_10"
+        android:textColor="@color/color_000"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_image"
+        tools:text="水质检测的方法水质检测的方法水质检测的方法水质检测的方法水质检测的方法" />
+
+
+    <LinearLayout
+        android:id="@+id/item_label_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/item_user"
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        tools:background="@color/colorAccent"
+        tools:layout_height="@dimen/dp_10"
+        tools:layout_width="100dp"
+        tools:visibility="visible"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:id="@+id/item_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_9b9"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/item_image"
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        tools:text="技术保障部" />
+
+
+    <TextView
+        android:id="@+id/item_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:textColor="@color/color_9b9"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/item_user"
+        app:layout_constraintLeft_toRightOf="@+id/item_user"
+        app:layout_constraintTop_toTopOf="@+id/item_user"
+        tools:text="240阅读" />
+
+    <TextView
+        android:id="@+id/item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textColor="@color/color_9b9"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/item_user"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_user"
+        tools:text="2023-04-27" />
+
+    <View
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="2px"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/color_eee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/item_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>
