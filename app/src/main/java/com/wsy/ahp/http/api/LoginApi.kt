@@ -22,7 +22,6 @@ interface LoginApi {
     : HiCall<JsonObject>
 
 
-
     @retrofit2.http.POST("sys/mLogin")
     fun mLogin(@Body body: RequestBody)
             : Call<JsonObject>

@@ -17,7 +17,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.wsy.ahp.R
 import com.wsy.ahp.http.api.LoginApi
 import com.wsy.ahp.http.common.RetrofitServiceCreator
-import com.wsy.ahp.http.common.Url
+import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.ahp.model.entity.Banner
 import com.wsy.ahp.model.entity.CommonService
 import com.wsy.ahp.route.HiRoute
@@ -104,7 +104,7 @@ class UserFragment:HiBaseFragment() {
         if(SPUtil.getString("avatar")==null){
             user_avatar.setImageResource(R.drawable.ic_avatar_default)
             user_avatar.setOnClickListener{
-                navigation(Url.loginUrl)
+                navigation(ArouterUrl.loginUrl)
             }
         }
         user_avatar.loadCircle(SPUtil.getString("avatar")?:"")

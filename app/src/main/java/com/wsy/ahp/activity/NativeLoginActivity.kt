@@ -3,17 +3,15 @@ package com.wsy.ahp.activity
 import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.wsy.ahp.R
-import com.wsy.ahp.http.ApiFactory
 import com.wsy.ahp.http.api.LoginApi
 import com.wsy.ahp.http.api.TestApi
 import com.wsy.ahp.http.common.RetrofitServiceCreator
-import com.wsy.ahp.http.common.Url
+import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.ahp.model.entity.LoginBody
 import com.wsy.ahp.model.entity.LoginService
 import com.wsy.common.ui.component.HiBaseActivity
@@ -22,14 +20,11 @@ import com.wsy.wsy_library.util.HiStatusBar
 import kotlinx.android.synthetic.main.activity_login.*
 import okhttp3.MediaType
 import okhttp3.RequestBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-@Route(path = Url.loginUrl)
+@Route(path = ArouterUrl.loginUrl)
 class NativeLoginActivity : HiBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 

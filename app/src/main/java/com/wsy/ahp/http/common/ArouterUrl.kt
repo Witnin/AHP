@@ -1,5 +1,5 @@
 package com.wsy.ahp.http.common
 
-object Url {
+object ArouterUrl {
     const val loginUrl = "/native/login"
 }
