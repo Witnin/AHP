@@ -1,12 +1,15 @@
 package com.wsy.ahp.activity.banner
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.RectF
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.app.hubert.guide.NewbieGuide
+import com.app.hubert.guide.model.GuidePage
 import com.bumptech.glide.Glide
 import com.wsy.ahp.R
 import com.wsy.ui.banner.HiBanner
@@ -14,7 +17,7 @@ import com.wsy.ui.banner.core.HiBannerMo
 import com.wsy.ui.banner.indicator.HiCircleIndicator
 import com.wsy.ui.banner.indicator.HiIndicator
 import com.wsy.ui.banner.indicator.HiNumIndicator
-import java.util.ArrayList
+
 
 class HiBannerDemoActivity : AppCompatActivity() {
     private var urls = arrayOf(
@@ -46,6 +49,24 @@ class HiBannerDemoActivity : AppCompatActivity() {
             }
 
         }
+
+
+        val btnSimple = findViewById<View>(R.id.viewButton) as Button
+        btnSimple.setOnClickListener {
+            NewbieGuide.with(this@HiBannerDemoActivity)
+                .setLabel("guide1") //
+//                 .setShowCounts(3)//控制次数
+                .alwaysShow(true) //总是显示，调试时可以打开
+                .addGuidePage(
+                    GuidePage.newInstance()
+                        .addHighLight(btnSimple)
+//                        .addHighLight(RectF(0.0F, 800.0F, 200F, 1200F))
+                        .setLayoutRes(R.layout.view_guide_simple)
+                )
+                .show()
+        }
+
+
     }
 
     private fun initView(hiIndicator: HiIndicator<*>?, autoPlay: Boolean) {

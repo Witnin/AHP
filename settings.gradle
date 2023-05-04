@@ -12,6 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
         jcenter()
         maven { url "https://gitee.com/ezy/repo/raw/cosmo/"}
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "AHP"

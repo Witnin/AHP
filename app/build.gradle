@@ -183,7 +183,12 @@ dependencies {
 
     //update
     implementation "me.reezy.cosmo:update:0.7.0"
-
     implementation 'com.teprinciple:updateapputilsx:2.3.0'
+
+    //v7
+    runtimeOnly 'androidx.appcompat:appcompat:1.6.1'
+
+    //指引 https://github.com/huburt-Hu/NewbieGuide
+    api 'com.github.huburt-Hu:NewbieGuide:v2.4.0'
 
 }
