@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
+        maven { url "https://gitee.com/ezy/repo/raw/cosmo/"}
     }
 }
 rootProject.name = "AHP"

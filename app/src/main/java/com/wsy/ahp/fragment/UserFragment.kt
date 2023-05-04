@@ -29,6 +29,7 @@ import com.wsy.ui.banner.core.HiBannerAdapter
 import com.wsy.ui.banner.core.HiBannerMo
 import com.wsy.wsy_library.util.HiDisplayUtil
 import kotlinx.android.synthetic.main.fragment_profile.*
+import me.reezy.cosmo.update.UpdateManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -44,6 +45,8 @@ class UserFragment:HiBaseFragment() {
         upDateUI()
         bannerList()
     }
+
+
 
     private fun bannerList(){
         val loginApi = RetrofitServiceCreator.create(LoginApi::class.java)

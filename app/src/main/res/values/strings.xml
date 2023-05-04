@@ -1,5 +1,7 @@
 <resources>
     <string name="app_version">Version1.0</string>
+    <string name="version_name">1.0.1</string>
+    <integer name="version_code">101</integer>
     <string name="app_long_name">勘验取证终端数据采集系统</string>
     <string name="hello">你好</string>
     <string name="first_short">first</string>
@@ -88,6 +90,7 @@
     <string name="item_collection">&#xe61d;   我的收藏</string>
     <string name="item_notify">&#xe61d;  课程通知</string>
     <string name="item_history">&#xe61d;   浏览历史</string>
+    <string name="item_update">&#xe61d;   版本更新</string>
     <string name="item_address">&#xe61d;   收货地址</string>
     <string name="profile_login_desc_welcome_back">Hi，欢迎回来</string>
     <string name="profile_not_login">请先登陆</string>

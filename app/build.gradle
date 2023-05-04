@@ -22,8 +22,8 @@ android {
         applicationId "com.wsy.ahp"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 102
+        versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -181,5 +181,9 @@ dependencies {
     //vasDolly
     api "com.tencent.vasdolly:helper:$vasDolly_version"
 
+    //update
+    implementation "me.reezy.cosmo:update:0.7.0"
+
+    implementation 'com.teprinciple:updateapputilsX:2.2.2'
 
 }
