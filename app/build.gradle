@@ -184,6 +184,6 @@ dependencies {
     //update
     implementation "me.reezy.cosmo:update:0.7.0"
 
-    implementation 'com.teprinciple:updateapputilsX:2.2.2'
+    implementation 'com.teprinciple:updateapputilsx:2.3.0'
 
 }

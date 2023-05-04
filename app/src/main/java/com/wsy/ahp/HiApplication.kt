@@ -1,10 +1,14 @@
 package com.wsy.ahp
 
 
-import android.util.Config
+
 import com.alibaba.android.arouter.launcher.ARouter
 import com.wsy.common.ActivityManager
 import com.wsy.common.ui.component.HiBaseApplication
+
+import update.UpdateAppUtils
+
+
 
 class HiApplication: HiBaseApplication() {
     override fun onCreate() {
@@ -18,7 +22,7 @@ class HiApplication: HiBaseApplication() {
         }
         ARouter.init(this)// 尽可能早，推荐在Application中初始化
 
-
+        UpdateAppUtils.init(applicationContext)
 
 
     }

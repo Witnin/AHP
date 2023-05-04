@@ -55,7 +55,7 @@ class HomeFragment : HiBaseFragment() {
                         Log.d("home_type","$list")
                         upDateType(list)
                     }else{
-                        showToasts(getString(R.string.login_failed)+response.message())
+                        navigation(ArouterUrl.loginUrl)
                     }
                 }else{
                     navigation(ArouterUrl.loginUrl)
@@ -64,7 +64,7 @@ class HomeFragment : HiBaseFragment() {
             }
 
             override fun onFailure(call: Call<TypeService>, t: Throwable) {
-                showToasts(getString(R.string.login_failed)+t)
+                navigation(ArouterUrl.loginUrl)
             }
 
         })

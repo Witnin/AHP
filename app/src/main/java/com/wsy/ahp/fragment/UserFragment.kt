@@ -60,12 +60,12 @@ class UserFragment:HiBaseFragment() {
                     Log.d("user-bannerList","$bannerList")
                     updateBanner(bannerList)
                 }else{
-                    showToasts(getString(R.string.login_failed)+response.message())
+                    showToasts(getString(R.string.get_failed)+response.message())
                 }
             }
 
             override fun onFailure(call: Call<CommonService>, t: Throwable) {
-                showToasts(getString(R.string.login_failed)+t)
+                showToasts(getString(R.string.get_failed)+t)
 
             }
 
