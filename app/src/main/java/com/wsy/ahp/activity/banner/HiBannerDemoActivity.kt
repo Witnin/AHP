@@ -1,6 +1,5 @@
 package com.wsy.ahp.activity.banner
 
-import android.graphics.RectF
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.hubert.guide.NewbieGuide
 import com.app.hubert.guide.model.GuidePage
 import com.bumptech.glide.Glide
+import com.dalimao.library.util.FloatUtil
 import com.wsy.ahp.R
 import com.wsy.ui.banner.HiBanner
 import com.wsy.ui.banner.core.HiBannerMo
 import com.wsy.ui.banner.indicator.HiCircleIndicator
 import com.wsy.ui.banner.indicator.HiIndicator
 import com.wsy.ui.banner.indicator.HiNumIndicator
+import com.wsy.ui.floate.SimpleView
 
 
 class HiBannerDemoActivity : AppCompatActivity() {
@@ -52,6 +53,7 @@ class HiBannerDemoActivity : AppCompatActivity() {
 
 
         val btnSimple = findViewById<View>(R.id.viewButton) as Button
+        val floatBtn = findViewById<View>(R.id.floatButton) as Button
         btnSimple.setOnClickListener {
             NewbieGuide.with(this@HiBannerDemoActivity)
                 .setLabel("guide1") //
@@ -65,6 +67,12 @@ class HiBannerDemoActivity : AppCompatActivity() {
                 )
                 .show()
         }
+
+        floatBtn.setOnClickListener{
+            val floatView = SimpleView(this)
+            FloatUtil.showFloatView(floatView, null)
+        }
+
 
 
     }

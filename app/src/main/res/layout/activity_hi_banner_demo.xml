@@ -51,5 +51,13 @@
             android:layout_height="wrap_content"
             android:text="@string/button"
             />
+
+        <Button
+            android:layout_marginLeft="@dimen/dp_10"
+            android:id="@+id/floatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/floatButton"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

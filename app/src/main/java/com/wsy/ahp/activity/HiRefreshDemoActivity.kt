@@ -10,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.dalimao.library.util.FloatUtil
 import com.wsy.ahp.R
+import com.wsy.ahp.activity.banner.HiBannerDemoActivity
 import com.wsy.ui.refresh.HiLottieOverView
 import com.wsy.ui.refresh.HiRefresh
 import com.wsy.ui.refresh.HiRefreshLayout
@@ -40,6 +42,8 @@ class HiRefreshDemoActivity : AppCompatActivity() {
         })
         refreshLayout.setDisableRefreshScroll(false)
         initRecycleView()
+
+
     }
 
     var myDataset =

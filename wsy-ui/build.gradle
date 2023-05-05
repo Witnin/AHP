@@ -51,4 +51,7 @@ dependencies {
 
     implementation "androidx.recyclerview:recyclerview:1.1.0"
 
+    //悬浮窗FloatUtil
+    implementation 'com.github.liuguangli:FloatUtil:1.0'
+
 }
