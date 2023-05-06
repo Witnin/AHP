@@ -51,4 +51,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.14.9'
 
     api 'com.liulishuo.filedownloader:library:1.7.6'
+
+    //网络请求的实现一
+    implementation 'com.zhy:okhttputils:2.6.2'
 }

@@ -1,6 +1,7 @@
 package com.wsy.ahp.activity
 
 import android.app.Activity
+
 import com.wsy.common.ActivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +11,10 @@ import android.util.Log
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.cretin.www.cretinautoupdatelibrary.interfaces.AppDownloadListener
 import com.cretin.www.cretinautoupdatelibrary.model.DownloadInfo
 import com.cretin.www.cretinautoupdatelibrary.utils.AppUpdateUtils
+import com.google.android.material.internal.ContextUtils.getActivity
 import com.wsy.ahp.BuildConfig
 import com.wsy.ahp.R
 import com.wsy.ahp.http.api.CommonApi
@@ -20,10 +23,12 @@ import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.ahp.http.common.RetrofitServiceCreator
 import com.wsy.ahp.model.entity.VersionService
 import com.wsy.ahp.route.RouteFlag
+import com.xuexiang.xupdate.XUpdate
 import constant.UiType.CUSTOM
 import constant.UiType.PLENTIFUL
 import constant.UiType.SIMPLE
 import kotlinx.android.synthetic.main.activity_test.*
+import listener.UpdateDownloadListener
 import me.reezy.cosmo.update.UpdateInfo
 import me.reezy.cosmo.update.UpdateManager
 import model.UiConfig
@@ -101,7 +106,7 @@ class TestActivity : AppCompatActivity() {
 //                                .apkUrl(apkUrl)
 //                                .updateTitle("发现新版本V$version")
 //                                .updateContent(remarks)
-//                                .updateConfig(updateConfig)
+////                                .updateConfig(updateConfig)
 //                                .uiConfig(UiConfig(uiType = PLENTIFUL))
 //                                .update()
                             //---------------------------------------------
@@ -115,8 +120,9 @@ class TestActivity : AppCompatActivity() {
                             .setUpdateLog(remarks);
                             AppUpdateUtils.getInstance()
 //                                .addMd5CheckListener(...)//添加MD5检查更新
-//                            .addAppDownloadListener(...)//添加文件下载监听
+//                            .addAppDownloadListener()//添加文件下载监听
                             .checkUpdate(info);
+
                             //--------------------------------------------------
                             //方法三
 //                            UpdateManager.setChecker {
@@ -129,6 +135,9 @@ class TestActivity : AppCompatActivity() {
 //                            }
 //
 //                            UpdateManager.check(this@TestActivity)
+
+                            //--------------------------------------------------
+
 
                         }else{
                             showToasts(getString(R.string.get_failed)+response.message())

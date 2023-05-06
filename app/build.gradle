@@ -186,6 +186,9 @@ dependencies {
     implementation 'com.teprinciple:updateapputilsx:2.3.0'
     implementation 'com.github.MZCretin:AutoUpdateProject:2.0.5'
 
+    // xUpdate androidx版本 https://github.com/xuexiangjys/XUpdate/wiki/%E5%A6%82%E4%BD%95%E5%BC%95%E7%94%A8
+    implementation 'com.github.xuexiangjys:XUpdate:2.1.4'
+
     //v7
     runtimeOnly 'androidx.appcompat:appcompat:1.6.1'
 

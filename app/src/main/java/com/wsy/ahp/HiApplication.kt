@@ -2,18 +2,21 @@ package com.wsy.ahp
 
 
 
+import android.widget.Toast
 import com.alibaba.android.arouter.launcher.ARouter
 import com.cretin.www.cretinautoupdatelibrary.model.TypeConfig
 import com.cretin.www.cretinautoupdatelibrary.model.UpdateConfig
 import com.cretin.www.cretinautoupdatelibrary.utils.AppUpdateUtils
 import com.cretin.www.cretinautoupdatelibrary.utils.SSLUtils
-import com.cretin.www.cretinautoupdatelibrary.utils.SSLUtils.TrustAllHostnameVerifier
-import com.liulishuo.filedownloader.connection.FileDownloadUrlConnection
-import com.tencent.mmkv.MMKV
-import com.tencent.mmkv.MMKVLogLevel
 import com.wsy.common.ActivityManager
 import com.wsy.common.ui.component.HiBaseApplication
 import com.wsy.common.utils.OkHttp3Connection
+import com.wsy.common.utils.xupdate.OKHttpUpdateHttpService
+
+import com.xuexiang.xupdate.XUpdate
+import com.xuexiang.xupdate.entity.UpdateError.ERROR.CHECK_NO_NEW_VERSION
+import com.xuexiang.xupdate.proxy.IUpdateHttpService
+import com.xuexiang.xupdate.utils.UpdateUtils
 import okhttp3.OkHttpClient
 import update.UpdateAppUtils
 import java.util.concurrent.TimeUnit
@@ -42,15 +45,15 @@ class HiApplication: HiBaseApplication() {
             .readTimeout(30000, TimeUnit.SECONDS)
             .writeTimeout(30000, TimeUnit.SECONDS) //如果你需要信任所有的证书，可解决根证书不被信任导致无法下载的问题 start
             .sslSocketFactory(SSLUtils.createSSLSocketFactory())
-            .hostnameVerifier(TrustAllHostnameVerifier()) //如果你需要信任所有的证书，可解决根证书不被信任导致无法下载的问题 end
+            .hostnameVerifier(SSLUtils.TrustAllHostnameVerifier()) //如果你需要信任所有的证书，可解决根证书不被信任导致无法下载的问题 end
             .retryOnConnectionFailure(true)
         //当你希望使用传入model的方式，让插件自己解析并实现更新
         val updateConfig: UpdateConfig = UpdateConfig()
-            .setDebug(true) //是否是Debug模式
+            .setDebug(false) //是否是Debug模式
             .setDataSourceType(TypeConfig.DATA_SOURCE_TYPE_MODEL) //设置获取更新信息的方式
             .setShowNotification(true) //配置更新的过程中是否在通知栏显示进度
             .setNotificationIconRes(R.drawable.kje) //配置通知栏显示的图标
-            .setUiThemeType(TypeConfig.UI_THEME_AUTO) //配置UI的样式，一种有12种样式可供选择
+            .setUiThemeType(TypeConfig.UI_THEME_G) //配置UI的样式，一种有12种样式可供选择
             .setAutoDownloadBackground(false) //是否需要后台静默下载，如果设置为true，则调用checkUpdate方法之后会直接下载安装，不会弹出更新页面。当你选择UI样式为TypeConfig.UI_THEME_CUSTOM，静默安装失效，您需要在自定义的Activity中自主实现静默下载，使用这种方式的时候建议setShowNotification(false)，这样基本上用户就会对下载无感知了
 //            .setCustomActivityClass(CustomActivity::class.java) //如果你选择的UI样式为TypeConfig.UI_THEME_CUSTOM，那么你需要自定义一个Activity继承自RootActivity，并参照demo实现功能，在此处填写自定义Activity的class
             .setNeedFileMD5Check(false) //是否需要进行文件的MD5检验，如果开启需要提供文件本身正确的MD5校验码，DEMO中提供了获取文件MD5检验码的工具页面，也提供了加密工具类Md5Utils
@@ -61,6 +64,13 @@ class HiApplication: HiBaseApplication() {
         //方法三
 //        MMKV.initialize(applicationContext, if (BuildConfig.DEBUG) MMKVLogLevel.LevelDebug else MMKVLogLevel.LevelNone)
 
+
+
+
+    }
+
+    fun showToasts(message:String){
+        Toast.makeText(applicationContext,message, Toast.LENGTH_SHORT).show()
     }
 
 
