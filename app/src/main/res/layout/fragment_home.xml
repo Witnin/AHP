@@ -72,15 +72,32 @@
 
 
    </LinearLayout>
-
-   <com.wsy.ui.tab.top.HiTabTopLayout
-       android:id="@+id/tab_top_layout"
+   <RelativeLayout
        android:layout_width="match_parent"
-       android:layout_marginLeft="@dimen/dp_16"
-       android:layout_marginRight="@dimen/dp_16"
-       android:layout_marginBottom="@dimen/dp_10"
-       android:background="@color/color_white"
-       android:layout_height="@dimen/dp_45" />
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+      <com.wsy.ui.tab.top.HiTabTopLayout
+          android:id="@+id/tab_top_layout"
+          android:layout_width="wrap_content"
+          android:layout_marginTop="@dimen/dp_10"
+          android:layout_marginStart="@dimen/dp_16"
+          android:layout_marginEnd="@dimen/dp_44"
+          android:layout_marginBottom="@dimen/dp_10"
+          android:background="@color/color_white"
+          android:layout_height="@dimen/dp_45" />
+      <com.wsy.common.ui.view.IconFontTextView
+          android:layout_width="@dimen/dp_25"
+          android:layout_height="@dimen/dp_45"
+          android:layout_marginEnd="@dimen/dp_16"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:gravity="center"
+          android:textColor="@color/black"
+          android:text="@string/home_more"
+          android:textSize="@dimen/sp_20"
+          />
+   </RelativeLayout>
+
 
    <androidx.viewpager.widget.ViewPager
        android:id="@+id/view_pager"

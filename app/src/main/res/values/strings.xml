@@ -29,6 +29,13 @@
     <string name="wode">&#xe600;</string>
     <string name="knowledge">&#xe61d;</string>
 
+    <string name="login_back">&#xe624;</string>
+
+    <string name="home_others">&#xe662;</string>
+    <string name="home_more">&#xe607;</string>
+
+
+
     <string name="if_category">&#xe600;</string>
     <string name="if_favorite">&#xe639;</string>
     <string name="if_favorite1">&#xe620;</string>

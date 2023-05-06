@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:textColor="@color/black"
-            android:text="@string/knowledge"
+            android:text="@string/login_back"
             android:textSize="@dimen/sp_24">
 
         </com.wsy.common.ui.view.IconFontTextView>

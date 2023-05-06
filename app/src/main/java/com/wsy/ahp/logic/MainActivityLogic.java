@@ -115,8 +115,8 @@ public class MainActivityLogic {
         infoProfile.fragment = UserFragment.class;
         HiTabBottomInfo others = new HiTabBottomInfo<Integer>(
                 "其他",
-                "fonts/iconfont.ttf",
-                activityProvider.getString(R.string.if_home),
+                "fonts/ahp.ttf",
+                activityProvider.getString(R.string.home_others),
                 null,
                 defaultColor,
                 tintColor
