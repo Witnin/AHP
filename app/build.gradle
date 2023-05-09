@@ -201,6 +201,9 @@ dependencies {
 
     //splashscreen
     implementation 'androidx.core:core-splashscreen:1.0.0'
-
+    //lottie
     implementation "com.airbnb.android:lottie:6.0.0"
+
+    //viewpager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

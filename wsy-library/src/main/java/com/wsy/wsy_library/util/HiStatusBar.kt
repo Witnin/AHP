@@ -15,7 +15,7 @@ object HiStatusBar {
      *
      * translucent  沉浸式效果，也就是页面的布局延伸到状态栏之下
      */
-    fun setStatusBar(
+     fun setStatusBar(
         activity: Activity,
         darkContent: Boolean,
         statusBarColor: Int = Color.WHITE,

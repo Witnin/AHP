@@ -40,7 +40,16 @@ class HomeFragment : HiBaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        layoutView.findViewById<View>(R.id.home_answer).setOnClickListener {
+            showToasts("点击")
+            navigation("/home/answer")
+        }
+
         typeList()
+
+
+
     }
 
     private fun typeList(){
@@ -64,7 +73,7 @@ class HomeFragment : HiBaseFragment() {
             }
 
             override fun onFailure(call: Call<TypeService>, t: Throwable) {
-                navigation(ArouterUrl.loginUrl)
+                navigation(ArouterUrl.HOME_ANSWER)
             }
 
         })
