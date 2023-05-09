@@ -11,7 +11,14 @@
     <!--    TabBottom-->
     <color name="tabBottomDefaultColor">#ff656667</color>
     <color name="tabBottomTintColor">#ffd44949</color>
+
+
+
+    <!--透明-->
     <color name="transparent">#00000000</color>
+    <!--半透明-->
+    <color name="translucent">#22050505</color>
+
 
 
     <color name="colorPrimary">#008577</color>
