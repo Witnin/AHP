@@ -1,13 +1,24 @@
 package com.wsy.ahp
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.ViewAnimationUtils
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.animation.doOnEnd
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
 import androidx.lifecycle.whenResumed
 import androidx.lifecycle.whenStarted
+import com.airbnb.lottie.LottieAnimationView
+import com.google.android.material.animation.AnimatorSetCompat.playTogether
 import com.google.gson.JsonObject
 import com.wsy.ahp.coroutine.CoroutineScene.startScene1
 import com.wsy.ahp.coroutine.CoroutineScene3
@@ -26,11 +37,19 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import retrofit2.http.Field
+import java.lang.Integer.max
+import java.time.Clock
+import java.time.Instant
+import java.time.temporal.ChronoUnit
+
 
 class MainActivity : HiBaseActivity(), ActivityProvider {
     private var activityLogic: MainActivityLogic? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        先调用installSplashScreen，然后才能调用setContentView
+        val splashScreen = installSplashScreen()
+
         setContentView(R.layout.activity_main)
         activityLogic = MainActivityLogic(this, savedInstanceState)
 
@@ -41,6 +60,8 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
                 Toast.makeText(applicationContext, "当前处于：$front",Toast.LENGTH_LONG).show()
             }
         })
+
+
 
 
 //        ReentrantReadWriteLockDemo.test()
@@ -58,4 +79,7 @@ class MainActivity : HiBaseActivity(), ActivityProvider {
 
 
     }
+
+
+
 }

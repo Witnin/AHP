@@ -198,4 +198,9 @@ dependencies {
 
     //悬浮窗FloatUtil
     implementation 'com.github.liuguangli:FloatUtil:1.0'
+
+    //splashscreen
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+
+    implementation "com.airbnb.android:lottie:6.0.0"
 }
