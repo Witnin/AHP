@@ -44,12 +44,12 @@ android {
             storePassword "nanputech"
             keyPassword "nanputech"
         }
-        debug {//调试版本的签名配置
-            storeFile file('kyqzzd.keystore')
-            keyAlias "kyqzzd.keystore"
-            storePassword "nanputech"
-            keyPassword "nanputech"
-        }
+//        debug {//调试版本的签名配置
+//            storeFile file('kyqzzd.keystore')
+//            keyAlias "kyqzzd.keystore"
+//            storePassword "nanputech"
+//            keyPassword "nanputech"
+//        }
     }
 
     buildTypes {
@@ -206,4 +206,9 @@ dependencies {
 
     //viewpager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    //高德地图
+    implementation 'com.amap.api:3dmap:latest.integration'
+    implementation 'com.amap.api:search:latest.integration'
+
 }

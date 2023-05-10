@@ -2,8 +2,11 @@ package com.wsy.ahp
 
 
 
+import android.util.Log
 import android.widget.Toast
 import com.alibaba.android.arouter.launcher.ARouter
+import com.amap.api.maps.MapsInitializer
+import com.amap.api.services.core.ServiceSettings
 import com.cretin.www.cretinautoupdatelibrary.model.TypeConfig
 import com.cretin.www.cretinautoupdatelibrary.model.UpdateConfig
 import com.cretin.www.cretinautoupdatelibrary.utils.AppUpdateUtils
@@ -11,15 +14,11 @@ import com.cretin.www.cretinautoupdatelibrary.utils.SSLUtils
 import com.wsy.common.ActivityManager
 import com.wsy.common.ui.component.HiBaseApplication
 import com.wsy.common.utils.OkHttp3Connection
-import com.wsy.common.utils.xupdate.OKHttpUpdateHttpService
+import com.wsy.common.utils.xupdate.JsonUtil
 
-import com.xuexiang.xupdate.XUpdate
-import com.xuexiang.xupdate.entity.UpdateError.ERROR.CHECK_NO_NEW_VERSION
-import com.xuexiang.xupdate.proxy.IUpdateHttpService
-import com.xuexiang.xupdate.utils.UpdateUtils
 import okhttp3.OkHttpClient
-import update.UpdateAppUtils
 import java.util.concurrent.TimeUnit
+
 
 
 class HiApplication: HiBaseApplication() {
@@ -65,8 +64,18 @@ class HiApplication: HiBaseApplication() {
 //        MMKV.initialize(applicationContext, if (BuildConfig.DEBUG) MMKVLogLevel.LevelDebug else MMKVLogLevel.LevelNone)
 
 
+        //高德地图隐私合规
+        //Map
+        MapsInitializer.updatePrivacyShow(applicationContext, true, true)
+        MapsInitializer.updatePrivacyAgree(applicationContext, true)
 
+        //Search
+        ServiceSettings.updatePrivacyShow(applicationContext,true,true);
+        ServiceSettings.updatePrivacyAgree(applicationContext,true);
 
+        val sHA1 = JsonUtil.sHA1(applicationContext)
+        println("sHA1$sHA1")
+        Log.i("sha",sHA1)
     }
 
     fun showToasts(message:String){

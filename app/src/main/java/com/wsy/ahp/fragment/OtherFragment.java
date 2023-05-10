@@ -23,6 +23,7 @@ import com.wsy.ahp.activity.threed.GlGlobeActivity;
 import com.wsy.ahp.activity.threed.GlLineActivity;
 import com.wsy.ahp.activity.threed.PanoramaActivity;
 import com.wsy.ahp.activity.banner.HiBannerDemoActivity;
+import com.wsy.ahp.http.common.ArouterUrl;
 import com.wsy.common.ui.component.HiBaseFragment;
 import com.wsy.wsy_library.executor.HiExecutor;
 
@@ -118,6 +119,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.relative_parent).setOnClickListener(v ->{navigation("/relative/parent");});
         layoutView.findViewById(R.id.relative_brother).setOnClickListener(v ->{navigation("/relative/brother");});
         layoutView.findViewById(R.id.native_login).setOnClickListener(v ->{navigation("/native/login");});
+        layoutView.findViewById(R.id.map_base).setOnClickListener(v ->{navigation(ArouterUrl.HOME_MAP);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
