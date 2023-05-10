@@ -14,7 +14,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.wsy.ahp.R;
+import com.wsy.ahp.fragment.home.HomeFragment;
+import com.wsy.ahp.http.common.ArouterUrl;
 
 
 public class LaunchFragment extends Fragment {
@@ -63,7 +66,8 @@ public class LaunchFragment extends Fragment {
         if (position == count - 1){
             btn_start.setVisibility(View.VISIBLE);
             btn_start.setOnClickListener(v -> {
-                Toast.makeText(context,"欢迎您开启美好生活", Toast.LENGTH_SHORT).show();
+                ARouter.getInstance().build(ArouterUrl.HOME_PAGE).navigation();
+
             });
         }
 

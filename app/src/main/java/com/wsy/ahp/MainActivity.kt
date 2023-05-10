@@ -18,6 +18,7 @@ import androidx.lifecycle.whenCreated
 import androidx.lifecycle.whenResumed
 import androidx.lifecycle.whenStarted
 import com.airbnb.lottie.LottieAnimationView
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.animation.AnimatorSetCompat.playTogether
 import com.google.gson.JsonObject
 import com.wsy.ahp.coroutine.CoroutineScene.startScene1
@@ -25,6 +26,7 @@ import com.wsy.ahp.coroutine.CoroutineScene3
 import com.wsy.ahp.coroutine.CountDownLatchDemo
 import com.wsy.ahp.http.ApiFactory
 import com.wsy.ahp.http.api.TestApi
+import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.ahp.logic.MainActivityLogic
 import com.wsy.ahp.logic.MainActivityLogic.ActivityProvider
 import com.wsy.ahp.thread.*
@@ -42,7 +44,7 @@ import java.time.Clock
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 
-
+@Route(path = ArouterUrl.HOME_PAGE)
 class MainActivity : HiBaseActivity(), ActivityProvider {
     private var activityLogic: MainActivityLogic? = null
     override fun onCreate(savedInstanceState: Bundle?) {
