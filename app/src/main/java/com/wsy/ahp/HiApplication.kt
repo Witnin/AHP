@@ -12,6 +12,7 @@ import com.cretin.www.cretinautoupdatelibrary.model.UpdateConfig
 import com.cretin.www.cretinautoupdatelibrary.utils.AppUpdateUtils
 import com.cretin.www.cretinautoupdatelibrary.utils.SSLUtils
 import com.wsy.common.ActivityManager
+import com.wsy.common.Sha_Util
 import com.wsy.common.ui.component.HiBaseApplication
 import com.wsy.common.utils.OkHttp3Connection
 import com.wsy.common.utils.xupdate.JsonUtil
@@ -73,9 +74,9 @@ class HiApplication: HiBaseApplication() {
         ServiceSettings.updatePrivacyShow(applicationContext,true,true);
         ServiceSettings.updatePrivacyAgree(applicationContext,true);
 
-        val sHA1 = JsonUtil.sHA1(applicationContext)
-        println("sHA1$sHA1")
-        Log.i("sha",sHA1)
+//        val sHA1 = Sha_Util.sHA1(applicationContext)
+//        println("sHA1$sHA1")
+//        Log.i("sha",sHA1)
     }
 
     fun showToasts(message:String){
