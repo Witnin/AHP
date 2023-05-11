@@ -126,4 +126,10 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="button">按钮</string>
     <string name="floatButton">悬浮按钮</string>
+    <string name="shopping">商场</string>
+    <string name="big_house">楼宇</string>
+    <string name="school">学校</string>
+    <string name="houses">住宅区</string>
+    <string name="search_key_word">请输入关键字</string>
+    <string name="search">Search</string>
 </resources>

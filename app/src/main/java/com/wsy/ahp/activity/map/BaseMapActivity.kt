@@ -1,8 +1,7 @@
 package com.wsy.ahp.activity.map
 
 
-import android.content.pm.PackageManager
-import android.os.Build
+
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
