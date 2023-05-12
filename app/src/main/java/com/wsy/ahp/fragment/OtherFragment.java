@@ -121,6 +121,8 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.native_login).setOnClickListener(v ->{navigation("/native/login");});
         layoutView.findViewById(R.id.map_base).setOnClickListener(v ->{navigation(ArouterUrl.HOME_MAP);});
         layoutView.findViewById(R.id.map_weather).setOnClickListener(v ->{navigation(ArouterUrl.MAP_WEATHER);});
+        layoutView.findViewById(R.id.nested_scroll).setOnClickListener(v ->{navigation(ArouterUrl.NESTED_SCROLL);});
+        layoutView.findViewById(R.id.nested).setOnClickListener(v ->{navigation(ArouterUrl.NESTED);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){

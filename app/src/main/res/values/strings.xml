@@ -132,4 +132,5 @@
     <string name="houses">住宅区</string>
     <string name="search_key_word">请输入关键字</string>
     <string name="search">Search</string>
+    <string name="tab_name">tab_name</string>
 </resources>

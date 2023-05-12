@@ -346,6 +346,45 @@
 
                 </LinearLayout>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="嵌套滑动" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/nested_scroll"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="自定义nested_scroll"
+                        android:textAllCaps="false" />
+                    <Button
+                        android:id="@+id/nested"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="nested_scroll"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/coordinatorLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="coordinatorLayout" />
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

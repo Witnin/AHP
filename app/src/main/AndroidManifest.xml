@@ -46,6 +46,11 @@
         android:versionName="@string/app_version"
         tools:targetApi="31">
         <activity
+            android:name=".activity.scroll.ScrollActivity"
+            android:exported="false" />    <activity
+            android:name=".activity.scroll.NestedScrollActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.map.MapChooseActivity"
             android:exported="false" />
         <activity
