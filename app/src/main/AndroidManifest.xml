@@ -106,9 +106,9 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- 配置Launcher应用 -->
-                <!-- <category android:name="android.intent.category.HOME" /> -->
-                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+<!--                 配置Launcher应用 -->
+                 <category android:name="android.intent.category.HOME" />
+                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data

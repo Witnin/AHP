@@ -17,6 +17,7 @@ import com.wsy.ahp.R;
 import com.wsy.ahp.activity.scroll.adapter.RecyclerFragmentAdapter;
 import com.wsy.ahp.activity.scroll.fragment.RecyclerViewFragment;
 import com.wsy.ahp.http.common.ArouterUrl;
+import com.wsy.common.utils.StatusBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,15 @@ public class NestedScrollActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        StatusBar statusBar = new StatusBar(NestedScrollActivity.this);
+//        //设置颜色为半透明
+//        statusBar.setColor(R.color.translucent);
+//        //设置颜色为透明
+//        statusBar.setColor(R.color.transparent);
+        //隐藏状态栏
+        statusBar.hide();
+
         setContentView(R.layout.activity_scroll_nested);
         TabLayout tabLayout = findViewById(R.id.tablayout);
         LinearLayout tabViewPager = findViewById(R.id.tab_viewpager);
