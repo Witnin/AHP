@@ -21,21 +21,33 @@
                 android:gravity="center_horizontal"
                 android:text="测试示例文字跳转显示activity名称"
                 android:textSize="40sp" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="hiTop" />
                 <Button
                     android:id="@+id/mybutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="hiTop"
                     android:textAllCaps="false" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="hiRefresh" />
                 <Button
                     android:id="@+id/hiRefresh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="hiRefresh"
                     android:textAllCaps="false" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="hiBanner" />
                 <Button
                     android:id="@+id/hiBanner"
                     android:layout_width="match_parent"
@@ -382,6 +394,31 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="coordinatorLayout" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="listview测试" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/listview_article"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="listview测试"/>
+
 
                 </LinearLayout>
             </LinearLayout>

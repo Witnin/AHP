@@ -10,5 +10,6 @@ object ArouterUrl {
     const val MAP_WEATHER = "/map/weather"
     const val NESTED_SCROLL = "/nested/scroll"
     const val NESTED = "/nested/native"
+    const val LISTVIEW_ARTICLE = "/listview/article"
 
 }
