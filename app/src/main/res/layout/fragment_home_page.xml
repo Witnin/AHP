@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,6 +17,9 @@
                 android:gravity="center_horizontal"
                 android:text="测试示例文字跳转显示activity名称"
                 android:textSize="40sp" />
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -54,7 +53,11 @@
                     android:layout_height="wrap_content"
                     android:text="hiBanner"
                     android:textAllCaps="false" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="compose测试" />
 
             <Button
                 android:id="@+id/jetpackCompose"
@@ -87,8 +90,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="UI导航测试" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                 <Button
                     android:id="@+id/homeBottom"
                     android:layout_width="0dp"
@@ -104,6 +115,7 @@
                     android:layout_weight="1"
                     android:text="anim_bottom"
                     android:textAllCaps="false" />
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -422,7 +434,42 @@
 
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="recycleviewe测试" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/recycle_view_article"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="recycleview横向滚动"/>
+                    <Button
+                        android:id="@+id/recycle_view_water_flow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="recycleview瀑布流"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_height="@dimen/dp_140"
+                android:layout_width="match_parent">
+            </View>
+        </LinearLayout>
+
+
+</ScrollView>

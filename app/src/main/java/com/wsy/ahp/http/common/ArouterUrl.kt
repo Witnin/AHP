@@ -11,5 +11,6 @@ object ArouterUrl {
     const val NESTED_SCROLL = "/nested/scroll"
     const val NESTED = "/nested/native"
     const val LISTVIEW_ARTICLE = "/listview/article"
+    const val RECYCLE_VIEW_ARTICLE = "/recycleView/article"
 
 }
