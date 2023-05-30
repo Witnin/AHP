@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 import com.wsy.ahp.R
@@ -23,7 +24,22 @@ class RecycleViewWaterFlowAdapter(val articleList:List<Article>):RecyclerView.Ad
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycleview_water_flow_article_item, parent, false)
-        return ViewHolder(view)
+
+        val viewHolder = ViewHolder(view)
+        viewHolder.articleName.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            val article = articleList[position]
+            Toast.makeText(parent.context, "you clicked view ${article.name}",
+                Toast.LENGTH_SHORT).show()
+        }
+        viewHolder.articleImage.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            val article = articleList[position]
+            Toast.makeText(parent.context, "you clicked image ${article.name}",
+                Toast.LENGTH_SHORT).show()
+        }
+        return viewHolder
+
     }
 
     override fun getItemCount(): Int  = articleList.size
