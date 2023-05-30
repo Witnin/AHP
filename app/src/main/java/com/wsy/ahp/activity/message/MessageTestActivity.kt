@@ -1,5 +1,6 @@
 package com.wsy.ahp.activity.message
 
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_message_test.send
 @Route(path = ArouterUrl.RECYCLE_VIEW_MESSAGE)
 class MessageTestActivity : AppCompatActivity(),View.OnClickListener {
     private val msgList = ArrayList<Msg>()
-    private var adapter: MsgAdapter? = null
+    private lateinit var adapter: MsgAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +23,9 @@ class MessageTestActivity : AppCompatActivity(),View.OnClickListener {
         initMsg()
         val layoutManager = LinearLayoutManager(this)
         recyclerView_message.layoutManager = layoutManager
-        adapter = MsgAdapter(msgList)
+        if (!::adapter.isInitialized) {
+            adapter = MsgAdapter(msgList)
+        }
         recyclerView_message.adapter = adapter
         send.setOnClickListener(this)
 
@@ -35,7 +38,7 @@ class MessageTestActivity : AppCompatActivity(),View.OnClickListener {
                 if (content.isNotEmpty()) {
                     val msg = Msg(content, Msg.TYPE_SENT)
                     msgList.add(msg)
-                    adapter?.notifyItemInserted(msgList.size - 1) // 当有新消息时，
+                    adapter.notifyItemInserted(msgList.size - 1) // 当有新消息时，
                     recyclerView_message.scrollToPosition(msgList.size - 1) // 将RecyclerView
 
                     inputText.setText("") // 清空输入框中的内容
