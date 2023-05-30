@@ -125,6 +125,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.nested).setOnClickListener(v ->{navigation(ArouterUrl.NESTED);});
         layoutView.findViewById(R.id.listview_article).setOnClickListener(v ->{navigation(ArouterUrl.LISTVIEW_ARTICLE);});
         layoutView.findViewById(R.id.recycle_view_article).setOnClickListener(v ->{navigation(ArouterUrl.RECYCLE_VIEW_ARTICLE);});
+        layoutView.findViewById(R.id.recycle_view_water_flow).setOnClickListener(v ->{navigation(ArouterUrl.RECYCLE_VIEW_WATER_FLOW);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
