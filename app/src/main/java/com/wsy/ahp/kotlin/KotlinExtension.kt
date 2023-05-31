@@ -1,8 +1,12 @@
 package com.wsy.ahp.kotlin
 
 import android.app.Activity
+import android.content.Context
 import android.view.View
 import androidx.annotation.IdRes
+import java.io.BufferedWriter
+import java.io.IOException
+import java.io.OutputStreamWriter
 
 /**
  * kotlin扩展
@@ -16,6 +20,18 @@ fun String.lettersCount(): Int {
     }
     return count
 }
+
+//fun save(inputText: String) {
+//    try {
+//        val output = openFileOutput("data", Context.MODE_PRIVATE)
+//        val writer = BufferedWriter(OutputStreamWriter(output))
+//        writer.use {
+//            it.write(inputText)
+//        }
+//    } catch (e: IOException) {
+//        e.printStackTrace()
+//    }
+//}
 
 operator fun String.times(n: Int): String {
     val builder = StringBuilder()

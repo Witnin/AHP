@@ -17,5 +17,6 @@ object ArouterUrl {
     const val FRAGMENT_REPLACE = "/fragment/replace"
     const val RECYCLE_VIEW_NEWS = "/recycleView/news"
     const val SYSTEM_BROADCAST = "/system/broadcast"
+    const val STORAGE_FILE = "/storage/file"
 
 }

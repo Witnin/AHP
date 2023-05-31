@@ -130,6 +130,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.fragment_replace).setOnClickListener(v ->{navigation(ArouterUrl.FRAGMENT_REPLACE);});
         layoutView.findViewById(R.id.recycle_view_news).setOnClickListener(v ->{navigation(ArouterUrl.RECYCLE_VIEW_NEWS);});
         layoutView.findViewById(R.id.system_broadcast).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_BROADCAST);});
+        layoutView.findViewById(R.id.storage_file).setOnClickListener(v ->{navigation(ArouterUrl.STORAGE_FILE);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
