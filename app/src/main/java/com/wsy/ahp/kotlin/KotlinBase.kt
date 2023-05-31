@@ -7,41 +7,50 @@ import kotlin.jvm.JvmStatic
 object KotlinBase {
     @JvmStatic
     fun main(args: Array<String>) {
-        println("你好KOtlin")
-        test6()
+//        println("你好KOtlin")
+//        test6()
+//
+//        val list = listOf(1, 2, 3)
+//        val result = list.sum {
+//            println("it:${it}")
+//        }
+//        println("result${result}")
+//
+//        val listString = listOf("1", "2", "3")
+//        val result2 = listString.toIntSum()(2)
+//        println("result2:${result2}")
+//
+//        testClosure(22)(32) {
+//            println("testClosure:${it}")
+//        }
+//
+//        test11()
+//
+//        listeral()
+//
+//        Cat(11).eat()
+//
+//        println(Shop().isClose)
+//        println(Shop().scroe)
+//
+//        var test = Test()
+//        test.setUp()
+//        test.test()
+//
+//        testDataUtil()
+//        testStudent()
 
-        val list = listOf(1, 2, 3)
-        val result = list.sum {
-            println("it:${it}")
-        }
-        println("result${result}")
+//        val count = "ABD21219./x222".lettersCount()
+//        println(count)
 
-        val listString = listOf("1", "2", "3")
-        val result2 = listString.toIntSum()(2)
-        println("result2:${result2}")
-
-        testClosure(22)(32) {
-            println("testClosure:${it}")
-        }
-
-        test11()
-
-        listeral()
-
-        Cat(11).eat()
-
-        println(Shop().isClose)
-        println(Shop().scroe)
-
-        var test = Test()
-        test.setUp()
-        test.test()
-
-        testDataUtil()
-        testStudent()
+        val randomLengthString = getRandomLengthString("qwer")
+        println(randomLengthString)
         //-----------------main end--------------------------------
 
     }
+
+    fun getRandomLengthString(str: String) = str * (1..20).random()
+
 
     /**
      * 字符串判空

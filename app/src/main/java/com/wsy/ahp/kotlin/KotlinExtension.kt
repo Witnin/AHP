@@ -7,20 +7,39 @@ import androidx.annotation.IdRes
 /**
  * kotlin扩展
  */
+fun String.lettersCount(): Int {
+    var count = 0
+    for (char in this) {
+        if (char.isLetter()) {
+            count++
+        }
+    }
+    return count
+}
+
+operator fun String.times(n: Int): String {
+    val builder = StringBuilder()
+    repeat(n) {
+        builder.append(this)
+    }
+    return builder.toString()
+}
+
 
 fun main() {
-    val list = mutableListOf(1, 2, 3)
-    list.swap(0, 2)
-    println("list.swap(0,2):$list")
+//    val list = mutableListOf(1, 2, 3)
+//    list.swap(0, 2)
+//    println("list.swap(0,2):$list")
+//
+//    val listString = mutableListOf("A", "B", "C")
+//    listString.swap2(0, 2)
+//    println("listString.swap2(0,2):$listString")
+//    println("lastChar:${"1,2,3,7".lastChar}")
+//    Jump.print("1,2,3")
+//
+//    testRun(Room("hangzhou", 20f, 1.2f))
+//    testApply()
 
-    val listString = mutableListOf("A", "B", "C")
-    listString.swap2(0, 2)
-    println("listString.swap2(0,2):$listString")
-    println("lastChar:${"1,2,3,7".lastChar}")
-    Jump.print("1,2,3")
-
-    testRun(Room("hangzhou", 20f, 1.2f))
-    testApply()
     //---------------------main end------------------------------
 }
 
