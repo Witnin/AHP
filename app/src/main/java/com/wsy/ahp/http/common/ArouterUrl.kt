@@ -15,5 +15,6 @@ object ArouterUrl {
     const val RECYCLE_VIEW_WATER_FLOW = "/recycleView/waterflow"
     const val RECYCLE_VIEW_MESSAGE = "/recycleView/message"
     const val FRAGMENT_REPLACE = "/fragment/replace"
+    const val RECYCLE_VIEW_NEWS = "/recycleView/news"
 
 }
