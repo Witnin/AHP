@@ -555,6 +555,12 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="sp存储"/>
+                    <Button
+                        android:id="@+id/storage_db"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="database存储"/>
 
                 </LinearLayout>
             </LinearLayout>

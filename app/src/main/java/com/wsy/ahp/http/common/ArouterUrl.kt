@@ -19,5 +19,6 @@ object ArouterUrl {
     const val SYSTEM_BROADCAST = "/system/broadcast"
     const val STORAGE_FILE = "/storage/file"
     const val STORAGE_SP = "/storage/sp"
+    const val STORAGE_DATABASE = "/storage/db"
 
 }
