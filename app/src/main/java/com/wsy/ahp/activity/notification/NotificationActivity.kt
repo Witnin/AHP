@@ -38,6 +38,7 @@ class NotificationActivity : AppCompatActivity() {
                     BitmapFactory.decodeResource(resources,
                     R.drawable.kje))
                 .setContentIntent(pi)
+                .setAutoCancel(true) //点击后通知消失
                 .build()
             manager.notify(1, notification)
         }
