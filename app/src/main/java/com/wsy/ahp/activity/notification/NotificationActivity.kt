@@ -6,7 +6,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
-import android.os.Build
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
@@ -23,16 +23,37 @@ class NotificationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_notification)
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as
                 NotificationManager
+        //系统栏通知
         val channel = NotificationChannel("normal", "Normal",NotificationManager.
         IMPORTANCE_DEFAULT)
+
+        //横幅通知
+        val channel2 = NotificationChannel("important", "Important",
+            NotificationManager.IMPORTANCE_HIGH)
+        manager.createNotificationChannel(channel2)
+
         manager.createNotificationChannel(channel)
         sendNotice.setOnClickListener {
             val intent = Intent(this, PanoramaActivity::class.java)
             val pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
-            val notification = NotificationCompat.Builder(this, "normal")
+            val notification = NotificationCompat.Builder(this, "important")
                 .setContentTitle("This is content title")
-                .setContentText("This is content text")
+//                .setContentText("Learn how to build notifications, send and sync data,\n" +
+//                        " and use voice actions.Get the official Android IDE and developer tools to\n" +
+//                        " build apps for Android。")
+                /***
+                 * 长文本
+                 */
+//                .setStyle(NotificationCompat.BigTextStyle().bigText("Learn how to build notifications," +
+//                        "send and sync data, and use voice actions. Get the official " +
+//                        "Android IDE and developer tools to build apps for Android."))
+                /**
+                 * 图片
+                 */
+                .setStyle(NotificationCompat.BigPictureStyle().bigPicture(
+                    BitmapFactory.decodeResource(resources, R.drawable.kje)))
+
                 .setSmallIcon(R.drawable.kje)
                 .setLargeIcon(
                     BitmapFactory.decodeResource(resources,
