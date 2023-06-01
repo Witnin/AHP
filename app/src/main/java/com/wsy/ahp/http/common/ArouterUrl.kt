@@ -22,5 +22,6 @@ object ArouterUrl {
     const val STORAGE_DATABASE = "/storage/db"
     const val SYSTEM_PERMISSION = "/system/permission"
     const val SYSTEM_CONTACT = "/system/contact"
+    const val SYSTEM_NOTIFICATION = "/system/notification"
 
 }
