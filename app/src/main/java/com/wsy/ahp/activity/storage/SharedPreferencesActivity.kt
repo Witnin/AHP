@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.edit
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
@@ -15,11 +16,16 @@ class SharedPreferencesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shared_preferences)
         saveButton.setOnClickListener {
-            val editor = getSharedPreferences("data", Context.MODE_PRIVATE).edit()
-            editor.putString("name", "Tom")
-            editor.putInt("age", 28)
-            editor.putBoolean("married", false)
-            editor.apply()
+//            val editor = getSharedPreferences("data", Context.MODE_PRIVATE).edit()
+//            editor.putString("name", "Tom")
+//            editor.putInt("age", 28)
+//            editor.putBoolean("married", false)
+//            editor.apply()
+            getSharedPreferences("data",Context.MODE_PRIVATE).edit{
+                putString("name", "wsy")
+                putInt("age", 18)
+                putBoolean("married", true)
+            }
         }
 
         restoreButton.setOnClickListener {
