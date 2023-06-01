@@ -133,6 +133,8 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.storage_file).setOnClickListener(v ->{navigation(ArouterUrl.STORAGE_FILE);});
         layoutView.findViewById(R.id.storage_sp).setOnClickListener(v ->{navigation(ArouterUrl.STORAGE_SP);});
         layoutView.findViewById(R.id.storage_db).setOnClickListener(v ->{navigation(ArouterUrl.STORAGE_DATABASE);});
+        layoutView.findViewById(R.id.system_permission).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_PERMISSION);});
+        layoutView.findViewById(R.id.system_contact).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_CONTACT);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){

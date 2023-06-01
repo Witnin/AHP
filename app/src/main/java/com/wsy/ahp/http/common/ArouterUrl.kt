@@ -20,5 +20,7 @@ object ArouterUrl {
     const val STORAGE_FILE = "/storage/file"
     const val STORAGE_SP = "/storage/sp"
     const val STORAGE_DATABASE = "/storage/db"
+    const val SYSTEM_PERMISSION = "/system/permission"
+    const val SYSTEM_CONTACT = "/system/contact"
 
 }
