@@ -620,6 +620,31 @@
 
                 </LinearLayout>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:text="拍照" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/system_camera"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="拍照"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
             <View
                 android:layout_height="@dimen/dp_140"
                 android:layout_width="match_parent">

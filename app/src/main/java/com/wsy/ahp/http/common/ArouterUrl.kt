@@ -23,5 +23,6 @@ object ArouterUrl {
     const val SYSTEM_PERMISSION = "/system/permission"
     const val SYSTEM_CONTACT = "/system/contact"
     const val SYSTEM_NOTIFICATION = "/system/notification"
+    const val SYSTEM_CAMERA = "/system/camera"
 
 }
