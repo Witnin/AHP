@@ -26,5 +26,6 @@ object ArouterUrl {
     const val SYSTEM_CAMERA = "/system/camera"
     const val SYSTEM_AUDIO = "/system/audio"
     const val SYSTEM_VIDEO = "/system/video"
+    const val THREAD_UI_UPDATE = "/thread/ui"
 
 }

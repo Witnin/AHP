@@ -139,6 +139,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.system_camera).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_CAMERA);});
         layoutView.findViewById(R.id.system_audio).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_AUDIO);});
         layoutView.findViewById(R.id.system_video).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_VIDEO);});
+        layoutView.findViewById(R.id.thread_ui).setOnClickListener(v ->{navigation(ArouterUrl.THREAD_UI_UPDATE);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
