@@ -15,6 +15,7 @@ import androidx.exifinterface.media.ExifInterface
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
+import kotlinx.android.synthetic.main.activity_camera.fromAlbumBtn
 import kotlinx.android.synthetic.main.activity_camera.imageView
 import kotlinx.android.synthetic.main.activity_camera.takePhotoBtn
 import java.io.File
@@ -24,6 +25,8 @@ class CameraActivity : AppCompatActivity() {
     val takePhoto = 1
     lateinit var imageUri: Uri
     lateinit var outputImage: File
+
+    val fromAlbum = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +52,18 @@ class CameraActivity : AppCompatActivity() {
             startActivityForResult(intent, takePhoto)
         }
 
+        fromAlbumBtn.setOnClickListener {
+            // 打开文件选择器
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            // 指定只显示图片
+            intent.type = "image/*"
+            startActivityForResult(intent, fromAlbum)
+        }
+
 
     }
+
 
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -65,8 +78,25 @@ class CameraActivity : AppCompatActivity() {
                     imageView.setImageBitmap(rotateIfRequired(bitmap))
                 }
             }
+
+
+            fromAlbum -> {
+            if (resultCode == Activity.RESULT_OK && data != null) {
+                data.data?.let { uri ->
+                    // 将选择的图片显示
+                    val bitmap = getBitmapFromUri(uri)
+                    imageView.setImageBitmap(bitmap)
+                }
+            }
+        }
         }
     }
+
+    private fun getBitmapFromUri(uri: Uri) = contentResolver
+        .openFileDescriptor(uri, "r")?.use {
+            BitmapFactory.decodeFileDescriptor(it.fileDescriptor)
+        }
+
 
     private fun rotateIfRequired(bitmap: Bitmap): Bitmap {
         val exif = ExifInterface(outputImage.path)
