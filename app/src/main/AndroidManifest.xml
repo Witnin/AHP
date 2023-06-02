@@ -52,6 +52,12 @@
         android:versionName="@string/app_version"
         tools:targetApi="31">
         <activity
+            android:name=".activity.media.PlayVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.media.PlayAudioActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.permission.CameraActivity"
             android:exported="false" />
         <activity
@@ -183,7 +189,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/install_file" />
         </provider>
-
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
