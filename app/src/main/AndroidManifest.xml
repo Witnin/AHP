@@ -33,7 +33,10 @@
         tools:ignore="ProtectedPermissions" /> <!-- 允许读设备等信息，用于问题排查 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- 电话权限 -->
+    <!--通讯录-->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--前台service-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".HiApplication"
@@ -51,6 +54,19 @@
         android:versionCode="@integer/version_code"
         android:versionName="@string/app_version"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.thread.ServiceTestActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+        android:name=".service.MyIntentService"
+        android:enabled="true"
+        android:exported="true"/>
+
         <activity
             android:name=".activity.thread.ThreadUIUpdateActivity"
             android:exported="false" />
