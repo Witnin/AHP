@@ -9,4 +9,4 @@ import java.lang.annotation.RetentionPolicy
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(AnnotationTarget.FUNCTION)
-annotation class PUT(val value: String, val formPost: Boolean = true)
+annotation class WSY_PUT(val value: String, val formPost: Boolean = true)

@@ -4,9 +4,9 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 
 /**
- * @BaseUrl("https://api.devio.org/as/")
+ * @Headers({"connection:keep-alive","auth-token:token"})
  *fun test(@Filed("province") int provinceId)
  */
 @Target(AnnotationTarget.FUNCTION)
 @Retention(RetentionPolicy.RUNTIME)
-annotation class BaseUrl(val value: String)
+annotation class WSY_Headers(vararg val value: String)

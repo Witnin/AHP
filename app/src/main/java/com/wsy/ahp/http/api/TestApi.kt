@@ -1,12 +1,7 @@
 package com.wsy.ahp.http.api
 
 import com.google.gson.JsonObject
-import com.wsy.wsy_library.restful.HiCall
-import com.wsy.wsy_library.restful.annotation.GET
-import com.wsy.wsy_library.restful.annotation.Filed
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.Query
 
 

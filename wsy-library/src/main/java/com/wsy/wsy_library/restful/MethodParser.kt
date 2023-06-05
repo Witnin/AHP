@@ -91,11 +91,11 @@ class MethodParser(
             require(isPrimitive(value)) { "8 basic types are supported for now,index=$index" }
 
             val annotation = annotations[0]
-            if (annotation is Filed) {
+            if (annotation is WsyFiled) {
                 val key = annotation.value
                 val value = args[index]
                 parameters[key] = value.toString()
-            } else if (annotation is Path) {
+            } else if (annotation is WSY_Path) {
                 val replaceName = annotation.value
                 val replacement = value.toString()
                 if (replaceName != null && replaceName != null) {
@@ -116,21 +116,21 @@ class MethodParser(
         val annotations = method.annotations;
         for (annotation in annotations) {
             when (annotation) {
-                is GET -> {
+                is WSY_GET -> {
                     relativeUrl = annotation.value
                     httpMethod = HiRequest.METHOD.GET
                 }
-                is POST -> {
+                is WSY_POST -> {
                     relativeUrl = annotation.value
                     httpMethod = HiRequest.METHOD.POST
                     formPost = annotation.formPost
                 }
-                is PUT -> {
+                is WSY_PUT -> {
                     relativeUrl = annotation.value
                     httpMethod = HiRequest.METHOD.PUT
                     formPost = annotation.formPost
                 }
-                is Headers -> {
+                is WSY_Headers -> {
                     val headersArray = annotation.value
                     //@Headers("auth-token:token", "accountId:123456")
                     for (header in headersArray) {
@@ -146,7 +146,7 @@ class MethodParser(
                         headers[name] = value
                     }
                 }
-                is BaseUrl -> {
+                is WSY_BaseUrl -> {
                     domainUrl = annotation.value
                 }
                 else -> {

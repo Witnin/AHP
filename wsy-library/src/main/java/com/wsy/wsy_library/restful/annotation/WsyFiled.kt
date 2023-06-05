@@ -4,9 +4,9 @@ import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 
 /**
- * @GET("/cities/all")
+ * @BaseUrl("https://api.devio.org/as/")
  *fun test(@Filed("province") int provinceId)
  */
-@Target(AnnotationTarget.FUNCTION)
+@Target(AnnotationTarget.VALUE_PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-annotation class GET(val value: String)
+annotation class WsyFiled(val value: String)

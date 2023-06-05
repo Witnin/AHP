@@ -9,4 +9,4 @@ import java.lang.annotation.RetentionPolicy
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(AnnotationTarget.VALUE_PARAMETER)
-annotation class Path(val value: String)
+annotation class WSY_Path(val value: String)
