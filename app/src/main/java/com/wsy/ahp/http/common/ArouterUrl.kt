@@ -28,5 +28,6 @@ object ArouterUrl {
     const val SYSTEM_VIDEO = "/system/video"
     const val THREAD_UI_UPDATE = "/thread/ui"
     const val THREAD_SERVICE = "/thread/service"
+    const val SYSTEM_WEBVIEW = "/system/webview"
 
 }

@@ -3,6 +3,7 @@ package com.wsy.ahp.kotlin
 import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.view.View
 import androidx.annotation.IdRes
@@ -22,6 +23,29 @@ fun String.lettersCount(): Int {
     }
     return count
 }
+
+/**
+ * kotlin泛型实化简化Intent跳转，传参
+ *
+ * startActivity<TestActivity>(context)
+
+
+ * startActivity<TestActivity>(context) {
+ * putExtra("param1", "data")
+ * putExtra("param2", 123)
+}
+ */
+inline fun <reified T> startActivity(context: Context) {
+    val intent = Intent(context, T::class.java)
+    context.startActivity(intent)
+}
+
+inline fun <reified T> startActivity(context: Context, block: Intent.() -> Unit) {
+    val intent = Intent(context, T::class.java)
+    intent.block()
+    context.startActivity(intent)
+}
+
 
 fun cvOf(vararg pairs: Pair<String, Any?>): ContentValues {
     val cv = ContentValues()

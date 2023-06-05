@@ -99,6 +99,8 @@ public class OtherFragment extends HiBaseFragment {
         btn_gl_line.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), GlLineActivity.class);
             startActivity(intent);
+
+
         });
 
         myTextView.setOnClickListener(v -> {
@@ -141,6 +143,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.system_video).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_VIDEO);});
         layoutView.findViewById(R.id.thread_ui).setOnClickListener(v ->{navigation(ArouterUrl.THREAD_UI_UPDATE);});
         layoutView.findViewById(R.id.thread_service).setOnClickListener(v ->{navigation(ArouterUrl.THREAD_SERVICE);});
+        layoutView.findViewById(R.id.system_webview).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_WEBVIEW);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
