@@ -31,6 +31,7 @@ import kotlin.system.measureTimeMillis
 
     /**
      * 启动一个线程，先执行request1,然后同时运行request2,request3,这两并发结束后进而更新UI*/
+    @OptIn(DelicateCoroutinesApi::class)
     fun startScene2() {
         GlobalScope.launch(Dispatchers.Main) {
             Log.e(TAG, "coroutine is running")
@@ -56,6 +57,20 @@ import kotlin.system.measureTimeMillis
 
         }
         println("函数总耗时 $time")
+    }
+
+    private fun testRunBlocking2(){
+        runBlocking {
+            launch {
+                println("launch1")
+                delay(1000)
+                println("launch1 finished")
+            }
+            launch {
+                println("launch2")
+                println("launch2 finished")
+            }
+        }
     }
 
     @JvmStatic
