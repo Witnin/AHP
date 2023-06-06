@@ -17,7 +17,9 @@ import kotlinx.android.synthetic.main.activity_login.view
 import kotlinx.android.synthetic.main.activity_test_material.drawerLayout
 import kotlinx.android.synthetic.main.activity_test_material.fab
 import kotlinx.android.synthetic.main.activity_test_material.material_recyclerView
+import kotlinx.android.synthetic.main.activity_test_material.swipeRefresh
 import kotlinx.android.synthetic.main.activity_test_material.toolbar
+import kotlin.concurrent.thread
 
 @Route(path = ArouterUrl.MATERIAL_TEST)
 class TestMaterialActivity : AppCompatActivity() {
@@ -53,6 +55,23 @@ class TestMaterialActivity : AppCompatActivity() {
         val adapter = FruitAdapter(this, fruitList)
         material_recyclerView.adapter = adapter
 
+        swipeRefresh.setColorSchemeResources(R.color.colorPrimary)
+        swipeRefresh.setOnRefreshListener {
+            refreshFruits(adapter)
+        }
+
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun refreshFruits(adapter: FruitAdapter) {
+        thread {
+            Thread.sleep(2000)
+            runOnUiThread {
+                initFruits()
+                adapter.notifyDataSetChanged()
+                swipeRefresh.isRefreshing = false
+            }
+        }
     }
 
     private fun initFruits() {

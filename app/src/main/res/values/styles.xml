@@ -22,6 +22,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FruitActivityTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
     <!--    <attr name="hintColor" format="color"></attr>
             <attr name="inputColor" format="color"></attr>
             <attr name="textSize" format="dimension"></attr>-->
