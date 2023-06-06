@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<FrameLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.appcompat.widget.Toolbar
@@ -26,7 +26,7 @@
         android:src="@drawable/ic_done"
         android:contentDescription="TODO" />
 
-</FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="match_parent"

@@ -7,8 +7,10 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.google.android.material.snackbar.Snackbar
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
+import kotlinx.android.synthetic.main.activity_login.view
 import kotlinx.android.synthetic.main.activity_test_material.drawerLayout
 import kotlinx.android.synthetic.main.activity_test_material.fab
 import kotlinx.android.synthetic.main.activity_test_material.toolbar
@@ -24,8 +26,12 @@ class TestMaterialActivity : AppCompatActivity() {
             it.setHomeAsUpIndicator(R.drawable.ic_menu)
         }
 
-        fab.setOnClickListener {
-            Toast.makeText(this, "FAB clicked", Toast.LENGTH_SHORT).show()
+        fab.setOnClickListener {view ->
+            Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT)
+                .setAction("Undo") {
+                    Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
+                }
+                .show()
         }
 
     }
