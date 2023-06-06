@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.snackbar.Snackbar
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
+import com.wsy.ahp.kotlin.showSnackbar
 import kotlinx.android.synthetic.main.activity_login.view
 import kotlinx.android.synthetic.main.activity_test_material.drawerLayout
 import kotlinx.android.synthetic.main.activity_test_material.fab
@@ -42,11 +43,14 @@ class TestMaterialActivity : AppCompatActivity() {
         }
 
         fab.setOnClickListener {view ->
-            Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT)
-                .setAction("Undo") {
-                    Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
-                }
-                .show()
+//            Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT)
+//                .setAction("Undo") {
+//                    Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
+//                }
+//                .show()
+            view.showSnackbar("This is Snackbar", "Action") {
+                Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
+            }
         }
 
         initFruits()

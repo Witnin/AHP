@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.view.View
 import androidx.annotation.IdRes
+import com.google.android.material.snackbar.Snackbar
 import java.io.BufferedWriter
 import java.io.IOException
 import java.io.OutputStreamWriter
@@ -22,6 +23,27 @@ fun String.lettersCount(): Int {
         }
     }
     return count
+}
+
+fun View.showSnackbar(text: String, actionText: String? = null,
+                      duration: Int = Snackbar.LENGTH_SHORT, block: (() -> Unit)? = null) {
+    val snackbar = Snackbar.make(this, text, duration)
+    if (actionText != null && block != null) {
+        snackbar.setAction(actionText) {
+            block()
+        }
+    }
+    snackbar.show()
+}
+fun View.showSnackbar(resId: Int, actionResId: Int? = null,
+                      duration: Int = Snackbar.LENGTH_SHORT, block: (() -> Unit)? = null) {
+    val snackbar = Snackbar.make(this, resId, duration)
+    if (actionResId != null && block != null) {
+        snackbar.setAction(actionResId) {
+            block()
+        }
+    }
+    snackbar.show()
 }
 
 /**
