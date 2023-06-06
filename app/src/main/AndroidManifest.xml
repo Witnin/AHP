@@ -54,6 +54,10 @@
         android:versionName="@string/app_version"
         tools:targetApi="31">
         <activity
+            android:name=".activity.material.TestMaterialActivity"
+            android:label="知识库"
+            android:exported="false" />
+        <activity
             android:name=".activity.webview.WebViewActivity"
             android:exported="false" />
         <activity

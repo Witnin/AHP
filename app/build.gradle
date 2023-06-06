@@ -212,4 +212,6 @@ dependencies {
     implementation 'com.amap.api:3dmap:latest.integration'
     implementation 'com.amap.api:search:latest.integration'
 
+    //图片圆形化
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }
