@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
 import kotlinx.android.synthetic.main.activity_test_material.drawerLayout
+import kotlinx.android.synthetic.main.activity_test_material.fab
 import kotlinx.android.synthetic.main.activity_test_material.toolbar
 
 @Route(path = ArouterUrl.MATERIAL_TEST)
@@ -21,6 +22,10 @@ class TestMaterialActivity : AppCompatActivity() {
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setHomeAsUpIndicator(R.drawable.ic_menu)
+        }
+
+        fab.setOnClickListener {
+            Toast.makeText(this, "FAB clicked", Toast.LENGTH_SHORT).show()
         }
 
     }
