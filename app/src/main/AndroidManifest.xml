@@ -54,9 +54,12 @@
         android:versionName="@string/app_version"
         tools:targetApi="31">
         <activity
-            android:name=".activity.material.coordinatorlayout.CoordinatorLayoutActivity"
-            android:theme="@style/FruitActivityTheme"
+            android:name=".activity.jetpack.CalculatorActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.material.coordinatorlayout.CoordinatorLayoutActivity"
+            android:exported="false"
+            android:theme="@style/FruitActivityTheme" />
         <activity
             android:name=".activity.material.TestMaterialActivity"
             android:exported="false"

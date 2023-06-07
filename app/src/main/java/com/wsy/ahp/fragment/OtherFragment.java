@@ -145,6 +145,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.thread_service).setOnClickListener(v ->{navigation(ArouterUrl.THREAD_SERVICE);});
         layoutView.findViewById(R.id.system_webview).setOnClickListener(v ->{navigation(ArouterUrl.SYSTEM_WEBVIEW);});
         layoutView.findViewById(R.id.material_test).setOnClickListener(v ->{navigation(ArouterUrl.MATERIAL_TEST);});
+        layoutView.findViewById(R.id.viewmodel_cal).setOnClickListener(v ->{navigation(ArouterUrl.VIEWMODEL_CAL);});
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
@@ -182,10 +183,6 @@ public class OtherFragment extends HiBaseFragment {
                 }
             });
         });
-
-
-
-
 
 
     }
