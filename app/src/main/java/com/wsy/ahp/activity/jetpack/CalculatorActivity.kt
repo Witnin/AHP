@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.edit
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.wsy.ahp.R
@@ -18,10 +19,14 @@ class CalculatorActivity : AppCompatActivity() {
 
     lateinit var viewModel: NumberViewModel
     lateinit var sp: SharedPreferences
+    lateinit var calLifecycle: Lifecycle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
+
+        lifecycle.addObserver(MyObserver())
+
         sp = getPreferences(Context.MODE_PRIVATE)
         val countReserved = sp.getInt("count_reserved", 0)
         viewModel = ViewModelProvider(this,NumberViewModelFactory(countReserved)).get(NumberViewModel::class.java)
