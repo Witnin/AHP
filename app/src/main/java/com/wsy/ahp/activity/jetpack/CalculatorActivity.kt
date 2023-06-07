@@ -12,6 +12,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
 import kotlinx.android.synthetic.main.activity_calculator.clearBtn
+import kotlinx.android.synthetic.main.activity_calculator.getUserBtn
 import kotlinx.android.synthetic.main.activity_calculator.infoText
 import kotlinx.android.synthetic.main.activity_calculator.plusOneBtn
 
@@ -37,6 +38,14 @@ class CalculatorActivity : AppCompatActivity() {
             viewModel.clear()
         }
 
+        getUserBtn.setOnClickListener {
+            val userId = (0..10000).random().toString()
+            viewModel.getUser(userId)
+        }
+        viewModel.user.observe(this) { user ->
+            infoText.text = user.firstName
+        }
+
         viewModel.counter.observe(this) { count ->
             infoText.text = count.toString()
         }
@@ -48,7 +57,7 @@ class CalculatorActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         sp.edit {
-            putInt("count_reserved", viewModel.counter.value ?:0)
+            putInt("count_reserved", viewModel.user.value?.firstName?.toInt() ?:0)
         }
     }
 
