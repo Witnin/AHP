@@ -31,5 +31,6 @@ object ArouterUrl {
     const val SYSTEM_WEBVIEW = "/system/webview"
     const val MATERIAL_TEST = "/material/test"
     const val VIEWMODEL_CAL = "/viewmodel/cal"
+    const val NOW_ARTICLE = "/now/article"
 
 }
