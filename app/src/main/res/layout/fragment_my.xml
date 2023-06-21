@@ -6,10 +6,24 @@
     android:layout_height="match_parent">
 
 
+
+
+
+  <TextView
+      android:id="@+id/countDown"
+      android:layout_width="wrap_content"
+      android:layout_height="18dp"
+      android:layout_gravity="center"
+      app:layout_constraintRight_toRightOf="parent"
+      android:text="倒计时"
+      tools:ignore="MissingConstraints" />
+
+
  <Button
      android:id="@+id/toutiao_register"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
-     app:layout_constraintTop_toTopOf="parent"
-     android:text="注册"/>
+     android:text="注册"
+     app:layout_constraintTop_toBottomOf="@id/countDown"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,6 +55,7 @@ class RegisterActivity : AppCompatActivity() {
             else{
 
                 Toast.makeText(this,"操作成功", Toast.LENGTH_LONG).show()
+                finish()
             }
         }
 
