@@ -17,6 +17,7 @@ import com.wsy.ahp.fragment.nowarticle.MiniVideoFragment
 import com.wsy.ahp.fragment.nowarticle.MyFragment
 import com.wsy.ahp.fragment.nowarticle.VideoFragment
 import com.wsy.ahp.http.common.ArouterUrl
+import com.wsy.common.utils.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_now_article.ctl_home
 import kotlinx.android.synthetic.main.activity_now_article.vp_home
 
@@ -31,7 +32,8 @@ class NowArticleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_now_article)
-
+        //设置状态栏颜色
+        StatusBarUtils.setStatusBar(this,1,R.color.color_298)
         val titles = resources.getStringArray(R.array.title)
         val selectIds: TypedArray = resources.obtainTypedArray(R.array.selected)
         val unSelectIds: TypedArray = resources.obtainTypedArray(R.array.unselected)
