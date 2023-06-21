@@ -32,5 +32,6 @@ object ArouterUrl {
     const val MATERIAL_TEST = "/material/test"
     const val VIEWMODEL_CAL = "/viewmodel/cal"
     const val NOW_ARTICLE = "/now/article"
+    const val NOW_ARTICLE_REGISTER = "/article/register"
 
 }
