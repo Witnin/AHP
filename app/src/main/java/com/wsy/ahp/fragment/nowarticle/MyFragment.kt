@@ -22,9 +22,6 @@ class MyFragment: HiBaseFragment(),CountDownListener {
             navigation("/article/register")
         }
 
-
-
-
     }
 
     override fun getLayoutId(): Int {
@@ -37,10 +34,10 @@ class MyFragment: HiBaseFragment(),CountDownListener {
 
     override fun countDown(time: Long) {
 
-        if(time>60*1000){
-            s=("${time/1000/60}分${time/1000 % 60}秒")
+        s = if(time>60*1000){
+            ("${time/1000/60}分${time/1000 % 60}秒")
         }else{
-            s = ("${time/1000}秒")
+            ("${time/1000}秒")
         }
 
         countDown.text = s
