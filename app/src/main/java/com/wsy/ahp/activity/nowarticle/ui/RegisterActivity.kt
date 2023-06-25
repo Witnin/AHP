@@ -5,20 +5,34 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.google.gson.Gson
 import com.wsy.ahp.R
+import com.wsy.ahp.http.api.LoginApi
 import com.wsy.ahp.http.common.ArouterUrl
+import com.wsy.ahp.http.common.RetrofitServiceCreator
+import com.wsy.ahp.model.entity.LoginBody
+import com.wsy.ahp.model.entity.LoginService
 import com.wsy.common.utils.IEditTextChangeListener
+import com.wsy.common.utils.SPUtil
 import com.wsy.common.utils.WorksSizeCheckUtil.setChangeListener
 import com.wsy.common.utils.WorksSizeCheckUtil.textChangeListener
+import kotlinx.android.synthetic.main.activity_login.input_item_password
+import kotlinx.android.synthetic.main.activity_login.input_item_username
 import kotlinx.android.synthetic.main.activity_register.agreement
 import kotlinx.android.synthetic.main.activity_register.imageBack
 import kotlinx.android.synthetic.main.activity_register.input
 import kotlinx.android.synthetic.main.activity_register.input_password
 import kotlinx.android.synthetic.main.activity_register.nextStep
+import okhttp3.MediaType
+import okhttp3.RequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 @Route(path = ArouterUrl.NOW_ARTICLE_REGISTER)
@@ -28,6 +42,14 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        if(SPUtil.getBoolean("agreement") && SPUtil.getString("username")!=null && SPUtil.getString("password")!=null){
+            input.setText(SPUtil.getString("username"))
+            input_password.setText(SPUtil.getString("password"))
+            agreement.isChecked = true
+            nextStep.setCardBackgroundColor(ContextCompat.getColor(this@RegisterActivity,R.color.color_298))
+        }
+
         val username = input.text
         val password = input_password.text
 
@@ -47,14 +69,14 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this,"请输入密码", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
-            else if(!agreement.isChecked){
-
-                Toast.makeText(this,"同意用户协议和隐私政策后才可以登录", Toast.LENGTH_LONG).show()
-                return@setOnClickListener
-            }
+//            else if(!agreement.isChecked){
+//
+//                Toast.makeText(this,"同意用户协议和隐私政策后才可以登录", Toast.LENGTH_LONG).show()
+//                return@setOnClickListener
+//            }
             else{
 
-                Toast.makeText(this,"操作成功", Toast.LENGTH_LONG).show()
+                goLogin()
                 finish()
             }
         }
@@ -85,6 +107,70 @@ class RegisterActivity : AppCompatActivity() {
 
 
 
+    }
+
+    private fun goLogin() {
+        val username = input.text
+        val password = input_password.text
+        if(agreement.isChecked){
+            SPUtil.putBoolean("agreement",true)
+            SPUtil.putString("password",password.toString())
+        }else{
+            SPUtil.putBoolean("agreement",false)
+        }
+
+        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password))
+            return
+
+        val loginApi = RetrofitServiceCreator.create(LoginApi::class.java)
+
+        val loginBody = LoginBody(username = username.toString(), password.toString())
+
+        val requestBody = RequestBody.create(
+            MediaType.parse("application/json"), Gson().toJson(loginBody) )
+
+        loginApi.sLogin(requestBody).enqueue(object: Callback<LoginService> {
+            override fun onResponse(call: Call<LoginService>, response: Response<LoginService>) {
+                if (response!!.isSuccessful && response.body()!!.code==200){
+                    val data = response.body()
+                    val result = data!!.result
+                    Log.i("registerActivity",data!!.message)
+                    val username = data.result.userInfo.username
+                    val realname = data.result.userInfo.realname
+                    val avatar = data.result.userInfo.avatar
+                    val introduce = data.result.userInfo.introduce
+                    val backgroundUrl = data.result.userInfo.backgroundUrl
+                    val matureTime = data.result.userInfo.matureTime
+                    val token = data.result.token
+                    SPUtil.putString("X-Access-Token",token)
+                    SPUtil.putString("username",username)
+                    SPUtil.putString("realname",realname)
+                    SPUtil.putString("avatar",avatar)
+                    SPUtil.putString("introduce",introduce)
+                    SPUtil.putString("backgroundUrl",backgroundUrl)
+                    SPUtil.putString("matureTime",matureTime)
+                    showToasts(getString(R.string.login_success)+data!!.message)
+                    Log.i("registerActivity",data!!.message)
+                    finish()
+                }else{
+                    val data = response.body()
+                    Log.i("registerActivity",data!!.message)
+                    showToasts(getString(R.string.login_failed)+data!!.message)
+                }
+            }
+
+            override fun onFailure(call: Call<LoginService>, t: Throwable) {
+                Log.i("registerActivity", t.toString())
+                showToasts(getString(R.string.login_failed)+t)
+            }
+
+        })
+
+
+    }
+
+    fun showToasts(message:String){
+        Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT).show()
     }
 
 
