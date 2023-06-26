@@ -31,7 +31,7 @@ class MobileEditText @JvmOverloads constructor(context: Context, attrs: Attribut
         val   minimumWidth: Int=draw!!.minimumWidth
         val   minimumHeight: Int=draw!!.minimumHeight
         draw!!.setBounds(0,0,minimumWidth,minimumHeight)
-        isShow(true)
+        isShow(false)
     }
     //控制显示隐藏
     private fun isShow(isShow:Boolean){
@@ -74,5 +74,10 @@ class MobileEditText @JvmOverloads constructor(context: Context, attrs: Attribut
         lengthBefore: Int,
         lengthAfter: Int
     ) {
+        if(TextUtils.isEmpty(text.toString())){
+            isShow(false)
+        }else{
+            isShow(true)
+        }
     }
 }
