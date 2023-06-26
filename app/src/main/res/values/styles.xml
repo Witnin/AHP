@@ -60,4 +60,13 @@
     <style name="leftMargin_lineAppearance" parent="lineAppearance">
         <item name="leftMargin">10dp</item>
     </style>
+    <style name="btn_off">
+        <item name="android:track">@drawable/etbg</item>
+        <item name="android:thumb">@drawable/btn_shape</item>
+        <item name="android:background">@null</item>
+        <item name="android:textOff">关闭</item>
+        <item name="android:textOn">打开</item>
+        <item name="android:switchMinWidth">50dp</item>
+
+    </style>
 </resources>

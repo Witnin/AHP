@@ -33,5 +33,6 @@ object ArouterUrl {
     const val VIEWMODEL_CAL = "/viewmodel/cal"
     const val NOW_ARTICLE = "/now/article"
     const val NOW_ARTICLE_REGISTER = "/article/register"
+    const val NOW_ARTICLE_SETTING = "/article/setting"
 
 }

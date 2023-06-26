@@ -22,6 +22,10 @@ class MyFragment: HiBaseFragment(),CountDownListener {
             navigation("/article/register")
         }
 
+        layoutView.findViewById<View>(R.id.toutiao_setting).setOnClickListener {
+            navigation("/article/setting")
+        }
+
     }
 
     override fun getLayoutId(): Int {

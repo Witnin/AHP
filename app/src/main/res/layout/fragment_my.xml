@@ -26,4 +26,12 @@
      android:text="注册"
      app:layout_constraintTop_toBottomOf="@id/countDown"
     />
+
+    <Button
+        android:id="@+id/toutiao_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置"
+        app:layout_constraintTop_toBottomOf="@id/toutiao_register"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingsItem">
+        <attr name="leftTitle" format="string" />
+        <attr name="contentTitle" format="string" />
+        <attr name="rightTitle" format="string" />
+        <attr name="isShowButton" format="boolean" />
+        <attr name="isShowImage" format="boolean" />
+    </declare-styleable>
+</resources>
