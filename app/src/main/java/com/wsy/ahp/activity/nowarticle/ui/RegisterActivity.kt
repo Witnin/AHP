@@ -114,12 +114,6 @@ class RegisterActivity : AppCompatActivity() {
     private fun goLogin() {
         val username = input.text
         val password = input_password.text
-        if(agreement.isChecked){
-            SPUtil.putBoolean("agreement",true)
-            SPUtil.putString("password",password.toString())
-        }else{
-            SPUtil.putBoolean("agreement",false)
-        }
 
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password))
             return
@@ -134,6 +128,12 @@ class RegisterActivity : AppCompatActivity() {
         loginApi.sLogin(requestBody).enqueue(object: Callback<LoginService> {
             override fun onResponse(call: Call<LoginService>, response: Response<LoginService>) {
                 if (response!!.isSuccessful && response.body()!!.code==200){
+                    if(agreement.isChecked){
+                        SPUtil.putBoolean("agreement",true)
+                        SPUtil.putString("password",password.toString())
+                    }else{
+                        SPUtil.putBoolean("agreement",false)
+                    }
                     val data = response.body()
                     val result = data!!.result
                     Log.i("registerActivity",data!!.message)
