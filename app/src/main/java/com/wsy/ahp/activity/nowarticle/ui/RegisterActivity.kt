@@ -1,6 +1,7 @@
 package com.wsy.ahp.activity.nowarticle.ui
 
 import android.annotation.SuppressLint
+import android.content.res.Resources
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -42,6 +43,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        input.width = 600
 
         if(SPUtil.getBoolean("agreement") && SPUtil.getString("username")!=null && SPUtil.getString("password")!=null){
             input.setText(SPUtil.getString("username"))

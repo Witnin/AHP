@@ -1,5 +1,6 @@
 package com.wsy.common.ui.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.text.Editable
@@ -16,7 +17,7 @@ import com.wsy.common.R
  * time   : 2023/06/21
  * desc   : 自定义手机号码输入框
  */
-class MobileEditText @JvmOverloads constructor(context: Context, attrs: AttributeSet?=null, defStyleAttr: Int = com.google.android.material.R.attr.editTextStyle
+class MobileEditText @JvmOverloads constructor(context: Context, attrs: AttributeSet?=null, defStyleAttr: Int = androidx.appcompat.R.attr.editTextStyle
 ) : AppCompatEditText(context, attrs, defStyleAttr) , TextWatcher {
 
     //设置默认的删除图标
@@ -30,7 +31,7 @@ class MobileEditText @JvmOverloads constructor(context: Context, attrs: Attribut
         val   minimumWidth: Int=draw!!.minimumWidth
         val   minimumHeight: Int=draw!!.minimumHeight
         draw!!.setBounds(0,0,minimumWidth,minimumHeight)
-        isShow(false)
+        isShow(true)
     }
     //控制显示隐藏
     private fun isShow(isShow:Boolean){
@@ -55,6 +56,7 @@ class MobileEditText @JvmOverloads constructor(context: Context, attrs: Attribut
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         if(event!!.action==MotionEvent.ACTION_DOWN){
             val isDelete:Boolean = event.x>(width-totalPaddingRight)&&

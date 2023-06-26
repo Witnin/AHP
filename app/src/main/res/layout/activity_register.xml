@@ -60,7 +60,7 @@
 
         <com.wsy.common.ui.view.MobileEditText
             android:id="@+id/input"
-            android:layout_width="288dp"
+            android:layout_width="650dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:autofillHints="true"
@@ -72,7 +72,7 @@
             android:paddingStart="23dp"
             android:paddingLeft="23dp"
             android:textSize="@dimen/dp_14"
-            tools:ignore="RtlSymmetry,TextSizeCheck,TouchTargetSizeCheck" />
+          />
 
     </LinearLayout>
 
@@ -112,7 +112,7 @@
 
         <com.wsy.common.ui.view.MobileEditText
             android:id="@+id/input_password"
-            android:layout_width="288dp"
+            android:layout_width="650dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:autofillHints="true"
