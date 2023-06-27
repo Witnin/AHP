@@ -4,34 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
-
-
-
-  <TextView
-      android:id="@+id/countDown"
-      android:layout_width="wrap_content"
-      android:layout_height="18dp"
-      android:layout_gravity="center"
-      app:layout_constraintRight_toRightOf="parent"
-      android:text="倒计时"
-      tools:ignore="MissingConstraints" />
-
-
- <Button
-     android:id="@+id/toutiao_register"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:text="注册"
-     app:layout_constraintTop_toBottomOf="@id/countDown"
-    />
-
-    <Button
-        android:id="@+id/toutiao_setting"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/time_rl"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="设置"
-        app:layout_constraintTop_toBottomOf="@id/toutiao_register"
-        />
+        app:layout_constraintRight_toLeftOf="@+id/settings_rl"
+        tools:ignore="MissingConstraints">
+    <TextView
+        android:id="@+id/countDown"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_gravity="center_horizontal"
+
+        android:text="倒计时"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginRight="@dimen/dp_14"
+        tools:ignore="MissingConstraints" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/settings_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints">
+    <ImageView
+
+        android:id="@+id/toutiao_setting"
+        android:src="@mipmap/setting"
+        android:padding="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/setting"
+      />
+    </RelativeLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_login"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/my_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toutiao_login"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/_46dp"
+            app:cardBackgroundColor="@color/color_298"
+            android:visibility="gone"
+            app:cardCornerRadius="46dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <TextView
+                android:layout_gravity="center"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/login_success"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar_Image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:src="@drawable/nav_icon"
+           />
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/avatar_Image"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_3"
+            android:text="姓名"/>
+        <TextView
+            android:id="@+id/toutiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/avatar_Image"
+            android:layout_below="@+id/username"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="头条"/>
+        <TextView
+            android:id="@+id/toutiao_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toutiao"
+            android:layout_below="@+id/username"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="99+"/>
+        <TextView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/toutiao_num"
+            android:layout_below="@+id/username"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="粉丝"/>
+        <TextView
+            android:id="@+id/star_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/star"
+            android:layout_below="@+id/username"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="10"/>
+        <TextView
+            android:id="@+id/certification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_14"
+            android:textColor="@color/color_c61"
+            android:text="申请认证"/>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_common_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/dp_48">
+
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

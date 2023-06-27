@@ -18,7 +18,7 @@ class MyFragment: HiBaseFragment(),CountDownListener {
         mAuthCodeTimer = AuthCodeTimer(1*60*1000,1000,this)
         mAuthCodeTimer!!.start()
 
-        layoutView.findViewById<View>(R.id.toutiao_register).setOnClickListener {
+        layoutView.findViewById<View>(R.id.toutiao_login).setOnClickListener {
             navigation("/article/register")
         }
 
