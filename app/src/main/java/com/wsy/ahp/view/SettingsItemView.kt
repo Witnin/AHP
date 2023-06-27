@@ -1,17 +1,20 @@
 package com.wsy.ahp.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import androidx.core.content.ContextCompat
 import com.wsy.ahp.R
 import kotlinx.android.synthetic.main.settings_item_view.view.btn_off
 import kotlinx.android.synthetic.main.settings_item_view.view.content_title
 import kotlinx.android.synthetic.main.settings_item_view.view.iv_right_back
 import kotlinx.android.synthetic.main.settings_item_view.view.left_title
 import kotlinx.android.synthetic.main.settings_item_view.view.right_title
+import kotlinx.android.synthetic.main.settings_item_view.view.rl_item
 
 class SettingsItemView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,defStyleAttr:Int = 0
@@ -21,7 +24,9 @@ class SettingsItemView @JvmOverloads constructor(
     private var rightTitle:String? = ""
     private var isShowButton:Boolean = false
     private var isShowImage:Boolean = false
+    private var view:View? = null
 
+    @SuppressLint("CustomViewStyleable")
     private val settingsArray:TypedArray = context.obtainStyledAttributes(attrs, R.styleable.SettingsItem)
     init {
         leftTitle = settingsArray.getString(R.styleable.SettingsItem_leftTitle)
@@ -34,12 +39,12 @@ class SettingsItemView @JvmOverloads constructor(
     }
 
     private fun initView() {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.settings_item_view,this)
-        view.left_title.text = leftTitle
-        view.right_title.text = rightTitle
-        view.content_title.text = contentTitle
-        isShowBtn(view)
-        isShowImage(view)
+        view= LayoutInflater.from(context).inflate(R.layout.settings_item_view,this)
+        view!!.left_title.text = leftTitle
+        view!!.right_title.text = rightTitle
+        view!!.content_title.text = contentTitle
+        isShowBtn(view!!)
+        isShowImage(view!!)
     }
 
     private fun isShowBtn(view:View){
@@ -57,4 +62,8 @@ class SettingsItemView @JvmOverloads constructor(
             view.iv_right_back.visibility = View.GONE
         }
     }
+
+     fun setBgItem(colorIds:Int){
+         view!!.rl_item.setBackgroundColor(ContextCompat.getColor(context,colorIds))
+     }
 }

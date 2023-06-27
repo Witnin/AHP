@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_4e4"
     tools:context=".activity.nowarticle.ui.SettingsActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_title"
         app:contentInsetStart="0dp"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,35 +41,197 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginStart="@dimen/dp_14"
+            android:layout_marginEnd="@dimen/dp_14"
             android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_shape_20"
+            android:orientation="vertical">
+
             <com.wsy.ahp.view.SettingsItemView
+                android:id="@+id/settings_night"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:leftTitle="夜间模式"
+                app:contentTitle="模式选择，可以选择夜间或者白天模式"
                 app:isShowButton="true"
 
                 />
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@color/c_d8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+            <com.wsy.ahp.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                app:leftTitle="轻触"
+                app:rightTitle="对的"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@color/c_d8"
+                app:layout_constraintLeft_toLeftOf="parent"
+            />
 
             <com.wsy.ahp.view.SettingsItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:leftTitle="轻触"
-                app:rightTitle="对的"
-                />
-            <com.wsy.ahp.view.SettingsItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
                 app:leftTitle="轻触"
                 app:isShowImage = "true"
                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@color/c_d8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+            <com.wsy.ahp.view.SettingsItemView
+                android:id="@+id/yi_ji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                app:leftTitle="一级"
+                app:isShowImage = "true"
+                />
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_14"
+                android:layout_marginBottom="@dimen/dp_14"
+                android:background="@color/color_4e4">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="隐私设置"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:textSize="@dimen/dp_14"
+
+                    />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_shape_20"
+            android:orientation="vertical">
+            <com.wsy.ahp.view.SettingsItemView
+                android:id="@+id/people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                app:leftTitle="允许推荐可能我认识的人"
+                app:isShowButton="true"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@color/c_d8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
             <com.wsy.ahp.view.SettingsItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:leftTitle="一级"
-                app:contentTitle="内容"
+                android:layout_marginTop="@dimen/dp_5"
+                app:leftTitle="检查版本"
+                app:rightTitle="2.9.6"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@color/c_d8"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+            <com.wsy.ahp.view.SettingsItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                app:leftTitle="关于知识库"
                 app:isShowImage = "true"
                 />
         </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:background="@color/color_4e4"
+                    android:textSize="@dimen/dp_14"
+
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/btn_shape_20"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="@string/log_out"
+                        android:textColor="@color/color_c61"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:textSize="@dimen/dp_16"
+
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text=""
+                    android:background="@color/color_4e4"
+                    android:textSize="@dimen/dp_14"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/all_right_reserved_by_nanputech_com"
+                    android:background="@color/color_4e4"
+                    android:textSize="@dimen/dp_14"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sp"
+                    android:text=""
+                    android:background="@color/color_4e4"
+                    android:textSize="@dimen/dp_14"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

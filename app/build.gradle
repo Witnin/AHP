@@ -232,4 +232,7 @@ dependencies {
 
 //    FlycoTabLayout
     implementation 'io.github.h07000223:flycoTabLayout:3.0.0'
+
+    //开关控件LSwitch
+    implementation 'com.github.liys666666:LSwitch:V1.1.2'
 }

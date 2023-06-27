@@ -23,6 +23,7 @@
 
 
     <color name="colorPrimary">#008577</color>
+    <color name="btn_off">#bfcce4</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
@@ -41,6 +42,7 @@
     <color name="color_eee">#eeeeee</color>
     <color name="color_fef">#feffff</color>
     <color name="color_666">#666666</color>
+    <color name="color_4e4">#e4e4e4</color>
     <color name="color_333">#333333</color>
     <color name="color_656">#656667</color>
     <color name="color_background">#f3f4f5</color>
@@ -53,6 +55,7 @@
     <color name="color_c61">#C61B00</color>
     <color name="color_d9f">#D9F8CE</color>
     <color name="color_00a">#00AD00</color>
+    <color name="color_32ff7e">#32ff7e</color>
     <color name="color_faf0">#FAF0EE</color>
     <color name="color_eed">#eed7ad</color>
     <color name="color_d43">#d4372e</color>
