@@ -17,23 +17,20 @@ import com.wsy.ahp.fragment.nowarticle.MiniVideoFragment
 import com.wsy.ahp.fragment.nowarticle.MyFragment
 import com.wsy.ahp.fragment.nowarticle.VideoFragment
 import com.wsy.ahp.http.common.ArouterUrl
+import com.wsy.common.ui.component.BaseActivity
 import com.wsy.common.utils.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_now_article.ctl_home
 import kotlinx.android.synthetic.main.activity_now_article.vp_home
 
 @Route(path = ArouterUrl.NOW_ARTICLE)
-class NowArticleActivity : AppCompatActivity() {
+class NowArticleActivity : BaseActivity() {
 
     private val titleTabs = ArrayList<CustomTabEntity>()
 
     private val fragments = ArrayList<Fragment>()
+    override fun getLayoutId(): Int = R.layout.activity_now_article
 
-    @SuppressLint("Recycle")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_now_article)
-        //设置状态栏颜色
-        StatusBarUtils.setStatusBar(this,1,R.color.color_298)
+    override fun initData() {
         val titles = resources.getStringArray(R.array.title)
         val selectIds: TypedArray = resources.obtainTypedArray(R.array.selected)
         val unSelectIds: TypedArray = resources.obtainTypedArray(R.array.unselected)
@@ -78,6 +75,10 @@ class NowArticleActivity : AppCompatActivity() {
                     position,
                     false
                 )//smoothScroll控制ViewPager动画，false关闭后ViewPager不会闪烁
+                when(position){
+                    0,1,2 -> setLightStatusBar()
+                    3 ->setTransStatusBar()
+                }
             }
 
             override fun onTabReselect(position: Int) {
@@ -89,5 +90,9 @@ class NowArticleActivity : AppCompatActivity() {
 
 
         })
+    }
+
+    override fun init() {
+
     }
 }
