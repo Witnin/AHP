@@ -144,5 +144,6 @@
     <string name="log_out">退出登录</string>
     <string name="all_right_reserved_by_nanputech_com">All Right Reserved By NanPuTech.com</string>
     <string name="commonly_use">常用</string>
+    <string name="null_data">null</string>
 
 </resources>
