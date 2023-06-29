@@ -34,5 +34,6 @@ object ArouterUrl {
     const val NOW_ARTICLE = "/now/article"
     const val NOW_ARTICLE_REGISTER = "/article/register"
     const val NOW_ARTICLE_SETTING = "/article/setting"
+    const val USERINFO_DES = "/userinfo/des"
 
 }

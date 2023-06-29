@@ -148,6 +148,7 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.viewmodel_cal).setOnClickListener(v ->{navigation(ArouterUrl.VIEWMODEL_CAL);});
         layoutView.findViewById(R.id.now_article).setOnClickListener(v ->{navigation(ArouterUrl.NOW_ARTICLE);});
 
+
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{
             for (int priority = 0; priority < 10;priority++){
                 int finalPriority = priority;

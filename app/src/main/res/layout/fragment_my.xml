@@ -108,23 +108,26 @@
             android:layout_marginTop="@dimen/dp_14"
             android:textColor="@color/black"
            />
-        <TextView
-            android:id="@+id/certification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/toutiao_setting"
-            android:layout_marginRight="@dimen/dp_14"
-            android:textColor="@color/color_c61"
-            android:text="申请认证"/>
         <ImageView
-            android:id="@+id/toutiao_setting"
-            android:src="@mipmap/setting"
-            android:layout_alignParentRight="true"
+            android:id="@+id/toutiao_des"
+            android:src="@mipmap/right"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/username"
             android:padding="10dip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/setting"
             />
+        <TextView
+            android:id="@+id/certification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_14"
+            android:textColor="@color/color_c61"
+            android:text="申请认证"/>
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

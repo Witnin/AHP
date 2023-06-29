@@ -51,11 +51,11 @@ class MyFragment: HiBaseFragment(),CountDownListener {
             navigation("/article/register")
         }
 
-        layoutView.findViewById<View>(R.id.toutiao_setting).setOnClickListener {
-            navigation("/article/setting")
+        layoutView.findViewById<View>(R.id.toutiao_des).setOnClickListener {
+            navigation("/userinfo/des")
         }
 
-        val item = CommonItemModel("我的关注1",R.mipmap.icon_case.toString())
+        val item = CommonItemModel("锁定信息","https://kcqzypt.oss-cn-beijing.aliyuncs.com/upload/password.png")
         mCommonList.add(item)
         val item2 = CommonItemModel("我的关注2",R.mipmap.tab_home_selected.toString())
         mCommonList.add(item2)
@@ -85,7 +85,7 @@ class MyFragment: HiBaseFragment(),CountDownListener {
         mCommonList.add(item14)
         val item15 = CommonItemModel("我的关注15",R.mipmap.username.toString())
         mCommonList.add(item15)
-        val item16 = CommonItemModel("我的关注16",R.mipmap.tab_home_selected.toString())
+        val item16 = CommonItemModel("设置中心","https://kcqzypt.oss-cn-beijing.aliyuncs.com/upload/setting.png","/article/setting")
         mCommonList.add(item16)
 
         val item1 =CommonItemModel("测试功能",R.mipmap.tab_home_selected.toString())

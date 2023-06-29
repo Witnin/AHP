@@ -92,8 +92,8 @@
     <string name="input_item_title_course_order_id">课程订单号</string>
     <string name="input_item_hint_order_id">请输入课程的订单号后四位</string>
     <string name="action_submit">提交</string>
-    <string name="input_item_title_moocid">慕课账号ID</string>
-    <string name="input_item_hint_moocid">请输入慕课账号ID</string>
+    <string name="input_item_title_moocid">账号ID</string>
+    <string name="input_item_hint_moocid">请输入账号ID</string>
     <string name="input_item_hint_pwd">请输入密码</string>
     <string name="input_item_hint_pwd2">请再次输入密码</string>
     <string name="input_item_title_pwd2">确认密码</string>
@@ -135,6 +135,8 @@
     <string name="search_key_word">请输入关键字</string>
     <string name="search">Search</string>
     <string name="setting">设置</string>
+    <string name="edit">编辑资料</string>
+    <string name="introduce">介绍一下</string>
     <string name="message_name">XiaoYan</string>
     <string name="tab_name">tab_name</string>
     <string name="settings">&#xe61d; 设置</string>
@@ -145,5 +147,10 @@
     <string name="all_right_reserved_by_nanputech_com">All Right Reserved By NanPuTech.com</string>
     <string name="commonly_use">常用</string>
     <string name="null_data">null</string>
+    <string name="album">从相册选择</string>
+    <string name="cancel">取消</string>
+    <string name="take_photo">拍照</string>
+    <string name="woman">女</string>
+    <string name="man">男</string>
 
 </resources>

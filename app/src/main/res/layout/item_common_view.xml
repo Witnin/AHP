@@ -32,7 +32,7 @@
         android:id="@+id/rv_common_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/sp_5"
+        android:layout_margin="@dimen/sp_8"
         android:background="@drawable/btn_shape_20"
         >
 

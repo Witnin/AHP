@@ -54,6 +54,9 @@
         android:versionName="@string/app_version"
         tools:targetApi="31">
         <activity
+            android:name=".activity.nowarticle.ui.UserInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.nowarticle.ui.SettingsActivity"
             android:exported="false" />
         <activity

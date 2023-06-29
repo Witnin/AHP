@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.android.arouter.launcher.ARouter
 import com.bumptech.glide.Glide
 import com.wsy.ahp.R
 import com.wsy.ahp.fragment.nowarticle.model.CommonItemModel
@@ -29,14 +30,13 @@ class CommonItemAdapter(mCommonItemList: MutableList<CommonItemModel>):RecyclerV
         viewHolder.title.setOnClickListener{
             val position = viewHolder.adapterPosition
             val commonItem = mCommonItemList!![position]
-            Toast.makeText(parent.context, "you clicked image ${commonItem.title}",
-                Toast.LENGTH_SHORT).show()
+            commonItem.route?.let { it1 -> navigation(it1) }
         }
         viewHolder.icon.setOnClickListener{
             val position = viewHolder.adapterPosition
             val commonItem = mCommonItemList!![position]
-            Toast.makeText(parent.context, "you clicked image ${commonItem.title}",
-                Toast.LENGTH_SHORT).show()
+            commonItem.route?.let { it1 -> navigation(it1) }
+
         }
         return viewHolder
     }
@@ -52,5 +52,9 @@ class CommonItemAdapter(mCommonItemList: MutableList<CommonItemModel>):RecyclerV
 
     override fun getItemCount(): Int {
        return mCommonItemList!!.size
+    }
+
+    private fun navigation(s: String) {
+        ARouter.getInstance().build(s).navigation()
     }
 }
