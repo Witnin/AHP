@@ -4,39 +4,174 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_4e4"
     tools:context=".activity.nowarticle.ui.UserInfoActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_title"
-        app:contentInsetStart="0dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        android:background="@color/white"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/tv_image"
-            android:src="@mipmap/icon_back"
-            android:padding="10dip"
-            android:layout_marginStart="@dimen/dp_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/back" />
+            android:layout_marginStart="@dimen/dp_14"
+            android:contentDescription="@string/back"
+            android:padding="10dip"
+            android:src="@mipmap/icon_back" />
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/edit"
-            android:textSize="@dimen/sp_14"
-            android:textColor="@color/black"
             android:layout_gravity="center_horizontal"
-            />
+            android:text="@string/userInfo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
     </androidx.appcompat.widget.Toolbar>
-    <com.wsy.ahp.view.UserInfoItemView
-        android:id="@+id/change_avatar"
-        app:layout_constraintTop_toBottomOf="@+id/tb_title"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_48"
-        app:user_leftTitle="头像"
-        app:user_isShowImage="false"
-        />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_marginEnd="@dimen/dp_14"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_shape_20"
+                android:orientation="vertical">
+
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/change_avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="true"
+                    app:user_leftTitle="头像" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_real_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="昵称" />
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="介绍" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="手机号" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="邮箱" />
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="性别" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_region"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="地区" />
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

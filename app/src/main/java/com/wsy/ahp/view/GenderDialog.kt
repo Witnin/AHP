@@ -10,16 +10,16 @@ class GenderDialog: BaseDialogFragment() {
     private var mDialogFragmentListener:DialogFragmentListener?=null
     override fun getLayout(): Int = R.layout.dialog_gender
 
-    override fun initView(views: View) {
-        view?.man?.setOnClickListener{
+    override fun initView(view: View) {
+        view.man.setOnClickListener{
             mDialogFragmentListener!!.onDialog(1)
             dismiss()
         }
-        view?.woman?.setOnClickListener{
+        view.woman.setOnClickListener{
             mDialogFragmentListener!!.onDialog(2)
             dismiss()
         }
-        view?.cancel?.setOnClickListener{
+        view.cancel.setOnClickListener{
             dismiss()
         }
     }

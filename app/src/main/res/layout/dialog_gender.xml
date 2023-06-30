@@ -4,14 +4,16 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="130dp"
+        android:layout_width="250dp"
+        android:layout_height="180dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/man"
-            android:layout_marginTop="@dimen/sp_14"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/sp_30"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/sp_5"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/man"
@@ -21,7 +23,9 @@
         <TextView
             android:id="@+id/woman"
             android:layout_marginTop="@dimen/sp_16"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/sp_5"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/color_298"
@@ -30,7 +34,9 @@
         <TextView
             android:id="@+id/cancel"
             android:layout_marginTop="@dimen/sp_14"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/sp_5"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/color_298"

@@ -136,7 +136,8 @@
     <string name="search">Search</string>
     <string name="setting">设置</string>
     <string name="edit">编辑资料</string>
-    <string name="introduce">介绍一下</string>
+    <string name="userInfo">个人信息</string>
+    <string name="introduce">null</string>
     <string name="message_name">XiaoYan</string>
     <string name="tab_name">tab_name</string>
     <string name="settings">&#xe61d; 设置</string>

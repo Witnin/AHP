@@ -44,12 +44,16 @@
         android:id="@+id/login_success"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/dp_40"
+        android:background="@drawable/btn_shape_20"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginRight="@dimen/dp_14"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="98dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/avatar_Image"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_marginTop="@dimen/dp_14"
             android:layout_marginLeft="@dimen/dp_14"
             android:src="@drawable/nav_icon"
            />
@@ -59,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/avatar_Image"
             android:layout_marginLeft="@dimen/dp_14"
-            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginTop="@dimen/dp_14"
             android:text="姓名"/>
         <TextView
             android:id="@+id/toutiao"
@@ -125,6 +129,7 @@
             android:layout_height="wrap_content"
            android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_14"
             android:textColor="@color/color_c61"
             android:text="申请认证"/>
 

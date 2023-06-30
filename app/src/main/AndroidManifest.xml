@@ -8,6 +8,9 @@
         android:required="true" />
     <uses-feature
         android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="false" /> <!-- 允许程序打开网络套接字 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序设置内置sd卡的写权限 -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 通知权限 -->
@@ -36,6 +39,16 @@
     <!-- 通讯录 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 前台service -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
     <application
         android:name=".HiApplication"

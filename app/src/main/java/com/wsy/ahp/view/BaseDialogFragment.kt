@@ -30,7 +30,7 @@ abstract class BaseDialogFragment : DialogFragment() {
 
     protected abstract fun getLayout(): Int
 
-    protected abstract fun initView(views: View)
+    protected abstract fun initView(view: View)
 
     protected abstract fun initDate()
 
