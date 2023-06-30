@@ -13,6 +13,7 @@ import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.ahp.view.DialogFragmentListener
+import com.wsy.ahp.view.EditDialog
 import com.wsy.ahp.view.GenderDialog
 import com.wsy.ahp.view.GlideEngine
 import com.wsy.ahp.view.PhotoDialog
@@ -74,6 +75,17 @@ class UserInfoActivity : AppCompatActivity() {
 
                             }
                         }
+                    }
+                })
+            }
+        })
+
+        user_info_real_name.setUserOnClickListener(object : UserInfoItemView.UserOnClickListener {
+            override fun userOnClick(view: View) {
+                val mPhoto = EditDialog()
+                mPhoto.show(supportFragmentManager, "editDialog")
+                mPhoto.setDialogFragmentListener(object : DialogFragmentListener {
+                    override fun onDialog(type: Int) {
                     }
                 })
             }
