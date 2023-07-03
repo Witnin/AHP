@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.bumptech.glide.Glide
 import com.luck.picture.lib.basic.PictureSelector
 import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.entity.LocalMedia
@@ -14,13 +13,11 @@ import com.wsy.ahp.R
 import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.ahp.view.DialogFragmentListener
 import com.wsy.ahp.view.EditDialog
+import com.wsy.ahp.view.EditTextDialogListener
 import com.wsy.ahp.view.GenderDialog
 import com.wsy.ahp.view.GlideEngine
-import com.wsy.ahp.view.PhotoDialog
 import com.wsy.ahp.view.UserInfoItemView
 import kotlinx.android.synthetic.main.activity_user_info.*
-import kotlinx.android.synthetic.main.fragment_my.avatar_Image
-import kotlinx.android.synthetic.main.item_user_info.view.user_info_item_avatar
 
 
 @Route(path = ArouterUrl.USERINFO_DES)
@@ -82,10 +79,11 @@ class UserInfoActivity : AppCompatActivity() {
 
         user_info_real_name.setUserOnClickListener(object : UserInfoItemView.UserOnClickListener {
             override fun userOnClick(view: View) {
-                val mPhoto = EditDialog()
+                val mPhoto = EditDialog("请输入昵称")
                 mPhoto.show(supportFragmentManager, "editDialog")
-                mPhoto.setDialogFragmentListener(object : DialogFragmentListener {
-                    override fun onDialog(type: Int) {
+                mPhoto.setEditTextDialogListener(object : EditTextDialogListener {
+                    override fun onDialog(content: String) {
+                        user_info_real_name.setTextRight(content)
                     }
                 })
             }
@@ -93,7 +91,7 @@ class UserInfoActivity : AppCompatActivity() {
 
 
 
-        user_info_real_name.setTextRight("小张")
+
     }
 
     private fun selectPhoto() {

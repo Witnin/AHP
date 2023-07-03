@@ -15,7 +15,7 @@
     </style>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_298</item>
         <item name="colorPrimaryDark">@color/translucent</item>
@@ -68,5 +68,12 @@
         <item name="android:textOn">打开</item>
         <item name="android:switchMinWidth">50dp</item>
 
+    </style>
+
+    <style name="Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>
