@@ -1,12 +1,16 @@
 package com.wsy.wsy_library.util
 
 import android.graphics.Rect
+import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
+import java.text.SimpleDateFormat
+import java.util.Date
 
-
-
-    fun getGlobalListener(
+/**
+ * 键盘回弹
+ */
+fun getGlobalListener(
         decorView: View,
         contentView: View
     ): ViewTreeObserver.OnGlobalLayoutListener {
@@ -27,6 +31,12 @@ import android.view.ViewTreeObserver
                 }
         }
     }
+
+ fun getTime(date: Date): String? { //可根据需要自行截取数据显示
+    Log.d("getTime()", "choice date millis: " + date.getTime())
+    val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    return format.format(date)
+}
 
 
 

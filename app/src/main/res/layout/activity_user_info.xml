@@ -161,6 +161,23 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     />
                 <com.wsy.ahp.view.UserInfoItemView
+                    android:id="@+id/user_info_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tb_title"
+                    app:user_isShowImage="false"
+                    app:user_leftTitle="生日" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:background="@color/c_d8"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <com.wsy.ahp.view.UserInfoItemView
                     android:id="@+id/user_info_region"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_48"
