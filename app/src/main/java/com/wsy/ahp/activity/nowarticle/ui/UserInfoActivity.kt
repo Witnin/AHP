@@ -174,11 +174,11 @@ class UserInfoActivity : AppCompatActivity() {
                     val data = response.body()
                     val result = data!!.message
                     SPUtil.putString("avatar",result)
-                    showToasts(getString(R.string.upload_success)+data!!.message)
+                    showToasts(getString(R.string.upload_success))
                     finish()
                 }else{
                     val data = response.body()
-                    showToasts(getString(R.string.upload_failed)+data!!.message)
+                    showToasts(getString(R.string.upload_failed))
                     Log.i("UserInfoActivity",data!!.message)
                 }
             }

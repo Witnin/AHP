@@ -90,6 +90,13 @@ class NowArticleActivity : BaseActivity() {
 
 
         })
+
+        ctl_home.showDot(1)
+        ctl_home.showMsg(0, 55);
+        ctl_home.setMsgMargin(0, -5f, 2f);
+
+        ctl_home.showMsg(2, 100);
+        ctl_home.setMsgMargin(2, -5f, 1f);
     }
 
     override fun init() {
