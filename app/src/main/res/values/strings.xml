@@ -87,6 +87,8 @@
 
     <string name="input_item_title_pwd">密码</string>
     <string name="login_success">登录成功</string>
+    <string name="upload_success">上传成功</string>
+    <string name="upload_failed">上传失败</string>
     <string name="login_failed">登陆失败:</string>
     <string name="get_failed">获取失败:</string>
     <string name="input_item_title_course_order_id">课程订单号</string>
