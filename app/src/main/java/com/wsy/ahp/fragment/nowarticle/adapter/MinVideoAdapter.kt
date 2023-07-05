@@ -1,15 +1,16 @@
 package com.wsy.ahp.fragment.nowarticle.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.wsy.ahp.R
 import com.wsy.ahp.fragment.nowarticle.model.MinVideoModel
+import kotlinx.coroutines.withContext
 
 class MinVideoAdapter(minVideoList: MutableList<MinVideoModel>):RecyclerView.Adapter<MinVideoAdapter.MinVideoHolder>() {
 
@@ -22,8 +23,17 @@ class MinVideoAdapter(minVideoList: MutableList<MinVideoModel>):RecyclerView.Ada
         val videoPlayTimes:TextView = it.findViewById(R.id.video_play_times)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MinVideoHolder
-        = MinVideoHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_min_video,parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MinVideoHolder{
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_min_video,parent,false)
+        val holder = MinVideoHolder(view)
+        holder.itemView.setOnClickListener{
+            val position = holder.absoluteAdapterPosition
+            val video = minVideoList[position]
+            Toast.makeText(parent.context, "video标题:${video.title} ", Toast.LENGTH_SHORT).show()
+        }
+        return holder
+    }
+
 
     override fun getItemCount(): Int {
         return minVideoList.size

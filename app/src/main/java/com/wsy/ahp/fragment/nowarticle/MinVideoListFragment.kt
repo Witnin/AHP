@@ -22,10 +22,8 @@ class MinVideoListFragment:HiBaseFragment(){
         super.onViewCreated(view, savedInstanceState)
         views =view
         view.rv_video_list.layoutManager=GridLayoutManager(activity,3)
-
         val item7 = MinVideoModel("极光之夜","https://kcqzypt.oss-cn-beijing.aliyuncs.com/2022/08/11/0df65084705b7d60234a402b2ad88e9_1660198313678.jpg",1,2)
         mList!!.add(item7)
-
         view.rv_video_list.adapter = MinVideoAdapter(mList)
     }
 }
