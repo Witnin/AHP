@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="4dp">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="290dp">
+    <ImageView
+        android:id="@+id/video_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:id="@+id/video_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_14"
+        android:textColor="@color/black"
+        android:text="@string/beautiful_scenes"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_above="@+id/video_play_times"
+        android:drawablePadding="@dimen/dp_5"/>
+    <TextView
+        android:id="@+id/video_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_14"
+        android:textColor="@color/black"
+        android:text="@string/like"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dp_14"
+        android:layout_alignParentBottom="true"
+        android:drawablePadding="@dimen/dp_5"/>
+    <TextView
+        android:id="@+id/video_play_times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dp_14"
+        android:textColor="@color/black"
+        android:text="@string/play_times"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dp_14"
+        android:drawableLeft="@mipmap/publish"
+        android:drawablePadding="@dimen/dp_5"
+        />
+</RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

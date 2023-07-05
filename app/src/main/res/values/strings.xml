@@ -159,5 +159,8 @@
     <string name="please_input">请输入...</string>
     <string name="finish">完成</string>
     <string name="publish">发布</string>
+    <string name="play_times">154万次播放</string>
+    <string name="beautiful_scenes">美丽的极光</string>
+    <string name="like">208次点赞</string>
 
 </resources>
