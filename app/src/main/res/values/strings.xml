@@ -158,5 +158,6 @@
     <string name="input_username">请输入用户名</string>
     <string name="please_input">请输入...</string>
     <string name="finish">完成</string>
+    <string name="publish">发布</string>
 
 </resources>

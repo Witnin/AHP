@@ -76,8 +76,8 @@ class NowArticleActivity : BaseActivity() {
                     false
                 )//smoothScroll控制ViewPager动画，false关闭后ViewPager不会闪烁
                 when(position){
-                    0,1,2 -> setLightStatusBar()
-                    3 ->setTransStatusBar()
+//                    0,1,2 -> setLightStatusBar()
+                    0,1,2,3 ->setTransStatusBar()
                 }
             }
 

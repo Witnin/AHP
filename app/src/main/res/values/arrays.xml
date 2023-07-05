@@ -16,6 +16,15 @@
         <item>短视频</item>
         <item>我的</item>
     </string-array>
+
+    <string-array name="video">
+        <item>水质</item>
+        <item>土壤</item>
+        <item>气体</item>
+        <item>食品</item>
+        <item>噪音</item>
+        <item>其他</item>
+    </string-array>
     <integer-array name="selected">
         <item>@mipmap/tab_home_selected</item>
         <item>@mipmap/tab_video_selected</item>
