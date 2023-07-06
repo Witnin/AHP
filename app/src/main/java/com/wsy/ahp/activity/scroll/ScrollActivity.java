@@ -25,7 +25,7 @@ public class ScrollActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scroll);
-        TabLayout tabLayout = findViewById(R.id.tablayout);
+        TabLayout tabLayout = findViewById(R.id.video_tab_layout);
         ViewPager2 viewPager = findViewById(R.id.viewpager_view);
         viewPager.setAdapter(new RecyclerFragmentAdapter(this,getPageFragments()));
         final String[] labels = new String[]{"水质", "土壤", "其他"};

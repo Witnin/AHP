@@ -31,6 +31,7 @@ import com.wsy.wsy_library.util.getTime
 import kotlinx.android.synthetic.main.activity_user_info.*
 
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -190,7 +191,7 @@ class UserInfoActivity : AppCompatActivity() {
         })
     }
     private fun getParam(file: File): MultipartBody.Part {
-        val requestBody: RequestBody = RequestBody.create(MediaType.parse("image/*"),file)
+        val requestBody: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(),file)
         return MultipartBody.Part.createFormData("file",file.name,requestBody)
     }
 

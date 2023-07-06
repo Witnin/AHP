@@ -39,7 +39,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout"
+                android:id="@+id/video_tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/tab_name" />

@@ -4,6 +4,7 @@ import com.google.gson.JsonObject
 import com.wsy.wsy_library.restful.*
 import okhttp3.FormBody
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -94,7 +95,7 @@ class RetrofitCallFactory(baseUrl: String) : HiCall.Factory {
                     requestBody = builder.build()
                 } else {
                     requestBody = RequestBody.create(
-                        MediaType.parse("application/json;utf-8"),
+                        "application/json;utf-8".toMediaTypeOrNull(),
                         jsonObject.toString()
                     )
                 }
@@ -117,7 +118,7 @@ class RetrofitCallFactory(baseUrl: String) : HiCall.Factory {
                     requestBody = builder.build()
                 } else {
                     requestBody = RequestBody.create(
-                        MediaType.parse("application/json;utf-8"),
+                        "application/json;utf-8".toMediaTypeOrNull(),
                         jsonObject.toString()
                     )
                 }

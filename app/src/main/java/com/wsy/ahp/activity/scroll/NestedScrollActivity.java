@@ -37,7 +37,7 @@ public class NestedScrollActivity extends AppCompatActivity {
         statusBar.hide();
 
         setContentView(R.layout.activity_scroll_nested);
-        TabLayout tabLayout = findViewById(R.id.tablayout);
+        TabLayout tabLayout = findViewById(R.id.video_tab_layout);
         LinearLayout tabViewPager = findViewById(R.id.tab_viewpager);
         NestedScrollView nestedScrollView = findViewById(R.id.nested_scroll_view);
         ViewPager2 viewPager = findViewById(R.id.viewpager_view);

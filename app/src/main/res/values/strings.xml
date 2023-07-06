@@ -162,5 +162,7 @@
     <string name="play_times">154万次播放</string>
     <string name="beautiful_scenes">美丽的极光</string>
     <string name="like">208次点赞</string>
+    <string name="wan">万</string>
+    <string name="tag">标签 水质 土壤</string>
 
 </resources>

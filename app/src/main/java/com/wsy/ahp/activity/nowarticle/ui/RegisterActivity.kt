@@ -32,6 +32,7 @@ import kotlinx.android.synthetic.main.activity_register.input_password
 import kotlinx.android.synthetic.main.activity_register.nextStep
 import kotlinx.android.synthetic.main.activity_register.remember_password
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -129,7 +130,7 @@ class RegisterActivity : AppCompatActivity() {
         val loginBody = LoginBody(username = username.toString(), password.toString())
 
         val requestBody = RequestBody.create(
-            MediaType.parse("application/json"), Gson().toJson(loginBody) )
+            "application/json".toMediaTypeOrNull(), Gson().toJson(loginBody) )
 
         loginApi.sLogin(requestBody).enqueue(object: Callback<LoginService> {
             override fun onResponse(call: Call<LoginService>, response: Response<LoginService>) {
