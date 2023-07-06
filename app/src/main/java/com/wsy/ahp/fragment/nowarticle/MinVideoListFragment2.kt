@@ -12,7 +12,7 @@ import com.wsy.ahp.fragment.nowarticle.viewModel.VideoViewModel
 import com.wsy.common.ui.component.HiBaseFragment
 import kotlinx.android.synthetic.main.fragment_min_video_list.view.rv_video_list
 
-class MinVideoListFragment() :HiBaseFragment(){
+class MinVideoListFragment2() :HiBaseFragment(){
 
     private var views:View? = null
 
@@ -36,9 +36,6 @@ class MinVideoListFragment() :HiBaseFragment(){
         }
 
 
-
-
-
-        view.rv_video_list.adapter = MinVideoAdapter(videoViewModel.mList)
+        view.rv_video_list.adapter = MinVideoAdapter(videoViewModel.mList2)
     }
 }
