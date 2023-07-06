@@ -191,6 +191,7 @@
 
                     />
                 <LinearLayout
+                    android:id="@+id/logout"
                     android:layout_width="match_parent"
                     android:background="@drawable/btn_shape_20"
                     android:layout_height="wrap_content">
@@ -199,7 +200,7 @@
                         android:layout_height="30dp"
                         android:text="@string/log_out"
                         android:textColor="@color/color_c61"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:layout_marginTop="@dimen/dp_5"
                         android:layout_marginBottom="@dimen/dp_5"
                         android:textSize="@dimen/dp_16"

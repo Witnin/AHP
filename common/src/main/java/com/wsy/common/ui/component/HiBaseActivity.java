@@ -22,4 +22,6 @@ public class HiBaseActivity extends AppCompatActivity implements HiBaseActionInt
                 Toast.LENGTH_SHORT
         ).show();
     }
+
+
 }

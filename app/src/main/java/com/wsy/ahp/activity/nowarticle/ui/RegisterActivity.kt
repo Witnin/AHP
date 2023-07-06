@@ -1,5 +1,6 @@
 package com.wsy.ahp.activity.nowarticle.ui
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Bundle
@@ -29,6 +30,7 @@ import kotlinx.android.synthetic.main.activity_register.imageBack
 import kotlinx.android.synthetic.main.activity_register.input
 import kotlinx.android.synthetic.main.activity_register.input_password
 import kotlinx.android.synthetic.main.activity_register.nextStep
+import kotlinx.android.synthetic.main.activity_register.remember_password
 import okhttp3.MediaType
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -71,11 +73,15 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this,"请输入密码", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
-//            else if(!agreement.isChecked){
-//
-//                Toast.makeText(this,"同意用户协议和隐私政策后才可以登录", Toast.LENGTH_LONG).show()
-//                return@setOnClickListener
-//            }
+            else if(!agreement.isChecked){
+
+                Toast.makeText(this,"同意用户协议和隐私政策后才可以登录", Toast.LENGTH_LONG).show()
+                ObjectAnimator.ofFloat(remember_password, "translationX", 0f, 25f, -25f, 25f, -25f, 15f,
+                    -15f, 6f, -6f, 0f).also {
+                    it.duration = 1000
+                }.start()
+                return@setOnClickListener
+            }
             else{
 
                 goLogin()
