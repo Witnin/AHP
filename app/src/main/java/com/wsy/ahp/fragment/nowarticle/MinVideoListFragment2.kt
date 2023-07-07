@@ -6,9 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.wsy.ahp.R
 import com.wsy.ahp.fragment.nowarticle.adapter.MinVideoAdapter
-import com.wsy.ahp.fragment.nowarticle.model.MinVideoModel
-import com.wsy.ahp.fragment.nowarticle.model.TypeModel
-import com.wsy.ahp.fragment.nowarticle.viewModel.VideoViewModel
+import com.wsy.ahp.fragment.nowarticle.viewModel.MinVideoViewModel
 import com.wsy.common.ui.component.HiBaseFragment
 import kotlinx.android.synthetic.main.fragment_min_video_list.view.rv_video_list
 
@@ -16,7 +14,7 @@ class MinVideoListFragment2() :HiBaseFragment(){
 
     private var views:View? = null
 
-    var videoViewModel: VideoViewModel = VideoViewModel()
+    var videoViewModel: MinVideoViewModel = MinVideoViewModel()
 
 
 

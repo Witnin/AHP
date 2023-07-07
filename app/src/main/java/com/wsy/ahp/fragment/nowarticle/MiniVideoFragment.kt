@@ -1,12 +1,10 @@
 package com.wsy.ahp.fragment.nowarticle
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.wsy.ahp.R
 import com.wsy.ahp.fragment.nowarticle.adapter.MainTabAdapter
-import com.wsy.ahp.fragment.nowarticle.viewModel.VideoViewModel
+import com.wsy.ahp.fragment.nowarticle.viewModel.MinVideoViewModel
 import com.wsy.common.ui.component.HiBaseFragment
 import kotlinx.android.synthetic.main.fragment_mini_video.view.stl_tab_title
 import kotlinx.android.synthetic.main.fragment_mini_video.view.vp_min
@@ -14,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_mini_video.view.vp_min
 
 class MiniVideoFragment : HiBaseFragment() {
 
-     var videoViewModel:VideoViewModel = VideoViewModel()
+     var videoViewModel:MinVideoViewModel = MinVideoViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
