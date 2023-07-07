@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.GridLayoutManager
 import com.wsy.ahp.R
 import com.wsy.ahp.fragment.nowarticle.adapter.VideoListAdapter
@@ -15,11 +16,14 @@ import com.wsy.ahp.fragment.nowarticle.api.VideoApiService
 
 import com.wsy.ahp.model.entity.Recommend
 
+
 import kotlinx.android.synthetic.main.fragment_video_list.video_list_rv
+import kotlinx.android.synthetic.main.fragment_video_list.video_no_data
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 
@@ -86,6 +90,13 @@ class VideoListFragment : Fragment() {
         adapter = VideoListAdapter(videoItemList)
 // 3
         video_list_rv.adapter = adapter
+
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        myScope.cancel()
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -103,6 +114,7 @@ class VideoListFragment : Fragment() {
                 "气体"->{
                     val response = VideoApiService.create().getRecommendList(1, 20,2)
                     videoItemList.addAll(response.result.records)
+
                 }
                 "食品"->{
                     val response = VideoApiService.create().getRecommendList(1, 20,3)
@@ -118,7 +130,9 @@ class VideoListFragment : Fragment() {
                 }
 
             }
-
+            if(videoItemList.isEmpty()){
+                video_no_data.visibility = View.VISIBLE
+            }
             adapter.notifyDataSetChanged()
         }
     }

@@ -164,5 +164,6 @@
     <string name="like">208次点赞</string>
     <string name="wan">万</string>
     <string name="tag">标签 水质 土壤</string>
+    <string name="no_data">暂无数据</string>
 
 </resources>
