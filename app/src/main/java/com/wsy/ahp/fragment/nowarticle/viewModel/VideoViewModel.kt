@@ -1,90 +1,67 @@
 package com.wsy.ahp.fragment.nowarticle.viewModel
+import android.annotation.SuppressLint
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.mutableStateListOf
-import androidx.fragment.app.Fragment
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wsy.ahp.R
-import com.wsy.ahp.fragment.nowarticle.MinVideoListFragment
-import com.wsy.ahp.fragment.nowarticle.adapter.MainTabAdapter
-import com.wsy.ahp.fragment.nowarticle.model.MinVideoModel
-import com.wsy.ahp.fragment.nowarticle.model.TypeModel
-import com.wsy.ahp.http.api.HomeApi
-import com.wsy.ahp.http.common.ArouterUrl
-import com.wsy.ahp.http.common.RetrofitServiceCreator
-import com.wsy.ahp.model.entity.Type
-import com.wsy.ahp.model.entity.TypeService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-class VideoViewModel:WsyViewModel() {
+import com.wsy.ahp.fragment.nowarticle.repository.VideoListRepository
+import com.wsy.ahp.model.entity.Recommend
 
-     var fragmentList:MutableList<Fragment>? = mutableListOf()
-        private set
-     var titles = mutableListOf(
-         Type(0,"水质检测","1"),
-         Type(1,"土壤","2"),
-         Type(2,"气体检测","3"),
-         Type(3,"食品","4"),
-         Type(4,"噪音","5"),
-         Type(5,"其他","6"),
-       )
-         private set
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
-//    var titleList = listOf<Type>()
-    var minVideoAdapter: MainTabAdapter? = null
+class VideoViewModel :ViewModel(){
+    // 1
+    private val _videoList = MutableLiveData<List<Recommend>>()
+    // 2
+    val videoList: LiveData<List<Recommend>>
+        get() = _videoList
+    // 3
+    var type: String = ""
 
-    val mList:MutableList<MinVideoModel> = ArrayList()
-    val mList2:MutableList<MinVideoModel> = ArrayList()
-
-
-    val item7 = MinVideoModel("极光之夜","https://kcqzypt.oss-cn-beijing.aliyuncs.com/2022/08/11/0df65084705b7d60234a402b2ad88e9_1660198313678.jpg",1,2)
-    val item8 = MinVideoModel("试纸检测","https://kcqzypt.oss-cn-beijing.aliyuncs.com/2022/08/11/0df65084705b7d60234a402b2ad88e9_1660198313678.jpg",1,2)
-
-    init {
-
-//        for (index in 0 until titles.size){
-//            titleList.add(titles[index])
-//        }
-        typeList()
-
-        repeat(20){
-            mList!!.add(item7)
-        }
-        repeat(20){
-            mList2!!.add(item8)
-        }
+    private val myJob = Job()
+    private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+        Log.i("请求错误信息", "${throwable.message}")
     }
+    private val myScope = CoroutineScope(myJob + Dispatchers.Main + exceptionHandler)
 
-     fun typeList(){
-        val homeApi = RetrofitServiceCreator.create(HomeApi::class.java)
-        homeApi.type(1,10).enqueue(object : Callback<TypeService> {
-            override fun onResponse(call: Call<TypeService>, response: Response<TypeService>) {
-                if(response.isSuccessful){
-                    if (response.body()!!.code == 200){
-                        Log.d("home","${response.body()}")
-                        val data = response.body()!!.result
+    @SuppressLint("NotifyDataSetChanged")
+    fun requestData(){
+        myScope.launch {
+            when(type){
+                "水质"->{
+                    val response = VideoListRepository.getRecommendList(1,20,0)
+                    _videoList.value = response.result.records
+                }
+                "土壤"->{
+                    val response = VideoListRepository.getRecommendList(1, 20,1)
+                    _videoList.value = response.result.records
+                }
+                "气体"->{
+                    val response = VideoListRepository.getRecommendList(1, 20,2)
+                    _videoList.value = response.result.records
 
-                        val titleList = data.records.toList()
-                        Log.d("home-titleList","${titleList}")
-
-                        titles = titleList.toMutableList()
-                        Log.d("home-titles","${titles}")
-                    }else{
-                        navigation(ArouterUrl.loginUrl)
-                    }
-                }else{
-                    navigation(ArouterUrl.loginUrl)
+                }
+                "食品"->{
+                    val response = VideoListRepository.getRecommendList(1, 20,3)
+                    _videoList.value = response.result.records
+                }
+                "噪音"->{
+                    val response = VideoListRepository.getRecommendList(1, 20,4)
+                    _videoList.value = response.result.records
+                }
+                "其他"->{
+                    val response = VideoListRepository.getRecommendList(1, 20,5)
+                    _videoList.value = response.result.records
                 }
 
             }
 
-            override fun onFailure(call: Call<TypeService>, t: Throwable) {
-                navigation(ArouterUrl.HOME_ANSWER)
-            }
-
-        })
+        }
     }
-
 }

@@ -4,42 +4,53 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.wsy.ahp.R
+import com.wsy.ahp.fragment.nowarticle.viewModel.VideoViewModel
 import com.wsy.ahp.model.entity.Recommend
-
 import kotlinx.android.synthetic.main.item_playlist.view.video_background
 import kotlinx.android.synthetic.main.item_playlist.view.video_like
 import kotlinx.android.synthetic.main.item_playlist.view.video_play_times
 import kotlinx.android.synthetic.main.item_playlist.view.video_tag_ll
 import kotlinx.android.synthetic.main.item_playlist.view.video_title
 
-
-
-class VideoListAdapter(private val playlists: List<Recommend>): RecyclerView.Adapter<VideoListAdapter.VideoListHolder>()
-     {
+class VideoListItemAdapter: ListAdapter<Recommend, VideoListItemAdapter.VideoListItemHolder>(DiffCallback) {
+        // 2
+        object DiffCallback: DiffUtil.ItemCallback<Recommend>() {
+            override fun areItemsTheSame(oldItem: Recommend, newItem: Recommend): Boolean {
+                return oldItem === newItem
+            }
+            override fun areContentsTheSame(oldItem: Recommend, newItem: Recommend): Boolean {
+                return oldItem.recTitle == newItem.recTitle && oldItem.recPic ==
+                        newItem.recPic
+            }
+        }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): VideoListHolder {
+    ): VideoListItemAdapter.VideoListItemHolder {
         val v = LayoutInflater.from(parent.context).inflate(
             R.layout.item_playlist, parent,
             false)
-        return VideoListHolder(v)
+        return VideoListItemAdapter.VideoListItemHolder(v)
     }
+
+
+
     // 3
-    override fun onBindViewHolder(holder: VideoListHolder, position: Int) {
-        val playitem = playlists[position]
-        holder.bindPlayItem(playitem)
+    override fun onBindViewHolder(holder: VideoListItemHolder, position: Int) {
+
+//        val playitem = playlists[position]
+//        holder.bindPlayItem(playitem)
+        holder.bindPlayItem(getItem(position))
     }
 
-
-    // 4
-    override fun getItemCount() = playlists.size
-    // 5
-    class VideoListHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class VideoListItemHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         private var playItem: Recommend? = null
         // 6
         @SuppressLint("StringFormatInvalid")
@@ -65,7 +76,4 @@ class VideoListAdapter(private val playlists: List<Recommend>): RecyclerView.Ada
 
 
     }
-
-
-
 }
