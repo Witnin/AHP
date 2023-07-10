@@ -4,13 +4,14 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.paging.PagedListAdapter
+
+
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.wsy.ahp.R
-import com.wsy.ahp.fragment.nowarticle.viewModel.VideoViewModel
 import com.wsy.ahp.model.entity.Recommend
 import kotlinx.android.synthetic.main.item_playlist.view.video_background
 import kotlinx.android.synthetic.main.item_playlist.view.video_like
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.item_playlist.view.video_play_times
 import kotlinx.android.synthetic.main.item_playlist.view.video_tag_ll
 import kotlinx.android.synthetic.main.item_playlist.view.video_title
 
-class VideoListItemAdapter: ListAdapter<Recommend, VideoListItemAdapter.VideoListItemHolder>(DiffCallback) {
+class VideoListItemAdapter: PagedListAdapter<Recommend, VideoListItemAdapter.VideoListItemHolder>(DiffCallback) {
         // 2
         object DiffCallback: DiffUtil.ItemCallback<Recommend>() {
             override fun areItemsTheSame(oldItem: Recommend, newItem: Recommend): Boolean {
@@ -54,9 +55,9 @@ class VideoListItemAdapter: ListAdapter<Recommend, VideoListItemAdapter.VideoLis
         private var playItem: Recommend? = null
         // 6
         @SuppressLint("StringFormatInvalid")
-        fun bindPlayItem(item: Recommend) {
+        fun bindPlayItem(item: Recommend?) {
             playItem = item
-            view.video_title.text = item.recTitle
+            view.video_title.text = item!!.recTitle
             view.video_like.text = "${item.articleCheckClick.likeNum}"
             if (item.recNum!! > 100000) {
                 view.video_play_times.text = view.resources.getString(R.string.wan, item.recNum/ 10000)

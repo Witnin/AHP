@@ -17,7 +17,7 @@ import retrofit2.http.Query
 interface VideoApiService {
 
     companion object {
-        private const val TAG = "MusicApiService"
+        private const val TAG = "ApiService"
 
         val token = SPUtil.getString("X-Access-Token") ?: ""
 
