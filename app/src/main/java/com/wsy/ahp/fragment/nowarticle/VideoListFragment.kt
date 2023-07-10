@@ -92,7 +92,15 @@ class VideoListFragment : Fragment() {
 
         viewModel.pagedListLiveData.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
+
+            refreshlayout.isRefreshing = false
+
         })
+
+        refreshlayout.setOnRefreshListener {
+            viewModel.resetQuery()
+        }
+
 
 //        viewModel.videoList.observe(viewLifecycleOwner, Observer {
 //            adapter.submitList(it)

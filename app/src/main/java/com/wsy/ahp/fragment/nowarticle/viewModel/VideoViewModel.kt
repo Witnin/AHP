@@ -25,4 +25,9 @@ class VideoViewModel(private val type:String) :ViewModel(){
         PagedList.Config.Builder().setPageSize(18).build()
     ).build()
 
+
+    /* 下拉刷新 */
+    fun resetQuery() {
+        pagedListLiveData.value?.dataSource?.invalidate()
+    }
 }
