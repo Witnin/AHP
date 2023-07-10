@@ -18,7 +18,9 @@ import com.wsy.ahp.fragment.nowarticle.adapter.VideoListItemAdapter
 import com.wsy.ahp.fragment.nowarticle.datasource.VideoListDataSourceFactory
 
 import com.wsy.ahp.fragment.nowarticle.viewModel.VideoViewModel
+import com.wsy.ahp.view.LoadingViewHolder
 import kotlinx.android.synthetic.main.fragment_video_list.*
+import kotlinx.coroutines.NonDisposableHandle.parent
 
 
 class VideoListFragment : Fragment() {
@@ -43,6 +45,7 @@ class VideoListFragment : Fragment() {
     }
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,7 +59,7 @@ class VideoListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        var viewModel = ViewModelProviders.of(this, object : ViewModelProvider.Factory {
+        val viewModel = ViewModelProviders.of(this, object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 if (modelClass.isAssignableFrom(VideoViewModel::class.java)) {
                     arguments?.getString(QueryKey)?.let {
@@ -71,7 +74,7 @@ class VideoListFragment : Fragment() {
 //        arguments?.getString(QueryKey)?.let {
 //            video_text.text = it
 //        }
-        adapter = VideoListItemAdapter()
+        adapter = VideoListItemAdapter(viewModel)
 
 //        arguments?.getString(QueryKey)?.let {
 //           viewModel.type = it
@@ -97,9 +100,17 @@ class VideoListFragment : Fragment() {
 
         })
 
+        viewModel.loadingStatusLiveData.observe(viewLifecycleOwner, Observer {
+            adapter.updateLoadingStatus(it)
+        })
+
+
         refreshlayout.setOnRefreshListener {
             viewModel.resetQuery()
         }
+
+
+
 
 
 //        viewModel.videoList.observe(viewLifecycleOwner, Observer {

@@ -1,16 +1,23 @@
 package com.wsy.ahp.fragment.nowarticle.datasource
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.wsy.ahp.fragment.nowarticle.repository.VideoListRepository
 import com.wsy.ahp.model.entity.Recommend
+import com.wsy.ahp.view.LoadingStatus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class VideoListDataSource(private val type: String, private val scope: CoroutineScope): PageKeyedDataSource<Int,Recommend>() {
+class VideoListDataSource(private val type: String, private val scope: CoroutineScope,private val loadingStatusLiveData: MutableLiveData<LoadingStatus>): PageKeyedDataSource<Int,Recommend>() {
+
+    public var retryFun: (() -> Any)? = null
+
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Recommend>) {
+        loadingStatusLiveData.postValue(LoadingStatus.Failed)
+        retryFun = null
         scope.launch {
             try {
                 when (type) {
@@ -43,6 +50,9 @@ class VideoListDataSource(private val type: String, private val scope: Coroutine
                 }
             }catch (e: Exception) {
                 Log.d("VideoListDataSource", "$e")
+                loadingStatusLiveData.postValue(LoadingStatus.Failed)
+                retryFun = { loadAfter(params, callback) }
+
             }
 
 
@@ -56,6 +66,8 @@ class VideoListDataSource(private val type: String, private val scope: Coroutine
         params: LoadInitialParams<Int>,
         callback: LoadInitialCallback<Int, Recommend>
     ) {
+        loadingStatusLiveData.postValue(LoadingStatus.InitalLoading)
+        retryFun = null
         scope.launch {
             try {
                 when (type) {
@@ -87,6 +99,8 @@ class VideoListDataSource(private val type: String, private val scope: Coroutine
 
                 }
             }catch (e: Exception) {
+                loadingStatusLiveData.postValue(LoadingStatus.Failed)
+                retryFun = {loadInitial(params, callback)}
                 Log.d("VideoListDataSource", "$e")
             }
 
