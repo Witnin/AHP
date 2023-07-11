@@ -265,4 +265,8 @@ dependencies {
     // 添加依赖
     def paging_version = '3.1.1'
     implementation "androidx.paging:paging-runtime:$paging_version"
+
+    implementation ('com.alibaba.android:vlayout:1.2.36@aar') {
+        transitive = true
+    }
 }
