@@ -3,6 +3,7 @@ package com.wsy.ahp.fragment.nowarticle
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -77,6 +78,9 @@ class MyFragment: HiBaseFragment(),CountDownListener {
 
                 //显示在按钮的下方
                 showAsDropDown(it)
+                //显示在底部
+//                showAtLocation(it,Gravity.BOTTOM,0,0)
+
 
             }
 
