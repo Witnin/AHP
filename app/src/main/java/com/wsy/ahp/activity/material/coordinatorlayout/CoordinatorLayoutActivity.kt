@@ -25,6 +25,7 @@ class CoordinatorLayoutActivity : AppCompatActivity() {
         val fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, 0)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         collapsingToolbar.title = fruitName
         Glide.with(this).load(fruitImageId).into(fruitImageView)
         fruitContentText.text = generateFruitContent(fruitName)

@@ -6,6 +6,7 @@ buildscript{
         room_version = "2.5.0"
         arouter_version = "1.0.2"
         vasDolly_version = "3.0.6"
+
     }
 
     dependencies {

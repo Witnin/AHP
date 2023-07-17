@@ -4,7 +4,12 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.PopupWindow
+import android.widget.Toast
+import androidx.compose.ui.unit.dp
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bumptech.glide.Glide
@@ -53,6 +58,28 @@ class MyFragment: HiBaseFragment(),CountDownListener {
 
         layoutView.findViewById<View>(R.id.toutiao_des).setOnClickListener {
             navigation("/userinfo/des")
+        }
+
+        layoutView.findViewById<View>(R.id.certification).setOnClickListener {
+            PopupWindow().apply {
+                //入口参数配置
+                contentView = layoutInflater.inflate(R.layout.popwindow_layout,null)
+                width = 190
+                height = ViewGroup.LayoutParams.WRAP_CONTENT
+                isFocusable = true
+
+                //设置按钮
+                val btnPopupWindow = contentView.findViewById<View>(R.id.popBtn)
+                btnPopupWindow.setOnClickListener {
+                    Toast.makeText(context,"退出弹窗！！",Toast.LENGTH_SHORT).show()
+                    dismiss()
+                }
+
+                //显示在按钮的下方
+                showAsDropDown(it)
+
+            }
+
         }
 
         val item = CommonItemModel("锁定信息","https://kcqzypt.oss-cn-beijing.aliyuncs.com/upload/password.png")
