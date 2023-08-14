@@ -13,7 +13,7 @@ import kotlin.system.measureTimeMillis
  * delay
  */
  object CoroutineScene {
-    private val TAG: String = "CoroutineScene"
+    private const val TAG: String = "CoroutineScene"
 
     /**
      * 以此启动三个子线程，并且同步的方式拿到他们的返回值，进而更新UI*/

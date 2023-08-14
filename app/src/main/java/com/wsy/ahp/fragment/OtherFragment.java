@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.wsy.ahp.R;
 import com.wsy.ahp.activity.GreetingActivity;
 import com.wsy.ahp.activity.HiRefreshDemoActivity;
@@ -147,6 +148,9 @@ public class OtherFragment extends HiBaseFragment {
         layoutView.findViewById(R.id.material_test).setOnClickListener(v ->{navigation(ArouterUrl.MATERIAL_TEST);});
         layoutView.findViewById(R.id.viewmodel_cal).setOnClickListener(v ->{navigation(ArouterUrl.VIEWMODEL_CAL);});
         layoutView.findViewById(R.id.now_article).setOnClickListener(v ->{navigation(ArouterUrl.NOW_ARTICLE);});
+        layoutView.findViewById(R.id.bottomSheet).setOnClickListener(v ->{
+
+        });
 
 
         layoutView.findViewById(R.id.executor1).setOnClickListener(v ->{

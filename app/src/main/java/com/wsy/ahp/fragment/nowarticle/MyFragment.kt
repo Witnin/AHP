@@ -18,6 +18,7 @@ import com.wsy.ahp.R
 import com.wsy.ahp.fragment.nowarticle.adapter.CommonAdapter
 import com.wsy.ahp.fragment.nowarticle.model.CommonItemModel
 import com.wsy.ahp.fragment.nowarticle.model.CommonModel
+import com.wsy.ahp.http.common.ArouterUrl
 import com.wsy.common.ui.component.HiBaseFragment
 import com.wsy.common.ui.view.CountDownListener
 import com.wsy.common.utils.AuthCodeTimer
@@ -88,9 +89,9 @@ class MyFragment: HiBaseFragment(),CountDownListener {
 
         val item = CommonItemModel("锁定信息","https://kcqzypt.oss-cn-beijing.aliyuncs.com/upload/password.png")
         mCommonList.add(item)
-        val item2 = CommonItemModel("我的关注2",R.mipmap.tab_home_selected.toString())
+        val item2 = CommonItemModel("底部导航","https://kcqzypt.oss-cn-beijing.aliyuncs.com/upload/password.png", ArouterUrl.NOW_ARTICLE_NAV)
         mCommonList.add(item2)
-        val item3 = CommonItemModel("我的关注3",R.mipmap.icon_case.toString())
+        val item3 = CommonItemModel("吸顶测试",R.mipmap.icon_case.toString(),ArouterUrl.stickyHeader)
         mCommonList.add(item3)
         val item4 = CommonItemModel("我的关注4",R.mipmap.tab_home_unselected.toString())
         mCommonList.add(item4)

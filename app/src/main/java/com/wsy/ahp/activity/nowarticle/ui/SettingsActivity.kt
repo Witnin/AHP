@@ -24,7 +24,7 @@ class SettingsActivity : HiBaseActivity() {
 
         settings_night.btn_off.isChecked=true
         HiStatusBar.setStatusBar(this,true, Color.WHITE,false)
-//        settings_night.left_title.text = "测试数据"
+        settings_night.left_title.text = "测试数据"
 
 //        yi_ji.setBgItem(R.color.color_eed)
         tv_image.setOnClickListener {

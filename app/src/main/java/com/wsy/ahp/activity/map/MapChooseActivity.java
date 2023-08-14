@@ -1,5 +1,6 @@
 package com.wsy.ahp.activity.map;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Point;
@@ -119,6 +120,7 @@ public class MapChooseActivity extends AppCompatActivity implements LocationSour
         resultData = new ArrayList<>();
 
     }
+
 
     private void initView() throws AMapException {
 
