@@ -65,6 +65,9 @@
         android:versionName="@string/app_version"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ThreeDimenActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.nowarticle.ui.StickyHeaderActivity"
             android:exported="false" />
         <activity

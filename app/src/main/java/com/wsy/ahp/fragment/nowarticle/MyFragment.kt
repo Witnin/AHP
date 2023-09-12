@@ -93,7 +93,7 @@ class MyFragment: HiBaseFragment(),CountDownListener {
         mCommonList.add(item2)
         val item3 = CommonItemModel("吸顶测试",R.mipmap.icon_case.toString(),ArouterUrl.stickyHeader)
         mCommonList.add(item3)
-        val item4 = CommonItemModel("我的关注4",R.mipmap.tab_home_unselected.toString())
+        val item4 = CommonItemModel("3D翻转","https://kcqzypt.oss-cn-beijing.aliyuncs.com/upload/password.png",ArouterUrl.threeDimen)
         mCommonList.add(item4)
         val item5 = CommonItemModel("我的关注5",R.mipmap.setting.toString())
         mCommonList.add(item5)

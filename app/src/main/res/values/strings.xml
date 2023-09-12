@@ -5,12 +5,12 @@
     <string name="app_long_name">勘验取证终端数据采集系统</string>
     <string name="hello">你好</string>
     <string name="first_short">first</string>
-    <string name="first_long">小颜坏坏</string>
+    <string name="first_long">测试</string>
     <string name="second_short">second</string>
     <string name="three_3d">3d全景</string>
     <string name="second_long">3d全景</string>
     <string name="third_short">third</string>
-    <string name="third_long">变成猪儿🐖</string>
+    <string name="third_long">测试logo🐖</string>
     <string name="kyqz_task">"任务列表"</string>
     <string name="kyqz_case">"专项监督"</string>
     <string name="kyqz_clue">"线索管理"</string>

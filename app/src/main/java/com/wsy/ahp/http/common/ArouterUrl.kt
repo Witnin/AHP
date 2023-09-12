@@ -37,5 +37,6 @@ object ArouterUrl {
     const val NOW_ARTICLE_SETTING = "/article/setting"
     const val USERINFO_DES = "/userinfo/des"
     const val stickyHeader = "/sticky/header"
+    const val threeDimen = "/three/dimen"
 
 }
