@@ -46,7 +46,8 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" /> <!-- 悬浮 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:name=".HiApplication"
@@ -64,6 +65,9 @@
         android:versionCode="@integer/version_code"
         android:versionName="@string/app_version"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.nowarticle.SwipeTestActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.ThreeDimenActivity"
             android:exported="false" />

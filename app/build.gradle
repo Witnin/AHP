@@ -270,5 +270,9 @@ dependencies {
         transitive = true
     }
 
+    //3D翻转
     implementation 'com.github.githubwing:ThreeDLayout:1.0.0'
+
+    //悬浮球
+    implementation 'com.github.yhaolpz:FloatWindow:1.0.9'
 }

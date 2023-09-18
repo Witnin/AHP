@@ -3,6 +3,8 @@ package com.wsy.ahp
 
 
 import android.util.Log
+import android.view.animation.BounceInterpolator
+import android.widget.ImageView
 import android.widget.Toast
 import com.alibaba.android.arouter.launcher.ARouter
 import com.amap.api.maps.MapsInitializer
@@ -10,19 +12,21 @@ import com.amap.api.services.core.ServiceSettings
 import com.cretin.www.cretinautoupdatelibrary.model.TypeConfig
 import com.cretin.www.cretinautoupdatelibrary.model.UpdateConfig
 import com.cretin.www.cretinautoupdatelibrary.utils.AppUpdateUtils
-import com.cretin.www.cretinautoupdatelibrary.utils.SSLUtils
 import com.wsy.common.ActivityManager
-import com.wsy.common.Sha_Util
 import com.wsy.common.ui.component.HiBaseApplication
-import com.wsy.common.utils.OkHttp3Connection
-import com.wsy.common.utils.xupdate.JsonUtil
+import com.yhao.floatwindow.FloatWindow
+import com.yhao.floatwindow.MoveType
+import com.yhao.floatwindow.PermissionListener
+import com.yhao.floatwindow.Screen
+import com.yhao.floatwindow.ViewStateListener
 
-import okhttp3.OkHttpClient
-import java.util.concurrent.TimeUnit
+
 
 
 
 class HiApplication: HiBaseApplication() {
+
+    val TAG = "HiApplication"
     override fun onCreate() {
         super.onCreate()
         ActivityManager.instance.init(this)
@@ -77,6 +81,85 @@ class HiApplication: HiBaseApplication() {
 //        val sHA1 = Sha_Util.sHA1(applicationContext)
 //        println("sHA1$sHA1")
 //        Log.i("sha",sHA1)
+
+
+        //悬浮球
+        val imageView = ImageView(applicationContext)
+        imageView.setImageResource(R.drawable.button_fl)
+
+
+
+        val mPermissionListener: PermissionListener = object : PermissionListener {
+            override fun onSuccess() {
+                Log.d(TAG, "onSuccess")
+            }
+
+            override fun onFail() {
+                Log.d(TAG, "onFail")
+            }
+        }
+
+        val mViewStateListener: ViewStateListener = object : ViewStateListener {
+            override fun onPositionUpdate(x: Int, y: Int) {
+                Log.d(TAG, "onPositionUpdate: x=$x y=$y")
+            }
+
+            override fun onShow() {
+                Log.d(TAG, "onShow")
+            }
+
+            override fun onHide() {
+                Log.d(TAG, "onHide")
+            }
+
+            override fun onDismiss() {
+                Log.d(TAG, "onDismiss")
+            }
+
+            override fun onMoveAnimStart() {
+                Log.d(TAG, "onMoveAnimStart")
+            }
+
+            override fun onMoveAnimEnd() {
+                Log.d(TAG, "onMoveAnimEnd")
+            }
+
+            override fun onBackToDesktop() {
+                Log.d(TAG, "onBackToDesktop")
+            }
+        }
+
+        FloatWindow
+            .with(applicationContext)
+            .setView(imageView)
+            .setWidth(Screen.width, 0.05f) //设置悬浮控件宽高
+            .setHeight(Screen.width, 0.05f)
+            .setX(Screen.width, 0.95f)
+            .setY(Screen.height, 0.3f)
+            .setMoveType(MoveType.slide, 0, 0)
+            .setMoveStyle(500, BounceInterpolator())
+            .setViewStateListener(mViewStateListener)
+            .setPermissionListener(mPermissionListener)
+            .setDesktopShow(true)
+            .build()
+
+        imageView.setOnClickListener {
+            Toast.makeText(
+                this@HiApplication,
+                "onClick",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        imageView.setOnLongClickListener{
+            Toast.makeText(
+                this@HiApplication,
+                "onLongClick",
+                Toast.LENGTH_SHORT
+            ).show()
+            true
+        }
+
     }
 
     fun showToasts(message:String){

@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wingsofts.threedlayout.ThreeDLayout;
 import com.wsy.ahp.R;
 import com.wsy.ahp.http.common.ArouterUrl;
+import com.yhao.floatwindow.FloatWindow;
+import com.yhao.floatwindow.MoveType;
+import com.yhao.floatwindow.Screen;
 
 @Route(path = ArouterUrl.threeDimen)
 public class ThreeDimenActivity extends AppCompatActivity {
@@ -29,6 +33,9 @@ public class ThreeDimenActivity extends AppCompatActivity {
         tdRoot = (ThreeDLayout) findViewById(R.id.td_root);
 
         dialog =new  AlertDialog.Builder(this).setMessage("refreshing....").create();
+
+
+
 
 
     }
