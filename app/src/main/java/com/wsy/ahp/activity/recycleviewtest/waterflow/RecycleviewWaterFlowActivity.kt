@@ -39,7 +39,7 @@ class RecycleviewWaterFlowActivity : AppCompatActivity() {
     }
 
     private fun initArticles(){
-        repeat(2){
+        repeat(10){
             articleList.add(Article(getRandomLengthString("Apple"), R.drawable.guan))
             articleList.add(Article(getRandomLengthString("Banana"), R.drawable.test))
             articleList.add(Article(getRandomLengthString("Orange"), R.drawable.answer))
