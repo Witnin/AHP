@@ -275,4 +275,12 @@ dependencies {
 
     //悬浮球
     implementation 'com.github.yhaolpz:FloatWindow:1.0.9'
+
+    implementation 'com.github.princekin-f:EasyFloat:2.0.4'
+
+//    implementation 'cn.bingoogolapple:bga-swipebacklayout:2.0.1@aar'
+
+    implementation 'com.github.bingoogolapple:BGASwipeBackLayout-Android:2.0.2'
+// 换成己工程里依赖的 support-v4 的版本
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

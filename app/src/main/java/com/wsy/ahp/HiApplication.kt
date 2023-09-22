@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.animation.BounceInterpolator
 import android.widget.ImageView
 import android.widget.Toast
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper
 import com.alibaba.android.arouter.launcher.ARouter
 import com.amap.api.maps.MapsInitializer
 import com.amap.api.services.core.ServiceSettings
@@ -159,6 +160,9 @@ class HiApplication: HiBaseApplication() {
             ).show()
             true
         }
+
+        //侧滑
+        BGASwipeBackHelper.init(this, null)
 
     }
 

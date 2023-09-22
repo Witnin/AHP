@@ -38,5 +38,6 @@ object ArouterUrl {
     const val USERINFO_DES = "/userinfo/des"
     const val stickyHeader = "/sticky/header"
     const val threeDimen = "/three/dimen"
+    const val flb = "/float/button"
 
 }
